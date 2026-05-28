@@ -13,7 +13,7 @@ public interface AppUserRepository extends JpaRepository<AppUser, Long> {
 
     Optional<AppUser> findByUsernameAndDeleted(String username, String deleted);
 
-    Optional<AppUser> findByEmailAndDeleted(String email, String deleted);
+    Optional<AppUser> findByEmailIgnoreCaseAndDeleted(String email, String deleted);
 
     Optional<AppUser> findByIdAndDeleted(Long id, String deleted);
 

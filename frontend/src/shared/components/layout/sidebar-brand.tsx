@@ -46,11 +46,12 @@ export function SidebarBrand({ expanded, className }: SidebarBrandProps) {
 type AppBrandProps = {
   /** Inline row (sidebar-style) or stacked for login. */
   layout?: "inline" | "stacked";
+  tone?: "default" | "inverse";
   className?: string;
 };
 
 /** Branding for login, mobile drawer header, etc. */
-export function AppBrand({ layout = "inline", className }: AppBrandProps) {
+export function AppBrand({ layout = "inline", tone = "default", className }: AppBrandProps) {
   if (layout === "stacked") {
     return (
       <Link
@@ -59,7 +60,7 @@ export function AppBrand({ layout = "inline", className }: AppBrandProps) {
         className={cn("inline-flex flex-col items-center gap-3", className)}
       >
         <BrandMark size="lg" priority />
-        <BrandWordmark size="lg" />
+        <BrandWordmark size="lg" tone={tone} />
       </Link>
     );
   }
@@ -71,7 +72,7 @@ export function AppBrand({ layout = "inline", className }: AppBrandProps) {
       className={cn("inline-flex min-w-0 items-center gap-2.5", className)}
     >
       <BrandMark size="md" priority />
-      <BrandWordmark size="md" />
+      <BrandWordmark size="md" tone={tone} />
     </Link>
   );
 }

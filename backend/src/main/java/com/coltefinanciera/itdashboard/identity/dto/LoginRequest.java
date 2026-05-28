@@ -1,9 +1,13 @@
 package com.coltefinanciera.itdashboard.identity.dto;
 
+import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 
 public record LoginRequest(
-        @NotBlank String username,
-        @NotBlank String password
+        @NotBlank(message = "El email es obligatorio")
+        @Email(message = "Debe ser un email válido")
+        String email,
+        @NotBlank(message = "La contraseña es obligatoria")
+        String password
 ) {
 }

@@ -9,15 +9,17 @@ const sizeStyles = {
 
 type BrandWordmarkProps = {
   size?: keyof typeof sizeStyles;
+  tone?: "default" | "inverse";
   className?: string;
 };
 
 /** Theme-adaptive corporate wordmark — uses CSS tokens, not image assets. */
-export function BrandWordmark({ size = "sm", className }: BrandWordmarkProps) {
+export function BrandWordmark({ size = "sm", tone = "default", className }: BrandWordmarkProps) {
   return (
     <span
       className={cn(
-        "brand-wordmark truncate font-semibold uppercase leading-none",
+        "truncate font-semibold uppercase leading-none",
+        tone === "inverse" ? "brand-wordmark-inverse" : "brand-wordmark",
         sizeStyles[size],
         className,
       )}

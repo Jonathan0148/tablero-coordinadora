@@ -66,7 +66,7 @@ public class AdminUserService {
         userRepository.findByUsernameAndDeleted(username, "N").ifPresent(existing -> {
             throw new BusinessException(ApiResponseCode.USER_ALREADY_EXISTS);
         });
-        userRepository.findByEmailAndDeleted(request.email().trim(), "N").ifPresent(existing -> {
+        userRepository.findByEmailIgnoreCaseAndDeleted(request.email().trim(), "N").ifPresent(existing -> {
             throw new BusinessException(ApiResponseCode.USER_ALREADY_EXISTS, "El email ya está registrado");
         });
 
@@ -84,7 +84,7 @@ public class AdminUserService {
     @PreAuthorize("hasAuthority('PERM_security:admin')")
     public AdminUserResponse update(Long id, UpdateUserRequest request) {
         AppUser user = getActiveUser(id);
-        userRepository.findByEmailAndDeleted(request.email().trim(), "N")
+        userRepository.findByEmailIgnoreCaseAndDeleted(request.email().trim(), "N")
                 .filter(existing -> !existing.getId().equals(id))
                 .ifPresent(existing -> {
                     throw new BusinessException(ApiResponseCode.USER_ALREADY_EXISTS, "El email ya está registrado");

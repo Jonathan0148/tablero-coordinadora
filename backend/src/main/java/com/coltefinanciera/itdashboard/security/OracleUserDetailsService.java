@@ -4,6 +4,7 @@ import com.coltefinanciera.itdashboard.identity.entity.AppUser;
 import com.coltefinanciera.itdashboard.identity.entity.Permission;
 import com.coltefinanciera.itdashboard.identity.entity.Role;
 import com.coltefinanciera.itdashboard.identity.repository.AppUserRepository;
+import com.coltefinanciera.itdashboard.identity.service.AuthService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.security.core.GrantedAuthority;
@@ -32,15 +33,16 @@ public class OracleUserDetailsService implements UserDetailsService {
 
     @Override
     @Transactional(readOnly = true)
-    public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-        AppUser user = userRepository.findByUsernameAndDeleted(username, "N")
+    public UserDetails loadUserByUsername(String principal) throws UsernameNotFoundException {
+        String email = AuthService.normalizeEmail(principal);
+        AppUser user = userRepository.findByEmailIgnoreCaseAndDeleted(email, "N")
                 .orElseThrow(() -> {
-                    log.warn("Authentication failed: user '{}' not found or deleted", username);
+                    log.warn("Authentication failed: email '{}' not found or deleted", email);
                     return new UsernameNotFoundException("Usuario no encontrado");
                 });
 
         if (!user.isActive()) {
-            log.warn("Authentication failed: user '{}' is inactive", username);
+            log.warn("Authentication failed: email '{}' is inactive", email);
             throw new UsernameNotFoundException("Usuario inactivo");
         }
 

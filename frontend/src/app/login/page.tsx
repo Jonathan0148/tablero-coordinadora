@@ -1,21 +1,31 @@
+import { LoginBackground } from "@/modules/auth/login-background";
 import { LoginBrand } from "@/modules/auth/login-brand";
 import { LoginForm } from "@/modules/auth/login-form";
-import { Card, CardContent } from "@/shared/components/card";
 
 export default function LoginPage() {
   return (
-    <main className="flex min-h-screen items-center justify-center bg-app-bg p-6">
-      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top,color-mix(in_srgb,var(--app-accent)_12%,transparent),transparent_40%)]" />
-      <Card className="relative w-full max-w-md border-app-border shadow-[var(--app-shadow-lg)]">
-        <CardContent className="space-y-8 p-8">
-          <div className="flex flex-col items-center text-center">
+    <main className="relative min-h-screen overflow-hidden">
+      <LoginBackground />
+
+      <div className="relative z-10 flex min-h-screen flex-col items-center justify-center px-4 py-8 sm:px-6 lg:px-10">
+        <div
+          className="login-glass w-full max-w-[420px] rounded-2xl border border-white/10 p-6 shadow-2xl sm:p-8"
+        >
+          <div className="mb-8 flex flex-col items-center text-center">
             <LoginBrand />
-            <h1 className="mt-4 text-2xl font-bold tracking-tight text-app-fg">IT Dashboard</h1>
-            <p className="mt-1 text-sm text-app-muted">Gestión ejecutiva de proyectos y operaciones IT</p>
+            <h1 className="mt-5 text-2xl font-bold tracking-tight text-white sm:text-[1.65rem]">
+              IT Dashboard
+            </h1>
+            <p className="mt-2 max-w-xs text-sm leading-relaxed text-slate-300">
+              Gestión ejecutiva de proyectos, operaciones y colaboración ágil
+            </p>
           </div>
           <LoginForm />
-        </CardContent>
-      </Card>
+          <p className="mt-6 text-center text-[11px] text-slate-400">
+            Acceso seguro con autenticación corporativa
+          </p>
+        </div>
+      </div>
     </main>
   );
 }

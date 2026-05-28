@@ -48,19 +48,20 @@ public class AuthService {
 
     @Transactional
     public AuthResponse login(LoginRequest request) {
+        String email = normalizeEmail(request.email());
         try {
             authenticationManager.authenticate(
-                    new UsernamePasswordAuthenticationToken(request.username(), request.password())
+                    new UsernamePasswordAuthenticationToken(email, request.password())
             );
         } catch (BadCredentialsException ex) {
-            log.warn("Login failed for username '{}': bad credentials", request.username());
+            log.warn("Login failed for email '{}': bad credentials", email);
             throw new BusinessException(ApiResponseCode.AUTH_INVALID_LOGIN);
         } catch (AuthenticationException ex) {
-            log.warn("Login failed for username '{}': {}", request.username(), ex.getMessage());
+            log.warn("Login failed for email '{}': {}", email, ex.getMessage());
             throw new BusinessException(ApiResponseCode.AUTH_INVALID_LOGIN);
         }
 
-        AppUser user = userRepository.findByUsernameAndDeleted(request.username(), "N")
+        AppUser user = userRepository.findByEmailIgnoreCaseAndDeleted(email, "N")
                 .filter(AppUser::isActive)
                 .orElseThrow(() -> new BusinessException(ApiResponseCode.AUTH_INVALID_LOGIN));
 
@@ -90,12 +91,16 @@ public class AuthService {
         );
     }
 
+    public static String normalizeEmail(String email) {
+        return email == null ? "" : email.trim().toLowerCase();
+    }
+
     private Set<String> permissions(AppUser user) {
         return user.getRoles().stream()
                 .filter(this::isActive)
                 .flatMap(role -> role.getPermissions().stream())
                 .filter(this::isActive)
-                .map(permission -> permission.getCode())
+                .map(Permission::getCode)
                 .collect(Collectors.toUnmodifiableSet());
     }
 

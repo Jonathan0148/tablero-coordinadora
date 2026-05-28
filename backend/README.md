@@ -89,7 +89,16 @@ mvn clean package
 
 El backend usa JWT stateless. Los permisos se exponen como authorities con prefijo `PERM_`.
 
-Ejemplo:
+Login (`POST /api/v1/auth/login`):
+
+```json
+{
+  "email": "admin@local.dev",
+  "password": "admin123"
+}
+```
+
+Ejemplo de permisos en JWT:
 
 ```text
 PERM_projects:read

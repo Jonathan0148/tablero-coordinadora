@@ -3,7 +3,7 @@ import { tokenStorage } from "@/services/token-storage";
 import type { AuthPayload, UserProfile } from "@/types/domain";
 
 export type LoginRequest = {
-  username: string;
+  email: string;
   password: string;
 };
 
