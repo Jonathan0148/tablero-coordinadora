@@ -1,0 +1,933 @@
+﻿{
+  "info": {
+    "_postman_id": "0a1c3f85-79e7-4a8d-b4dd-it-dashboard-enterprise",
+    "name": "IT Dashboard Enterprise API",
+    "description": "ColecciÃ³n enterprise para validar el backend Spring Boot Coordinadora IT contra Oracle 19c. Alineada con controllers reales bajo /api/v1.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{jwtToken}}",
+        "type": "string"
+      }
+    ]
+  },
+  "event": [
+    {
+      "listen": "prerequest",
+      "script": {
+        "type": "text/javascript",
+        "exec": [
+          "pm.request.headers.upsert({ key: 'Accept', value: 'application/json' });",
+          "if (!pm.request.headers.has('Content-Type') && ['POST','PUT','PATCH'].includes(pm.request.method)) {",
+          "  pm.request.headers.upsert({ key: 'Content-Type', value: 'application/json' });",
+          "}"
+        ]
+      }
+    },
+    {
+      "listen": "test",
+      "script": {
+        "type": "text/javascript",
+        "exec": [
+          "pm.test('Response time is below 3000ms', function () {",
+          "  pm.expect(pm.response.responseTime).to.be.below(3000);",
+          "});"
+        ]
+      }
+    }
+  ],
+  "item": [
+    {
+      "name": "Auth",
+      "item": [
+        {
+          "name": "Auth - Login",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('Status code is 200', function () { pm.response.to.have.status(200); });",
+                  "const response = pm.response.json();",
+                  "pm.test('Enterprise response wrapper exists', function () { pm.expect(response).to.include.keys(['code', 'message', 'userMessage', 'data']); });",
+                  "const json = response.data;",
+                  "const token = json.accessToken || json.access_token;",
+                  "const refresh = json.refreshToken || json.refresh_token || '';",
+                  "pm.test('Access token exists', function () { pm.expect(token).to.be.a('string').and.not.empty; });",
+                  "pm.environment.set('jwtToken', token);",
+                  "if (refresh) { pm.environment.set('refreshToken', refresh); }",
+                  "pm.test('User profile exists', function () { pm.expect(json.user).to.be.an('object'); });"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"username\": \"{{username}}\",\n  \"password\": \"{{password}}\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/v1/auth/login",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "v1",
+                "auth",
+                "login"
+              ]
+            },
+            "description": "AutenticaciÃ³n JWT. Guarda accessToken en jwtToken."
+          }
+        },
+        {
+          "name": "Auth - Refresh",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('Status code is 200', function () { pm.response.to.have.status(200); });",
+                  "const response = pm.response.json();",
+                  "pm.test('Enterprise response wrapper exists', function () { pm.expect(response).to.include.keys(['code', 'message', 'userMessage', 'data']); });",
+                  "const json = response.data;",
+                  "const token = json.accessToken || json.access_token;",
+                  "pm.test('Refreshed access token exists', function () { pm.expect(token).to.be.a('string').and.not.empty; });",
+                  "pm.environment.set('jwtToken', token);"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"username\": \"{{username}}\",\n  \"password\": \"{{password}}\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/v1/auth/refresh",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "v1",
+                "auth",
+                "refresh"
+              ]
+            },
+            "description": "Endpoint real actual de refresh reutiliza LoginRequest."
+          }
+        },
+        {
+          "name": "Auth - Me",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('Status code is 200', function () { pm.response.to.have.status(200); });",
+                  "const response = pm.response.json();",
+                  "pm.test('Enterprise response wrapper exists', function () { pm.expect(response).to.include.keys(['code', 'message', 'userMessage', 'data']); });",
+                  "const json = response.data;",
+                  "pm.test('Authenticated user has username and permissions', function () {",
+                  "  pm.expect(json.username).to.be.a('string');",
+                  "  pm.expect(json.permissions).to.be.an('array');",
+                  "});"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/v1/auth/me",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "v1",
+                "auth",
+                "me"
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Dashboard",
+      "item": [
+        {
+          "name": "Dashboard - Summary",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('Status code is 200', function () { pm.response.to.have.status(200); });",
+                  "const response = pm.response.json();",
+                  "pm.test('Enterprise response wrapper exists', function () { pm.expect(response).to.include.keys(['code', 'message', 'userMessage', 'data']); });",
+                  "const json = response.data;",
+                  "pm.test('Dashboard schema exists', function () {",
+                  "  pm.expect(json).to.have.property('totalProjects');",
+                  "  pm.expect(json).to.have.property('activeKanbanCards');",
+                  "  pm.expect(json).to.have.property('activityLogs');",
+                  "  pm.expect(json).to.have.property('projectsByTrafficLight');",
+                  "});"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/v1/dashboard/summary",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "v1",
+                "dashboard",
+                "summary"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Dashboard - Committee Summary",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('Status code is 200', function () { pm.response.to.have.status(200); });",
+                  "pm.test('Committee summary returns object', function () { pm.expect(pm.response.json()).to.be.an('object'); });"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/v1/committee/summary",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "v1",
+                "committee",
+                "summary"
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Projects",
+      "item": [
+        {
+          "name": "Projects - Search",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('Status code is 200', function () { pm.response.to.have.status(200); });",
+                  "const response = pm.response.json();",
+                  "pm.test('Enterprise response wrapper exists', function () { pm.expect(response).to.include.keys(['code', 'message', 'userMessage', 'data']); });",
+                  "const json = response.data;",
+                  "pm.test('Pagination schema exists', function () {",
+                  "  pm.expect(json).to.have.property('content').that.is.an('array');",
+                  "  pm.expect(json).to.have.property('page');",
+                  "  pm.expect(json).to.have.property('size');",
+                  "  pm.expect(json).to.have.property('totalElements');",
+                  "  pm.expect(json).to.have.property('totalPages');",
+                  "});",
+                  "if (json.content && json.content.length > 0) { pm.environment.set('projectId', json.content[0].id); }"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/v1/projects?page=0&size=20&sort=id,asc",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "v1",
+                "projects"
+              ],
+              "query": [
+                {
+                  "key": "page",
+                  "value": "0"
+                },
+                {
+                  "key": "size",
+                  "value": "20"
+                },
+                {
+                  "key": "sort",
+                  "value": "id,asc"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "name": "Projects - Create",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('Status code is 200', function () { pm.response.to.have.status(200); });",
+                  "const response = pm.response.json();",
+                  "pm.test('Enterprise response wrapper exists', function () { pm.expect(response).to.include.keys(['code', 'message', 'userMessage', 'data']); });",
+                  "const json = response.data;",
+                  "pm.test('Project created with id', function () { pm.expect(json.id).to.exist; });",
+                  "pm.environment.set('projectId', json.id);"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Proyecto QA Postman {{$timestamp}}\",\n  \"pipelineStatusCode\": \"DESARROLLO\",\n  \"startDate\": \"2026-05-27\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/v1/projects",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "v1",
+                "projects"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Projects - Get By Id",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('Status code is 200', function () { pm.response.to.have.status(200); });",
+                  "pm.test('Project response has id/name', function () {",
+                  "  const json = pm.response.json();",
+                  "  pm.expect(json.id).to.exist;",
+                  "  pm.expect(json.name).to.be.a('string');",
+                  "});"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/v1/projects/{{projectId}}",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "v1",
+                "projects",
+                "{{projectId}}"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Projects - Update",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('Status code is 200', function () { pm.response.to.have.status(200); });",
+                  "pm.test('Project updated', function () { pm.expect(pm.response.json().data.pipelineStatusCode).to.eql('DESARROLLO'); });"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Proyecto QA Postman Actualizado\",\n  \"pipelineStatusCode\": \"DESARROLLO\",\n  \"startDate\": \"2026-05-27\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/v1/projects/{{projectId}}",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "v1",
+                "projects",
+                "{{projectId}}"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Projects - Delete",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('Status code is 200', function () { pm.response.to.have.status(200); });"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/v1/projects/{{projectId}}",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "v1",
+                "projects",
+                "{{projectId}}"
+              ]
+            },
+            "description": "Soft delete. Ejecutar con cuidado; para pruebas se recomienda usar un proyecto creado por Postman."
+          }
+        }
+      ]
+    },
+    {
+      "name": "Project Updates",
+      "item": [
+        {
+          "name": "Project Updates - List By Project",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('Status code is 200', function () { pm.response.to.have.status(200); });",
+                  "const response = pm.response.json();",
+                  "pm.test('Enterprise response wrapper exists', function () { pm.expect(response).to.include.keys(['code', 'message', 'userMessage', 'data']); });",
+                  "const json = response.data;",
+                  "pm.test('Pagination schema exists', function () { pm.expect(json.content).to.be.an('array'); pm.expect(json.totalElements).to.exist; });"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/v1/projects/{{projectId}}/updates?page=0&size=20&sort=updatedAtOriginal,desc",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "v1",
+                "projects",
+                "{{projectId}}",
+                "updates"
+              ],
+              "query": [
+                {
+                  "key": "page",
+                  "value": "0"
+                },
+                {
+                  "key": "size",
+                  "value": "20"
+                },
+                {
+                  "key": "sort",
+                  "value": "updatedAtOriginal,desc"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "name": "Project Updates - Create Append Only",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('Status code is 200', function () { pm.response.to.have.status(200); });",
+                  "const response = pm.response.json();",
+                  "pm.test('Enterprise response wrapper exists', function () { pm.expect(response).to.include.keys(['code', 'message', 'userMessage', 'data']); });",
+                  "const json = response.data;",
+                  "pm.test('Project update response has traffic light', function () { pm.expect(json.trafficLightCode).to.exist; });"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"executiveStatusCode\": \"EN_CURSO\",\n  \"summary\": \"ActualizaciÃ³n QA Postman append-only\",\n  \"pendingItems\": \"Validar integraciÃ³n frontend\",\n  \"hasStopper\": false,\n  \"stopperDesc\": \"\",\n  \"stopperOwner\": \"\",\n  \"stopperImpactCode\": \"\",\n  \"relevantRisks\": \"\",\n  \"nextMilestone\": \"Prueba integral API\",\n  \"nextMilestoneDate\": \"2026-06-15\",\n  \"pendingDecisions\": \"\",\n  \"requiresCoordination\": false,\n  \"coordinationDesc\": \"\",\n  \"responsibleAreaCode\": \"\",\n  \"responsibleAction\": \"\",\n  \"additionalNotes\": \"Generado desde Postman\",\n  \"calculateTrafficLight\": true\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/v1/projects/{{projectId}}/updates",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "v1",
+                "projects",
+                "{{projectId}}",
+                "updates"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Project Updates - Current Status",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('Status code is 200 or 422 when project has no updates', function () { pm.expect([200,422]).to.include(pm.response.code); });",
+                  "if (pm.response.code === 200) { pm.test('Current status has updatedAtOriginal', function () { pm.expect(pm.response.json().data.updatedAtOriginal).to.exist; }); }"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/v1/projects/{{projectId}}/current-status",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "v1",
+                "projects",
+                "{{projectId}}",
+                "current-status"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Project Updates - Status At",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('Status code is 200 or 422', function () { pm.expect([200,422]).to.include(pm.response.code); });"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/v1/projects/{{projectId}}/status-at?at=2026-12-31T23:59:59Z",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "v1",
+                "projects",
+                "{{projectId}}",
+                "status-at"
+              ],
+              "query": [
+                {
+                  "key": "at",
+                  "value": "2026-12-31T23:59:59Z"
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Kanban",
+      "item": [
+        {
+          "name": "Kanban - List Cards",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('Status code is 200', function () { pm.response.to.have.status(200); });",
+                  "const response = pm.response.json();",
+                  "pm.test('Enterprise response wrapper exists', function () { pm.expect(response).to.include.keys(['code', 'message', 'userMessage', 'data']); });",
+                  "const json = response.data;",
+                  "pm.test('Pagination schema exists', function () { pm.expect(json.content).to.be.an('array'); });",
+                  "if (json.content && json.content.length > 0) { pm.environment.set('kanbanId', json.content[0].id); }"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/v1/kanban/cards?page=0&size=50",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "v1",
+                "kanban",
+                "cards"
+              ],
+              "query": [
+                {
+                  "key": "page",
+                  "value": "0"
+                },
+                {
+                  "key": "size",
+                  "value": "50"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "name": "Kanban - Create Card",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('Status code is 200', function () { pm.response.to.have.status(200); });",
+                  "const response = pm.response.json();",
+                  "pm.test('Enterprise response wrapper exists', function () { pm.expect(response).to.include.keys(['code', 'message', 'userMessage', 'data']); });",
+                  "const json = response.data;",
+                  "pm.test('Kanban card created', function () { pm.expect(json.id).to.exist; });",
+                  "pm.environment.set('kanbanId', json.id);"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"text\": \"Actividad QA Postman {{$timestamp}}\",\n  \"areaCode\": \"PLAN\",\n  \"priorityCode\": \"MEDIA\",\n  \"statusCode\": \"PENDIENTE\",\n  \"dueDate\": \"2026-06-30\",\n  \"reminderAt\": \"2026-06-20T09:00:00Z\",\n  \"projectId\": {{projectId}}\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/v1/kanban/cards",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "v1",
+                "kanban",
+                "cards"
+              ]
+            }
+          }
+        },
+        {
+          "name": "Kanban - Update Status",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('Status code is 200', function () { pm.response.to.have.status(200); });",
+                  "pm.test('Status updated', function () { pm.expect(pm.response.json().data.statusCode).to.eql('EN_CURSO'); });"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "PATCH",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/v1/kanban/cards/{{kanbanId}}/status?statusCode=EN_CURSO",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "v1",
+                "kanban",
+                "cards",
+                "{{kanbanId}}",
+                "status"
+              ],
+              "query": [
+                {
+                  "key": "statusCode",
+                  "value": "EN_CURSO"
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Team Members",
+      "item": [
+        {
+          "name": "Team Members - List",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('Status code is 200', function () { pm.response.to.have.status(200); });",
+                  "const response = pm.response.json();",
+                  "pm.test('Enterprise response wrapper exists', function () { pm.expect(response).to.include.keys(['code', 'message', 'userMessage', 'data']); });",
+                  "const json = response.data;",
+                  "pm.test('Pagination schema exists', function () { pm.expect(json.content).to.be.an('array'); });",
+                  "if (json.content && json.content.length > 0) { pm.environment.set('teamMemberId', json.content[0].id); }"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/v1/team-members?page=0&size=50",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "v1",
+                "team-members"
+              ],
+              "query": [
+                {
+                  "key": "page",
+                  "value": "0"
+                },
+                {
+                  "key": "size",
+                  "value": "50"
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "OKRs",
+      "item": [
+        {
+          "name": "OKRs - List",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('Status code is 200', function () { pm.response.to.have.status(200); });",
+                  "const response = pm.response.json();",
+                  "pm.test('Enterprise response wrapper exists', function () { pm.expect(response).to.include.keys(['code', 'message', 'userMessage', 'data']); });",
+                  "const json = response.data;",
+                  "pm.test('OKRs response is an array', function () { pm.expect(json).to.be.an('array'); });",
+                  "if (json.length > 0) { pm.environment.set('okrId', json[0].id); }"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/v1/okrs",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "v1",
+                "okrs"
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Activity Logs",
+      "item": [
+        {
+          "name": "Activity Logs - List",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('Status code is 200', function () { pm.response.to.have.status(200); });",
+                  "const response = pm.response.json();",
+                  "pm.test('Enterprise response wrapper exists', function () { pm.expect(response).to.include.keys(['code', 'message', 'userMessage', 'data']); });",
+                  "const json = response.data;",
+                  "pm.test('Pagination schema exists', function () { pm.expect(json.content).to.be.an('array'); });"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/v1/activity-logs?page=0&size=20",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "v1",
+                "activity-logs"
+              ],
+              "query": [
+                {
+                  "key": "page",
+                  "value": "0"
+                },
+                {
+                  "key": "size",
+                  "value": "20"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "name": "Activity Logs - Create",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "type": "text/javascript",
+                "exec": [
+                  "pm.test('Status code is 200', function () { pm.response.to.have.status(200); });",
+                  "pm.test('Activity log created', function () { pm.expect(pm.response.json().data.id).to.exist; });"
+                ]
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"text\": \"Entrada de bitÃ¡cora QA Postman {{$timestamp}}\",\n  \"areaCode\": \"COTIDIANA\",\n  \"loggedAtOriginal\": \"2026-05-27T23:59:00Z\"\n}"
+            },
+            "url": {
+              "raw": "{{baseUrl}}/v1/activity-logs",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "v1",
+                "activity-logs"
+              ]
+            }
+          }
+        }
+      ]
+    }
+  ]
+}

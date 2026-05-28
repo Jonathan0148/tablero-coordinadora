@@ -1,0 +1,50 @@
+spring:
+  application:
+    name: it-dashboard-backend
+  profiles:
+    active: local
+  jackson:
+    time-zone: UTC
+    default-property-inclusion: non_null
+  jpa:
+    open-in-view: false
+    hibernate:
+      ddl-auto: validate
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.OracleDialect
+        format_sql: true
+        jdbc:
+          time_zone: UTC
+  flyway:
+    enabled: true
+    baseline-on-migrate: true
+    locations: classpath:db/migration
+
+server:
+  servlet:
+    context-path: /
+  error:
+    include-message: never
+    include-binding-errors: never
+
+springdoc:
+  api-docs:
+    path: /api-docs
+  swagger-ui:
+    path: /swagger-ui.html
+    operations-sorter: alpha
+    tags-sorter: alpha
+
+app:
+  api:
+    version: v1
+  cors:
+    allowed-origins:
+      - http://localhost:3000
+      - http://127.0.0.1:3000
+  jwt:
+    issuer: coltefinanciera-it-dashboard
+    # Override with APP_JWT_SECRET in local/prod. Minimum 32 bytes for HS256.
+    secret: ${APP_JWT_SECRET:change-this-local-development-secret-32b}
+    access-token-minutes: 60

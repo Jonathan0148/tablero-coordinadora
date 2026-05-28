@@ -1,0 +1,18 @@
+package com.coltefinanciera.itdashboard.catalog.entity;
+
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+import lombok.Getter;
+import lombok.Setter;
+
+@Getter
+@Setter
+@Entity
+@Table(name = "traffic_light")
+public class TrafficLight extends BaseCatalogEntity {
+    @Id
+    @Column(name = "traffic_light_id")
+    private Long id;
+}
