@@ -1,0 +1,19 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="3A9011FE-2568-B450-0354-4F9BA7ADC933" containerWithKeyObject="3FB65570-C8B7-26A7-785F-F74DD5ECB24C" localFKIndex="25FAF0F0-19E6-228A-75F9-8ACFCDBB20BD" name="FK_NOTIFICATION_REMINDER__PROJECT_UPDATE">
+<sourceConnName>APP_CURSOR</sourceConnName>
+<sourceObjSchema>APP_CURSOR</sourceObjSchema>
+<sourceObjName>FK_NOTIFICATION_REMINDER__PROJECT_UPDATE</sourceObjName>
+<createdBy>bohor</createdBy>
+<createdTime>2026-05-28 18:10:17 UTC</createdTime>
+<ownerDesignName>mer</ownerDesignName>
+<referredTableLongName>APP_CURSOR.PROJECT_UPDATE</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>70CD601D-DC7A-0BA6-89E1-FEB706FC7146</referredTableID>
+<keyObject>29AB98BD-44F1-9955-0C52-39AED39D1A49</keyObject>
+<referredKeyID>29AB98BD-44F1-9955-0C52-39AED39D1A49</referredKeyID>
+<mandatory>false</mandatory>
+<refColNames>PROJECT_UPDATE_ID</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

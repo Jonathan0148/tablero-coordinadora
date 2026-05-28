@@ -1,0 +1,286 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="91F6D17A-3FEE-A8AE-CE7C-1717D8EB3DC2" schemaObject="29F73E7E-6ED0-6D22-A8E7-E516F10B9427" name="PIPELINE_STATUS">
+<sourceConnName>APP_CURSOR</sourceConnName>
+<sourceObjSchema>APP_CURSOR</sourceObjSchema>
+<sourceObjName>PIPELINE_STATUS</sourceObjName>
+<createdBy>bohor</createdBy>
+<createdTime>2026-05-28 18:10:03 UTC</createdTime>
+<ownerDesignName>mer</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="PIPELINE_STATUS_ID" id="FBB51E9F-C672-F94F-0779-A2BAA57351D0">
+<sourceConnName>APP_CURSOR</sourceConnName>
+<sourceObjSchema>PIPELINE_STATUS</sourceObjSchema>
+<sourceObjName>PIPELINE_STATUS_ID</sourceObjName>
+<createdBy>bohor</createdBy>
+<createdTime>2026-05-28 18:10:04 UTC</createdTime>
+<ownerDesignName>mer</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>19</dataTypePrecision>
+<dataTypeScale>0</dataTypeScale>
+<ownDataTypeParameters>,19,0</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="CODE" id="E284B451-E9C6-5779-ED26-E6DA7607F088">
+<sourceConnName>APP_CURSOR</sourceConnName>
+<sourceObjSchema>PIPELINE_STATUS</sourceObjSchema>
+<sourceObjName>CODE</sourceObjName>
+<createdBy>bohor</createdBy>
+<createdTime>2026-05-28 18:10:04 UTC</createdTime>
+<ownerDesignName>mer</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>60 CHAR</dataTypeSize>
+<ownDataTypeParameters>60 CHAR,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="NAME" id="A28201C2-8C63-C9C2-9E81-44BD99459690">
+<sourceConnName>APP_CURSOR</sourceConnName>
+<sourceObjSchema>PIPELINE_STATUS</sourceObjSchema>
+<sourceObjName>NAME</sourceObjName>
+<createdBy>bohor</createdBy>
+<createdTime>2026-05-28 18:10:04 UTC</createdTime>
+<ownerDesignName>mer</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>150 CHAR</dataTypeSize>
+<ownDataTypeParameters>150 CHAR,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="DESCRIPTION" id="2932138E-C55E-A1C3-0296-CA473FC26B5E">
+<sourceConnName>APP_CURSOR</sourceConnName>
+<sourceObjSchema>PIPELINE_STATUS</sourceObjSchema>
+<sourceObjName>DESCRIPTION</sourceObjName>
+<createdBy>bohor</createdBy>
+<createdTime>2026-05-28 18:10:04 UTC</createdTime>
+<ownerDesignName>mer</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>500 CHAR</dataTypeSize>
+<ownDataTypeParameters>500 CHAR,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="SORT_ORDER" id="79AB87D4-663A-0DEB-542F-EAF1007FB5D9">
+<sourceConnName>APP_CURSOR</sourceConnName>
+<sourceObjSchema>PIPELINE_STATUS</sourceObjSchema>
+<sourceObjName>SORT_ORDER</sourceObjName>
+<createdBy>bohor</createdBy>
+<createdTime>2026-05-28 18:10:04 UTC</createdTime>
+<ownerDesignName>mer</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>5</dataTypePrecision>
+<dataTypeScale>0</dataTypeScale>
+<defaultValue>0</defaultValue>
+<ownDataTypeParameters>,5,0</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="ACTIVE" id="86E7F74D-1300-C567-000B-990E96226D71">
+<sourceConnName>APP_CURSOR</sourceConnName>
+<sourceObjSchema>PIPELINE_STATUS</sourceObjSchema>
+<sourceObjName>ACTIVE</sourceObjName>
+<createdBy>bohor</createdBy>
+<createdTime>2026-05-28 18:10:04 UTC</createdTime>
+<ownerDesignName>mer</ownerDesignName>
+<constraintName>CK_PIPELINE_STATUS__ACTIVE</constraintName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT025</logicalDatatype>
+<dataTypeSize>1 BYTE</dataTypeSize>
+<listOfValues>
+<valueDef value="&apos;N&apos;" description=""/>
+<valueDef value="&apos;Y&apos;" description=""/>
+</listOfValues>
+<defaultValue>&apos;Y&apos;</defaultValue>
+<ownDataTypeParameters>1 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="CREATED_AT" id="F4F496EA-3EA5-B941-3C29-4CAC0EADC9D9">
+<sourceConnName>APP_CURSOR</sourceConnName>
+<sourceObjSchema>PIPELINE_STATUS</sourceObjSchema>
+<sourceObjName>CREATED_AT</sourceObjName>
+<createdBy>bohor</createdBy>
+<createdTime>2026-05-28 18:10:04 UTC</createdTime>
+<ownerDesignName>mer</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT046</logicalDatatype>
+<dataTypePrecision>6</dataTypePrecision>
+<defaultValue>SYSTIMESTAMP</defaultValue>
+<ownDataTypeParameters>,6,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="UPDATED_AT" id="A699279C-470E-2EF9-6117-6F30909378A6">
+<sourceConnName>APP_CURSOR</sourceConnName>
+<sourceObjSchema>PIPELINE_STATUS</sourceObjSchema>
+<sourceObjName>UPDATED_AT</sourceObjName>
+<createdBy>bohor</createdBy>
+<createdTime>2026-05-28 18:10:04 UTC</createdTime>
+<ownerDesignName>mer</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT046</logicalDatatype>
+<dataTypePrecision>6</dataTypePrecision>
+<defaultValue>SYSTIMESTAMP</defaultValue>
+<ownDataTypeParameters>,6,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="IS_DELETED" id="8DEAE22B-1979-6A6D-0693-50553DD1C2FB">
+<sourceConnName>APP_CURSOR</sourceConnName>
+<sourceObjSchema>PIPELINE_STATUS</sourceObjSchema>
+<sourceObjName>IS_DELETED</sourceObjName>
+<createdBy>bohor</createdBy>
+<createdTime>2026-05-28 18:10:04 UTC</createdTime>
+<ownerDesignName>mer</ownerDesignName>
+<constraintName>CK_PIPELINE_STATUS__DELETED</constraintName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT025</logicalDatatype>
+<dataTypeSize>1 BYTE</dataTypeSize>
+<listOfValues>
+<valueDef value="&apos;N&apos;" description=""/>
+<valueDef value="&apos;Y&apos;" description=""/>
+</listOfValues>
+<defaultValue>&apos;N&apos;</defaultValue>
+<ownDataTypeParameters>1 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="DELETED_AT" id="469ED1E9-26D7-8A56-9477-E9AADD176625">
+<sourceConnName>APP_CURSOR</sourceConnName>
+<sourceObjSchema>PIPELINE_STATUS</sourceObjSchema>
+<sourceObjName>DELETED_AT</sourceObjName>
+<createdBy>bohor</createdBy>
+<createdTime>2026-05-28 18:10:04 UTC</createdTime>
+<ownerDesignName>mer</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT046</logicalDatatype>
+<dataTypePrecision>6</dataTypePrecision>
+<ownDataTypeParameters>,6,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="CREATED_BY" id="693E1C3F-6A87-EB03-8C35-AAF4EA369B03">
+<sourceConnName>APP_CURSOR</sourceConnName>
+<sourceObjSchema>PIPELINE_STATUS</sourceObjSchema>
+<sourceObjName>CREATED_BY</sourceObjName>
+<createdBy>bohor</createdBy>
+<createdTime>2026-05-28 18:10:04 UTC</createdTime>
+<ownerDesignName>mer</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>128 CHAR</dataTypeSize>
+<ownDataTypeParameters>128 CHAR,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="UPDATED_BY" id="546F9A47-8571-C062-7573-EF9BF6757212">
+<sourceConnName>APP_CURSOR</sourceConnName>
+<sourceObjSchema>PIPELINE_STATUS</sourceObjSchema>
+<sourceObjName>UPDATED_BY</sourceObjName>
+<createdBy>bohor</createdBy>
+<createdTime>2026-05-28 18:10:04 UTC</createdTime>
+<ownerDesignName>mer</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>128 CHAR</dataTypeSize>
+<ownDataTypeParameters>128 CHAR,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="DELETED_BY" id="5CC233C2-23D4-340A-1856-B8AC63B0E83E">
+<sourceConnName>APP_CURSOR</sourceConnName>
+<sourceObjSchema>PIPELINE_STATUS</sourceObjSchema>
+<sourceObjName>DELETED_BY</sourceObjName>
+<createdBy>bohor</createdBy>
+<createdTime>2026-05-28 18:10:04 UTC</createdTime>
+<ownerDesignName>mer</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>128 CHAR</dataTypeSize>
+<ownDataTypeParameters>128 CHAR,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="918D236A-B07A-BFB3-455D-DDF74ACE2612" name="PK_PIPELINE_STATUS">
+<sourceConnName>APP_CURSOR</sourceConnName>
+<sourceObjSchema>APP_CURSOR</sourceObjSchema>
+<sourceObjName>PK_PIPELINE_STATUS</sourceObjName>
+<createdBy>bohor</createdBy>
+<createdTime>2026-05-28 18:10:12 UTC</createdTime>
+<ownerDesignName>mer</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="FBB51E9F-C672-F94F-0779-A2BAA57351D0"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="14B0DF55-FF94-E762-45A8-60DC78360735" name="UK_PIPELINE_STATUS__CODE">
+<sourceConnName>APP_CURSOR</sourceConnName>
+<sourceObjSchema>APP_CURSOR</sourceObjSchema>
+<sourceObjName>UK_PIPELINE_STATUS__CODE</sourceObjName>
+<createdBy>bohor</createdBy>
+<createdTime>2026-05-28 18:10:12 UTC</createdTime>
+<ownerDesignName>mer</ownerDesignName>
+<indexState>Unique Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="E284B451-E9C6-5779-ED26-E6DA7607F088"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="6BEF5441-B1F0-FEE6-9BCA-69759BF539B7" schemaObject="29F73E7E-6ED0-6D22-A8E7-E516F10B9427" name="IX_PIPELINE_STATUS__ACTIVE">
+<sourceConnName>APP_CURSOR</sourceConnName>
+<sourceObjSchema>APP_CURSOR</sourceObjSchema>
+<sourceObjName>IX_PIPELINE_STATUS__ACTIVE</sourceObjName>
+<createdBy>bohor</createdBy>
+<createdTime>2026-05-28 18:10:08 UTC</createdTime>
+<ownerDesignName>mer</ownerDesignName>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="86E7F74D-1300-C567-000B-990E96226D71"/>
+<colUsage columnID="79AB87D4-663A-0DEB-542F-EAF1007FB5D9"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="0A04287C-091D-F043-3C2C-A8B89406ED07" schemaObject="29F73E7E-6ED0-6D22-A8E7-E516F10B9427" name="PK_PIPELINE_STATUS">
+<sourceConnName>APP_CURSOR</sourceConnName>
+<sourceObjSchema>APP_CURSOR</sourceObjSchema>
+<sourceObjName>PK_PIPELINE_STATUS</sourceObjName>
+<createdBy>bohor</createdBy>
+<createdTime>2026-05-28 18:10:08 UTC</createdTime>
+<ownerDesignName>mer</ownerDesignName>
+<indexState>Unique Plain Index</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="FBB51E9F-C672-F94F-0779-A2BAA57351D0"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="26490A0A-1E85-521B-8988-05C377EB3BE3" schemaObject="29F73E7E-6ED0-6D22-A8E7-E516F10B9427" name="UK_PIPELINE_STATUS__CODE">
+<sourceConnName>APP_CURSOR</sourceConnName>
+<sourceObjSchema>APP_CURSOR</sourceObjSchema>
+<sourceObjName>UK_PIPELINE_STATUS__CODE</sourceObjName>
+<createdBy>bohor</createdBy>
+<createdTime>2026-05-28 18:10:08 UTC</createdTime>
+<ownerDesignName>mer</ownerDesignName>
+<indexState>Unique Plain Index</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="E284B451-E9C6-5779-ED26-E6DA7607F088"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

@@ -1,0 +1,139 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<TableProxyOraclev20c class="oracle.dbtools.crest.model.design.storage.oracle.v20c.TableProxyOraclev20c" name="PIPELINE_STATUS" directorySegmentName="seg_0" id="91F6D17A-3FEE-A8AE-CE7C-1717D8EB3DC2">
+<createdBy>bohor</createdBy>
+<createdTime>2026-05-28 18:10:03 UTC</createdTime>
+<ownerDesignName>mer</ownerDesignName>
+<schemaObject>29F73E7E-6ED0-6D22-A8E7-E516F10B9427</schemaObject>
+<logging>YES</logging>
+<partitionedRowMovement>DISABLE</partitionedRowMovement>
+<segment>A10205B5-24D3-6CC3-DC2F-D790A7ED9F40</segment>
+<tableSpace>A9CDD5BB-B30C-C03F-9D3A-2B16AA0E0BD7</tableSpace>
+<temporaryChanged>false</temporaryChanged>
+<accessDriverType>oracle_loader</accessDriverType>
+<rejectLimit></rejectLimit>
+<inMemory>NO</inMemory>
+<columnProxies itemClass="oracle.dbtools.crest.model.design.storage.oracle.v12c.ColumnProxyOraclev12c">
+<ColumnProxy name="DESCRIPTION" id="2932138E-C55E-A1C3-0296-CA473FC26B5E">
+<createdBy>bohor</createdBy>
+<createdTime>2026-05-28 18:10:04 UTC</createdTime>
+<ownerDesignName>mer</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="DELETED_AT" id="469ED1E9-26D7-8A56-9477-E9AADD176625">
+<createdBy>bohor</createdBy>
+<createdTime>2026-05-28 18:10:04 UTC</createdTime>
+<ownerDesignName>mer</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="UPDATED_BY" id="546F9A47-8571-C062-7573-EF9BF6757212">
+<createdBy>bohor</createdBy>
+<createdTime>2026-05-28 18:10:04 UTC</createdTime>
+<ownerDesignName>mer</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="DELETED_BY" id="5CC233C2-23D4-340A-1856-B8AC63B0E83E">
+<createdBy>bohor</createdBy>
+<createdTime>2026-05-28 18:10:04 UTC</createdTime>
+<ownerDesignName>mer</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="CREATED_BY" id="693E1C3F-6A87-EB03-8C35-AAF4EA369B03">
+<createdBy>bohor</createdBy>
+<createdTime>2026-05-28 18:10:04 UTC</createdTime>
+<ownerDesignName>mer</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="SORT_ORDER" id="79AB87D4-663A-0DEB-542F-EAF1007FB5D9">
+<createdBy>bohor</createdBy>
+<createdTime>2026-05-28 18:10:04 UTC</createdTime>
+<ownerDesignName>mer</ownerDesignName>
+<defaultValue>0</defaultValue>
+</ColumnProxy>
+<ColumnProxy name="ACTIVE" id="86E7F74D-1300-C567-000B-990E96226D71">
+<createdBy>bohor</createdBy>
+<createdTime>2026-05-28 18:10:04 UTC</createdTime>
+<ownerDesignName>mer</ownerDesignName>
+<defaultValue>&apos;Y&apos;</defaultValue>
+</ColumnProxy>
+<ColumnProxy name="IS_DELETED" id="8DEAE22B-1979-6A6D-0693-50553DD1C2FB">
+<createdBy>bohor</createdBy>
+<createdTime>2026-05-28 18:10:04 UTC</createdTime>
+<ownerDesignName>mer</ownerDesignName>
+<defaultValue>&apos;N&apos;</defaultValue>
+</ColumnProxy>
+<ColumnProxy name="NAME" id="A28201C2-8C63-C9C2-9E81-44BD99459690">
+<createdBy>bohor</createdBy>
+<createdTime>2026-05-28 18:10:04 UTC</createdTime>
+<ownerDesignName>mer</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="UPDATED_AT" id="A699279C-470E-2EF9-6117-6F30909378A6">
+<createdBy>bohor</createdBy>
+<createdTime>2026-05-28 18:10:04 UTC</createdTime>
+<ownerDesignName>mer</ownerDesignName>
+<defaultValue>SYSTIMESTAMP</defaultValue>
+</ColumnProxy>
+<ColumnProxy name="CODE" id="E284B451-E9C6-5779-ED26-E6DA7607F088">
+<createdBy>bohor</createdBy>
+<createdTime>2026-05-28 18:10:04 UTC</createdTime>
+<ownerDesignName>mer</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="CREATED_AT" id="F4F496EA-3EA5-B941-3C29-4CAC0EADC9D9">
+<createdBy>bohor</createdBy>
+<createdTime>2026-05-28 18:10:04 UTC</createdTime>
+<ownerDesignName>mer</ownerDesignName>
+<defaultValue>SYSTIMESTAMP</defaultValue>
+</ColumnProxy>
+<ColumnProxy name="PIPELINE_STATUS_ID" id="FBB51E9F-C672-F94F-0779-A2BAA57351D0">
+<createdBy>bohor</createdBy>
+<createdTime>2026-05-28 18:10:04 UTC</createdTime>
+<ownerDesignName>mer</ownerDesignName>
+</ColumnProxy>
+</columnProxies>
+<indexProxies>
+<IndexProxy class="oracle.dbtools.crest.model.design.storage.oracle.v10g.IndexProxyOraclev10g" name="PK_PIPELINE_STATUS" id="0A04287C-091D-F043-3C2C-A8B89406ED07">
+<createdBy>bohor</createdBy>
+<createdTime>2026-05-28 18:10:08 UTC</createdTime>
+<ownerDesignName>mer</ownerDesignName>
+<schemaObject>29F73E7E-6ED0-6D22-A8E7-E516F10B9427</schemaObject>
+<segment>16C73C0A-478A-4DAD-61E5-F3A0B4061226</segment>
+<tableSpace>A9CDD5BB-B30C-C03F-9D3A-2B16AA0E0BD7</tableSpace>
+</IndexProxy>
+<IndexProxy class="oracle.dbtools.crest.model.design.storage.oracle.v10g.IndexProxyOraclev10g" name="UK_PIPELINE_STATUS__CODE" id="26490A0A-1E85-521B-8988-05C377EB3BE3">
+<createdBy>bohor</createdBy>
+<createdTime>2026-05-28 18:10:08 UTC</createdTime>
+<ownerDesignName>mer</ownerDesignName>
+<schemaObject>29F73E7E-6ED0-6D22-A8E7-E516F10B9427</schemaObject>
+<segment>16C73C0A-478A-4DAD-61E5-F3A0B4061226</segment>
+<tableSpace>A9CDD5BB-B30C-C03F-9D3A-2B16AA0E0BD7</tableSpace>
+</IndexProxy>
+<IndexProxy class="oracle.dbtools.crest.model.design.storage.oracle.v10g.IndexProxyOraclev10g" name="IX_PIPELINE_STATUS__ACTIVE" id="6BEF5441-B1F0-FEE6-9BCA-69759BF539B7">
+<createdBy>bohor</createdBy>
+<createdTime>2026-05-28 18:10:08 UTC</createdTime>
+<ownerDesignName>mer</ownerDesignName>
+<schemaObject>29F73E7E-6ED0-6D22-A8E7-E516F10B9427</schemaObject>
+<segment>16C73C0A-478A-4DAD-61E5-F3A0B4061226</segment>
+<tableSpace>A9CDD5BB-B30C-C03F-9D3A-2B16AA0E0BD7</tableSpace>
+</IndexProxy>
+</indexProxies>
+<primaryKeys>
+<PrimaryKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.PKProxyOraclev10g" name="PK_PIPELINE_STATUS" id="918D236A-B07A-BFB3-455D-DDF74ACE2612">
+<createdBy>bohor</createdBy>
+<createdTime>2026-05-28 18:10:12 UTC</createdTime>
+<ownerDesignName>mer</ownerDesignName>
+<segment>16C73C0A-478A-4DAD-61E5-F3A0B4061226</segment>
+<tableSpace>A9CDD5BB-B30C-C03F-9D3A-2B16AA0E0BD7</tableSpace>
+<existingIndex>0A04287C-091D-F043-3C2C-A8B89406ED07</existingIndex>
+<indexSegment>16C73C0A-478A-4DAD-61E5-F3A0B4061226</indexSegment>
+<indexSort>SORTED</indexSort>
+<usingIndex>BY INDEX NAME</usingIndex>
+</PrimaryKey>
+</primaryKeys>
+<uniqueKeys>
+<UniqueKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.UniqueOraclev10g" name="UK_PIPELINE_STATUS__CODE" id="14B0DF55-FF94-E762-45A8-60DC78360735">
+<createdBy>bohor</createdBy>
+<createdTime>2026-05-28 18:10:12 UTC</createdTime>
+<ownerDesignName>mer</ownerDesignName>
+<segment>16C73C0A-478A-4DAD-61E5-F3A0B4061226</segment>
+<tableSpace>A9CDD5BB-B30C-C03F-9D3A-2B16AA0E0BD7</tableSpace>
+<existingIndex>26490A0A-1E85-521B-8988-05C377EB3BE3</existingIndex>
+<indexSegment>16C73C0A-478A-4DAD-61E5-F3A0B4061226</indexSegment>
+<indexSort>SORTED</indexSort>
+<usingIndex>BY INDEX NAME</usingIndex>
+</UniqueKey>
+</uniqueKeys>
+</TableProxyOraclev20c>

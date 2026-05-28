@@ -1,0 +1,234 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<TableProxyOraclev20c class="oracle.dbtools.crest.model.design.storage.oracle.v20c.TableProxyOraclev20c" name="KANBAN_CARD" directorySegmentName="seg_0" id="3AC9633F-35CA-168E-9893-0AD432D29143">
+<createdBy>bohor</createdBy>
+<createdTime>2026-05-28 18:10:03 UTC</createdTime>
+<ownerDesignName>mer</ownerDesignName>
+<schemaObject>29F73E7E-6ED0-6D22-A8E7-E516F10B9427</schemaObject>
+<logging>YES</logging>
+<partitionedRowMovement>DISABLE</partitionedRowMovement>
+<segment>A10205B5-24D3-6CC3-DC2F-D790A7ED9F40</segment>
+<tableSpace>A9CDD5BB-B30C-C03F-9D3A-2B16AA0E0BD7</tableSpace>
+<temporaryChanged>false</temporaryChanged>
+<accessDriverType>oracle_loader</accessDriverType>
+<rejectLimit></rejectLimit>
+<inMemory>NO</inMemory>
+<columnProxies itemClass="oracle.dbtools.crest.model.design.storage.oracle.v12c.ColumnProxyOraclev12c">
+<ColumnProxy name="WORK_AREA_ID" id="2F689A52-C0D2-8F1A-3F43-3DB4D83E4D4E">
+<createdBy>bohor</createdBy>
+<createdTime>2026-05-28 18:10:04 UTC</createdTime>
+<ownerDesignName>mer</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="LEGACY_ID" id="32DA495D-1A9D-C21B-B8AC-34E1211B40F8">
+<createdBy>bohor</createdBy>
+<createdTime>2026-05-28 18:10:04 UTC</createdTime>
+<ownerDesignName>mer</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="UPDATED_AT" id="36D0BC50-2D78-E09D-EE23-5CA8FA7A3996">
+<createdBy>bohor</createdBy>
+<createdTime>2026-05-28 18:10:04 UTC</createdTime>
+<ownerDesignName>mer</ownerDesignName>
+<defaultValue>SYSTIMESTAMP</defaultValue>
+</ColumnProxy>
+<ColumnProxy name="PRIORITY_LEVEL_ID" id="40FC356B-4B10-263E-44F9-69A123D97CF5">
+<createdBy>bohor</createdBy>
+<createdTime>2026-05-28 18:10:04 UTC</createdTime>
+<ownerDesignName>mer</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="IS_DELETED" id="4D847DB1-D349-9EAD-D767-C8295EA77073">
+<createdBy>bohor</createdBy>
+<createdTime>2026-05-28 18:10:04 UTC</createdTime>
+<ownerDesignName>mer</ownerDesignName>
+<defaultValue>&apos;N&apos;</defaultValue>
+</ColumnProxy>
+<ColumnProxy name="CREATED_BY" id="7BBF2AAB-DCBA-F5A8-9E4E-BB350B59EDF3">
+<createdBy>bohor</createdBy>
+<createdTime>2026-05-28 18:10:04 UTC</createdTime>
+<ownerDesignName>mer</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="CREATED_AT_ORIGINAL" id="7C7F9F91-C994-F7DF-0FCD-9F18D9C870D7">
+<createdBy>bohor</createdBy>
+<createdTime>2026-05-28 18:10:04 UTC</createdTime>
+<ownerDesignName>mer</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="CREATED_AT" id="8A3EBC28-5FB4-4E19-547D-A20EF80C8ECF">
+<createdBy>bohor</createdBy>
+<createdTime>2026-05-28 18:10:04 UTC</createdTime>
+<ownerDesignName>mer</ownerDesignName>
+<defaultValue>SYSTIMESTAMP</defaultValue>
+</ColumnProxy>
+<ColumnProxy name="KANBAN_STATUS_ID" id="90A4C231-EA84-83E9-0B2A-447B26DC79A2">
+<createdBy>bohor</createdBy>
+<createdTime>2026-05-28 18:10:04 UTC</createdTime>
+<ownerDesignName>mer</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="DELETED_AT" id="993AD2C8-146A-C859-D82B-F506E9ADF098">
+<createdBy>bohor</createdBy>
+<createdTime>2026-05-28 18:10:04 UTC</createdTime>
+<ownerDesignName>mer</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="REMINDER_AT" id="9B856680-8B8E-7FD6-A345-DB16544BF294">
+<createdBy>bohor</createdBy>
+<createdTime>2026-05-28 18:10:04 UTC</createdTime>
+<ownerDesignName>mer</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="PROJECT_ID" id="9F2C2FC5-909C-230C-0DFA-8AC24DDB9215">
+<createdBy>bohor</createdBy>
+<createdTime>2026-05-28 18:10:04 UTC</createdTime>
+<ownerDesignName>mer</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="DUE_DATE" id="C5553D33-55A8-DF87-7711-38B2BE6B2FCD">
+<createdBy>bohor</createdBy>
+<createdTime>2026-05-28 18:10:04 UTC</createdTime>
+<ownerDesignName>mer</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="UPDATED_BY" id="D11FD082-E1BE-10EE-B89A-28EBBA1792CC">
+<createdBy>bohor</createdBy>
+<createdTime>2026-05-28 18:10:04 UTC</createdTime>
+<ownerDesignName>mer</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="KANBAN_CARD_ID" id="D7DD47BA-F931-0128-1101-0CA29E278B93">
+<createdBy>bohor</createdBy>
+<createdTime>2026-05-28 18:10:04 UTC</createdTime>
+<ownerDesignName>mer</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="DELETED_BY" id="DEA3CC87-E528-FC92-27C6-ED972D53DED0">
+<createdBy>bohor</createdBy>
+<createdTime>2026-05-28 18:10:04 UTC</createdTime>
+<ownerDesignName>mer</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="TEXT" id="E0A41ACB-01FD-D16E-BF56-E099FC7D23B0">
+<createdBy>bohor</createdBy>
+<createdTime>2026-05-28 18:10:04 UTC</createdTime>
+<ownerDesignName>mer</ownerDesignName>
+</ColumnProxy>
+</columnProxies>
+<indexProxies>
+<IndexProxy class="oracle.dbtools.crest.model.design.storage.oracle.v10g.IndexProxyOraclev10g" name="UK_KANBAN_CARD__LEGACY_ID" id="351A7AA9-34F0-630F-3FAC-AF7122D9D342">
+<createdBy>bohor</createdBy>
+<createdTime>2026-05-28 18:10:08 UTC</createdTime>
+<ownerDesignName>mer</ownerDesignName>
+<schemaObject>29F73E7E-6ED0-6D22-A8E7-E516F10B9427</schemaObject>
+<segment>16C73C0A-478A-4DAD-61E5-F3A0B4061226</segment>
+<tableSpace>A9CDD5BB-B30C-C03F-9D3A-2B16AA0E0BD7</tableSpace>
+</IndexProxy>
+<IndexProxy class="oracle.dbtools.crest.model.design.storage.oracle.v10g.IndexProxyOraclev10g" name="PK_KANBAN_CARD" id="6394E4CA-3528-85DA-2AD4-8B53CBF23536">
+<createdBy>bohor</createdBy>
+<createdTime>2026-05-28 18:10:08 UTC</createdTime>
+<ownerDesignName>mer</ownerDesignName>
+<schemaObject>29F73E7E-6ED0-6D22-A8E7-E516F10B9427</schemaObject>
+<segment>16C73C0A-478A-4DAD-61E5-F3A0B4061226</segment>
+<tableSpace>A9CDD5BB-B30C-C03F-9D3A-2B16AA0E0BD7</tableSpace>
+</IndexProxy>
+<IndexProxy class="oracle.dbtools.crest.model.design.storage.oracle.v10g.IndexProxyOraclev10g" name="IX_KANBAN_CARD__DUE_DATE" id="6E8242B1-0FFD-3FE2-7809-6A4537C40E4A">
+<createdBy>bohor</createdBy>
+<createdTime>2026-05-28 18:10:08 UTC</createdTime>
+<ownerDesignName>mer</ownerDesignName>
+<schemaObject>29F73E7E-6ED0-6D22-A8E7-E516F10B9427</schemaObject>
+<segment>16C73C0A-478A-4DAD-61E5-F3A0B4061226</segment>
+<tableSpace>A9CDD5BB-B30C-C03F-9D3A-2B16AA0E0BD7</tableSpace>
+</IndexProxy>
+<IndexProxy class="oracle.dbtools.crest.model.design.storage.oracle.v10g.IndexProxyOraclev10g" name="IX_KANBAN_CARD__AREA" id="A0F1C359-B367-1D42-4D25-BEBD79A59D8A">
+<createdBy>bohor</createdBy>
+<createdTime>2026-05-28 18:10:08 UTC</createdTime>
+<ownerDesignName>mer</ownerDesignName>
+<schemaObject>29F73E7E-6ED0-6D22-A8E7-E516F10B9427</schemaObject>
+<segment>16C73C0A-478A-4DAD-61E5-F3A0B4061226</segment>
+<tableSpace>A9CDD5BB-B30C-C03F-9D3A-2B16AA0E0BD7</tableSpace>
+</IndexProxy>
+<IndexProxy class="oracle.dbtools.crest.model.design.storage.oracle.v10g.IndexProxyOraclev10g" name="IX_KANBAN_CARD__REMINDER" id="ACF74110-77F2-5A2A-1187-30FC64FA061B">
+<createdBy>bohor</createdBy>
+<createdTime>2026-05-28 18:10:08 UTC</createdTime>
+<ownerDesignName>mer</ownerDesignName>
+<schemaObject>29F73E7E-6ED0-6D22-A8E7-E516F10B9427</schemaObject>
+<segment>16C73C0A-478A-4DAD-61E5-F3A0B4061226</segment>
+<tableSpace>A9CDD5BB-B30C-C03F-9D3A-2B16AA0E0BD7</tableSpace>
+</IndexProxy>
+<IndexProxy class="oracle.dbtools.crest.model.design.storage.oracle.v10g.IndexProxyOraclev10g" name="IX_KANBAN_CARD__STATUS" id="B4E3FF85-F530-9C5B-D747-CFD244A7E613">
+<createdBy>bohor</createdBy>
+<createdTime>2026-05-28 18:10:08 UTC</createdTime>
+<ownerDesignName>mer</ownerDesignName>
+<schemaObject>29F73E7E-6ED0-6D22-A8E7-E516F10B9427</schemaObject>
+<segment>16C73C0A-478A-4DAD-61E5-F3A0B4061226</segment>
+<tableSpace>A9CDD5BB-B30C-C03F-9D3A-2B16AA0E0BD7</tableSpace>
+</IndexProxy>
+<IndexProxy class="oracle.dbtools.crest.model.design.storage.oracle.v10g.IndexProxyOraclev10g" name="IX_KANBAN_CARD__PRIORITY" id="C725968D-70F9-ED79-06B0-4706854CF3C1">
+<createdBy>bohor</createdBy>
+<createdTime>2026-05-28 18:10:08 UTC</createdTime>
+<ownerDesignName>mer</ownerDesignName>
+<schemaObject>29F73E7E-6ED0-6D22-A8E7-E516F10B9427</schemaObject>
+<segment>16C73C0A-478A-4DAD-61E5-F3A0B4061226</segment>
+<tableSpace>A9CDD5BB-B30C-C03F-9D3A-2B16AA0E0BD7</tableSpace>
+</IndexProxy>
+<IndexProxy class="oracle.dbtools.crest.model.design.storage.oracle.v10g.IndexProxyOraclev10g" name="IX_KANBAN_CARD__PROJECT" id="CE009974-8826-7E7D-B22B-2BA661E8D3F6">
+<createdBy>bohor</createdBy>
+<createdTime>2026-05-28 18:10:08 UTC</createdTime>
+<ownerDesignName>mer</ownerDesignName>
+<schemaObject>29F73E7E-6ED0-6D22-A8E7-E516F10B9427</schemaObject>
+<segment>16C73C0A-478A-4DAD-61E5-F3A0B4061226</segment>
+<tableSpace>A9CDD5BB-B30C-C03F-9D3A-2B16AA0E0BD7</tableSpace>
+</IndexProxy>
+</indexProxies>
+<foreignKeys>
+<ForeignKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.FKProxyOraclev10g" name="FK_KANBAN_CARD__PROJECT" id="B146641B-F1CE-4042-7E75-F8EB68FEA915">
+<createdBy>bohor</createdBy>
+<createdTime>2026-05-28 18:10:17 UTC</createdTime>
+<ownerDesignName>mer</ownerDesignName>
+</ForeignKey>
+<ForeignKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.FKProxyOraclev10g" name="FK_KANBAN_CARD__PRIORITY_LEVEL" id="D30534A7-4B74-BA42-E792-54895F16E373">
+<createdBy>bohor</createdBy>
+<createdTime>2026-05-28 18:10:17 UTC</createdTime>
+<ownerDesignName>mer</ownerDesignName>
+</ForeignKey>
+<ForeignKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.FKProxyOraclev10g" name="FK_KANBAN_CARD__WORK_AREA" id="E486CEAE-FC72-6206-23BE-CA8EBD631886">
+<createdBy>bohor</createdBy>
+<createdTime>2026-05-28 18:10:17 UTC</createdTime>
+<ownerDesignName>mer</ownerDesignName>
+</ForeignKey>
+<ForeignKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.FKProxyOraclev10g" name="FK_KANBAN_CARD__KANBAN_STATUS" id="ED6592FE-50BA-B295-35B1-1E3A53A45F8D">
+<createdBy>bohor</createdBy>
+<createdTime>2026-05-28 18:10:17 UTC</createdTime>
+<ownerDesignName>mer</ownerDesignName>
+</ForeignKey>
+</foreignKeys>
+<lobStorages>
+<LobStorage class="oracle.dbtools.crest.model.design.storage.oracle.v11g.LobStorageOraclev11g" name="SYS_LOB0000077246C00003$$" id="34B7E7A4-F439-BA28-8A0A-0416534E3401">
+<createdBy>bohor</createdBy>
+<createdTime>2026-05-28 18:10:17 UTC</createdTime>
+<ownerDesignName>mer</ownerDesignName>
+<cache>NOCACHE</cache>
+<chunk>8192</chunk>
+<column>TEXT</column>
+<compression>NO</compression>
+<duplication>KEEP_DUPLICATES</duplication>
+<logging>YES</logging>
+<tableSpace>A9CDD5BB-B30C-C03F-9D3A-2B16AA0E0BD7</tableSpace>
+<lobStorageType>SECUREFILE</lobStorageType>
+</LobStorage>
+</lobStorages>
+<primaryKeys>
+<PrimaryKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.PKProxyOraclev10g" name="PK_KANBAN_CARD" id="418469A2-5BC0-4D2F-EC3C-EFECC4D76DE7">
+<createdBy>bohor</createdBy>
+<createdTime>2026-05-28 18:10:12 UTC</createdTime>
+<ownerDesignName>mer</ownerDesignName>
+<segment>16C73C0A-478A-4DAD-61E5-F3A0B4061226</segment>
+<tableSpace>A9CDD5BB-B30C-C03F-9D3A-2B16AA0E0BD7</tableSpace>
+<existingIndex>6394E4CA-3528-85DA-2AD4-8B53CBF23536</existingIndex>
+<indexSegment>16C73C0A-478A-4DAD-61E5-F3A0B4061226</indexSegment>
+<indexSort>SORTED</indexSort>
+<usingIndex>BY INDEX NAME</usingIndex>
+</PrimaryKey>
+</primaryKeys>
+<uniqueKeys>
+<UniqueKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.UniqueOraclev10g" name="UK_KANBAN_CARD__LEGACY_ID" id="270D7BD7-B782-A0FE-9D9D-200E0AE93693">
+<createdBy>bohor</createdBy>
+<createdTime>2026-05-28 18:10:12 UTC</createdTime>
+<ownerDesignName>mer</ownerDesignName>
+<segment>16C73C0A-478A-4DAD-61E5-F3A0B4061226</segment>
+<tableSpace>A9CDD5BB-B30C-C03F-9D3A-2B16AA0E0BD7</tableSpace>
+<existingIndex>351A7AA9-34F0-630F-3FAC-AF7122D9D342</existingIndex>
+<indexSegment>16C73C0A-478A-4DAD-61E5-F3A0B4061226</indexSegment>
+<indexSort>SORTED</indexSort>
+<usingIndex>BY INDEX NAME</usingIndex>
+</UniqueKey>
+</uniqueKeys>
+</TableProxyOraclev20c>

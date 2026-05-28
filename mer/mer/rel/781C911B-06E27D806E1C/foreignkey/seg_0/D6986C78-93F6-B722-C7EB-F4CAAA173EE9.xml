@@ -1,0 +1,19 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="D6986C78-93F6-B722-C7EB-F4CAAA173EE9" containerWithKeyObject="70CD601D-DC7A-0BA6-89E1-FEB706FC7146" localFKIndex="233A081F-6E94-4ED1-CD39-4D3E4850928F" name="FK_PROJECT_UPDATE__EXECUTIVE_STATUS">
+<sourceConnName>APP_CURSOR</sourceConnName>
+<sourceObjSchema>APP_CURSOR</sourceObjSchema>
+<sourceObjName>FK_PROJECT_UPDATE__EXECUTIVE_STATUS</sourceObjName>
+<createdBy>bohor</createdBy>
+<createdTime>2026-05-28 18:10:17 UTC</createdTime>
+<ownerDesignName>mer</ownerDesignName>
+<referredTableLongName>APP_CURSOR.EXECUTIVE_STATUS</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>FB7A1872-0F58-2C61-D7D5-A05AA4946B2D</referredTableID>
+<keyObject>48BBE2F5-3FB7-56D2-801D-044169D0E037</keyObject>
+<referredKeyID>48BBE2F5-3FB7-56D2-801D-044169D0E037</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>EXECUTIVE_STATUS_ID</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

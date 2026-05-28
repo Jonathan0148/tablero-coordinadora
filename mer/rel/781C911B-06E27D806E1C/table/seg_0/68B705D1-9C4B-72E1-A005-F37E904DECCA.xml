@@ -1,0 +1,340 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="68B705D1-9C4B-72E1-A005-F37E904DECCA" schemaObject="29F73E7E-6ED0-6D22-A8E7-E516F10B9427" name="AUTH_REFRESH_TOKEN">
+<sourceConnName>APP_CURSOR</sourceConnName>
+<sourceObjSchema>APP_CURSOR</sourceObjSchema>
+<sourceObjName>AUTH_REFRESH_TOKEN</sourceObjName>
+<createdBy>bohor</createdBy>
+<createdTime>2026-05-28 18:10:03 UTC</createdTime>
+<ownerDesignName>mer</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="REFRESH_TOKEN_ID" id="400C54FE-6B42-1557-EBE7-E9ABE3131167">
+<sourceConnName>APP_CURSOR</sourceConnName>
+<sourceObjSchema>AUTH_REFRESH_TOKEN</sourceObjSchema>
+<sourceObjName>REFRESH_TOKEN_ID</sourceObjName>
+<createdBy>bohor</createdBy>
+<createdTime>2026-05-28 18:10:04 UTC</createdTime>
+<ownerDesignName>mer</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>19</dataTypePrecision>
+<dataTypeScale>0</dataTypeScale>
+<ownDataTypeParameters>,19,0</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="USER_ID" id="D48854FF-BDB9-71C6-F187-B4A3F4AEFC56">
+<sourceConnName>APP_CURSOR</sourceConnName>
+<sourceObjSchema>AUTH_REFRESH_TOKEN</sourceObjSchema>
+<sourceObjName>USER_ID</sourceObjName>
+<createdBy>bohor</createdBy>
+<createdTime>2026-05-28 18:10:04 UTC</createdTime>
+<ownerDesignName>mer</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>19</dataTypePrecision>
+<dataTypeScale>0</dataTypeScale>
+<ownDataTypeParameters>,19,0</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="DCEFB70F-9E7C-3C8F-0CE3-C195E52C0B14" referredColumn="880D4EA4-0744-033E-555A-B40E68AFDE35"/>
+</associations>
+</Column>
+<Column name="TOKEN_HASH" id="8308DFEF-1512-6859-58A8-16B8C3E83E03">
+<sourceConnName>APP_CURSOR</sourceConnName>
+<sourceObjSchema>AUTH_REFRESH_TOKEN</sourceObjSchema>
+<sourceObjName>TOKEN_HASH</sourceObjName>
+<createdBy>bohor</createdBy>
+<createdTime>2026-05-28 18:10:04 UTC</createdTime>
+<ownerDesignName>mer</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>255 CHAR</dataTypeSize>
+<ownDataTypeParameters>255 CHAR,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="ISSUED_AT" id="6FD8F4BF-9B45-CB35-BC91-7582FEB5FA3A">
+<sourceConnName>APP_CURSOR</sourceConnName>
+<sourceObjSchema>AUTH_REFRESH_TOKEN</sourceObjSchema>
+<sourceObjName>ISSUED_AT</sourceObjName>
+<createdBy>bohor</createdBy>
+<createdTime>2026-05-28 18:10:04 UTC</createdTime>
+<ownerDesignName>mer</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT046</logicalDatatype>
+<dataTypePrecision>6</dataTypePrecision>
+<ownDataTypeParameters>,6,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="EXPIRES_AT" id="8A2A2B3B-026B-B48C-85FF-EB99AAC6F4C0">
+<sourceConnName>APP_CURSOR</sourceConnName>
+<sourceObjSchema>AUTH_REFRESH_TOKEN</sourceObjSchema>
+<sourceObjName>EXPIRES_AT</sourceObjName>
+<createdBy>bohor</createdBy>
+<createdTime>2026-05-28 18:10:04 UTC</createdTime>
+<ownerDesignName>mer</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT046</logicalDatatype>
+<dataTypePrecision>6</dataTypePrecision>
+<ownDataTypeParameters>,6,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="REVOKED_AT" id="3B877A78-95C0-343B-0285-AD61A46B8865">
+<sourceConnName>APP_CURSOR</sourceConnName>
+<sourceObjSchema>AUTH_REFRESH_TOKEN</sourceObjSchema>
+<sourceObjName>REVOKED_AT</sourceObjName>
+<createdBy>bohor</createdBy>
+<createdTime>2026-05-28 18:10:04 UTC</createdTime>
+<ownerDesignName>mer</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT046</logicalDatatype>
+<dataTypePrecision>6</dataTypePrecision>
+<ownDataTypeParameters>,6,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="IP_ADDRESS" id="1C760B51-CB51-6908-E021-ECE0B8A4DD0A">
+<sourceConnName>APP_CURSOR</sourceConnName>
+<sourceObjSchema>AUTH_REFRESH_TOKEN</sourceObjSchema>
+<sourceObjName>IP_ADDRESS</sourceObjName>
+<createdBy>bohor</createdBy>
+<createdTime>2026-05-28 18:10:04 UTC</createdTime>
+<ownerDesignName>mer</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>64 CHAR</dataTypeSize>
+<ownDataTypeParameters>64 CHAR,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="USER_AGENT" id="1559D8AA-60D9-D6BC-AC6F-75EBDC97D44A">
+<sourceConnName>APP_CURSOR</sourceConnName>
+<sourceObjSchema>AUTH_REFRESH_TOKEN</sourceObjSchema>
+<sourceObjName>USER_AGENT</sourceObjName>
+<createdBy>bohor</createdBy>
+<createdTime>2026-05-28 18:10:04 UTC</createdTime>
+<ownerDesignName>mer</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>500 CHAR</dataTypeSize>
+<ownDataTypeParameters>500 CHAR,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="CREATED_AT" id="310C89A2-D4C6-AAA2-9B61-E0F4BD4D525F">
+<sourceConnName>APP_CURSOR</sourceConnName>
+<sourceObjSchema>AUTH_REFRESH_TOKEN</sourceObjSchema>
+<sourceObjName>CREATED_AT</sourceObjName>
+<createdBy>bohor</createdBy>
+<createdTime>2026-05-28 18:10:04 UTC</createdTime>
+<ownerDesignName>mer</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT046</logicalDatatype>
+<dataTypePrecision>6</dataTypePrecision>
+<defaultValue>SYSTIMESTAMP</defaultValue>
+<ownDataTypeParameters>,6,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="UPDATED_AT" id="236D7660-5BC7-2B9D-65C8-2FA3589B60A4">
+<sourceConnName>APP_CURSOR</sourceConnName>
+<sourceObjSchema>AUTH_REFRESH_TOKEN</sourceObjSchema>
+<sourceObjName>UPDATED_AT</sourceObjName>
+<createdBy>bohor</createdBy>
+<createdTime>2026-05-28 18:10:04 UTC</createdTime>
+<ownerDesignName>mer</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT046</logicalDatatype>
+<dataTypePrecision>6</dataTypePrecision>
+<defaultValue>SYSTIMESTAMP</defaultValue>
+<ownDataTypeParameters>,6,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="IS_DELETED" id="A78477A9-F534-F3A0-987F-0132B345FE4A">
+<sourceConnName>APP_CURSOR</sourceConnName>
+<sourceObjSchema>AUTH_REFRESH_TOKEN</sourceObjSchema>
+<sourceObjName>IS_DELETED</sourceObjName>
+<createdBy>bohor</createdBy>
+<createdTime>2026-05-28 18:10:04 UTC</createdTime>
+<ownerDesignName>mer</ownerDesignName>
+<constraintName>CK_AUTH_REFRESH_TOKEN__DELETED</constraintName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT025</logicalDatatype>
+<dataTypeSize>1 BYTE</dataTypeSize>
+<listOfValues>
+<valueDef value="&apos;N&apos;" description=""/>
+<valueDef value="&apos;Y&apos;" description=""/>
+</listOfValues>
+<defaultValue>&apos;N&apos;</defaultValue>
+<ownDataTypeParameters>1 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="DELETED_AT" id="56FD4282-8CD8-9B94-4C6F-E890D3FBE1D5">
+<sourceConnName>APP_CURSOR</sourceConnName>
+<sourceObjSchema>AUTH_REFRESH_TOKEN</sourceObjSchema>
+<sourceObjName>DELETED_AT</sourceObjName>
+<createdBy>bohor</createdBy>
+<createdTime>2026-05-28 18:10:04 UTC</createdTime>
+<ownerDesignName>mer</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT046</logicalDatatype>
+<dataTypePrecision>6</dataTypePrecision>
+<ownDataTypeParameters>,6,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="CREATED_BY" id="605BE92B-16BC-C6D5-C342-35D22E540147">
+<sourceConnName>APP_CURSOR</sourceConnName>
+<sourceObjSchema>AUTH_REFRESH_TOKEN</sourceObjSchema>
+<sourceObjName>CREATED_BY</sourceObjName>
+<createdBy>bohor</createdBy>
+<createdTime>2026-05-28 18:10:04 UTC</createdTime>
+<ownerDesignName>mer</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>128 CHAR</dataTypeSize>
+<ownDataTypeParameters>128 CHAR,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="UPDATED_BY" id="D2A26A50-3F41-10B2-0ABC-7A646FFAC7D8">
+<sourceConnName>APP_CURSOR</sourceConnName>
+<sourceObjSchema>AUTH_REFRESH_TOKEN</sourceObjSchema>
+<sourceObjName>UPDATED_BY</sourceObjName>
+<createdBy>bohor</createdBy>
+<createdTime>2026-05-28 18:10:04 UTC</createdTime>
+<ownerDesignName>mer</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>128 CHAR</dataTypeSize>
+<ownDataTypeParameters>128 CHAR,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="DELETED_BY" id="B65E2558-1016-D4C2-D50F-F84340E3DF1F">
+<sourceConnName>APP_CURSOR</sourceConnName>
+<sourceObjSchema>AUTH_REFRESH_TOKEN</sourceObjSchema>
+<sourceObjName>DELETED_BY</sourceObjName>
+<createdBy>bohor</createdBy>
+<createdTime>2026-05-28 18:10:04 UTC</createdTime>
+<ownerDesignName>mer</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>128 CHAR</dataTypeSize>
+<ownDataTypeParameters>128 CHAR,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="A842EDB4-6037-4238-7991-1F04654EF227" name="PK_AUTH_REFRESH_TOKEN">
+<sourceConnName>APP_CURSOR</sourceConnName>
+<sourceObjSchema>APP_CURSOR</sourceObjSchema>
+<sourceObjName>PK_AUTH_REFRESH_TOKEN</sourceObjName>
+<createdBy>bohor</createdBy>
+<createdTime>2026-05-28 18:10:12 UTC</createdTime>
+<ownerDesignName>mer</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="400C54FE-6B42-1557-EBE7-E9ABE3131167"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="25A36EC9-D6B1-163C-A5BC-7218FA2D2366" name="UK_AUTH_REFRESH_TOKEN__HASH">
+<sourceConnName>APP_CURSOR</sourceConnName>
+<sourceObjSchema>APP_CURSOR</sourceObjSchema>
+<sourceObjName>UK_AUTH_REFRESH_TOKEN__HASH</sourceObjName>
+<createdBy>bohor</createdBy>
+<createdTime>2026-05-28 18:10:12 UTC</createdTime>
+<ownerDesignName>mer</ownerDesignName>
+<indexState>Unique Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="8308DFEF-1512-6859-58A8-16B8C3E83E03"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="87A836EC-437B-79A1-9E20-B6E7C09D4DBD" schemaObject="29F73E7E-6ED0-6D22-A8E7-E516F10B9427" name="IX_AUTH_REFRESH_TOKEN__EXPIRES">
+<sourceConnName>APP_CURSOR</sourceConnName>
+<sourceObjSchema>APP_CURSOR</sourceObjSchema>
+<sourceObjName>IX_AUTH_REFRESH_TOKEN__EXPIRES</sourceObjName>
+<createdBy>bohor</createdBy>
+<createdTime>2026-05-28 18:10:08 UTC</createdTime>
+<ownerDesignName>mer</ownerDesignName>
+<indexExpression>SYS_EXTRACT_UTC(&quot;EXPIRES_AT&quot;)</indexExpression>
+<isSurrogateKey>false</isSurrogateKey>
+</ind_PK_UK>
+<ind_PK_UK id="A2C4D84A-6912-AB25-4E92-03CB54D7A978" schemaObject="29F73E7E-6ED0-6D22-A8E7-E516F10B9427" name="IX_AUTH_REFRESH_TOKEN__USER">
+<sourceConnName>APP_CURSOR</sourceConnName>
+<sourceObjSchema>APP_CURSOR</sourceObjSchema>
+<sourceObjName>IX_AUTH_REFRESH_TOKEN__USER</sourceObjName>
+<createdBy>bohor</createdBy>
+<createdTime>2026-05-28 18:10:08 UTC</createdTime>
+<ownerDesignName>mer</ownerDesignName>
+<indexExpression>USER_ID, SYS_EXTRACT_UTC(&quot;REVOKED_AT&quot;)</indexExpression>
+<isSurrogateKey>false</isSurrogateKey>
+</ind_PK_UK>
+<ind_PK_UK id="A27A79D0-B9FB-DA81-ED6B-8D6A6DA220DF" schemaObject="29F73E7E-6ED0-6D22-A8E7-E516F10B9427" name="PK_AUTH_REFRESH_TOKEN">
+<sourceConnName>APP_CURSOR</sourceConnName>
+<sourceObjSchema>APP_CURSOR</sourceObjSchema>
+<sourceObjName>PK_AUTH_REFRESH_TOKEN</sourceObjName>
+<createdBy>bohor</createdBy>
+<createdTime>2026-05-28 18:10:08 UTC</createdTime>
+<ownerDesignName>mer</ownerDesignName>
+<indexState>Unique Plain Index</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="400C54FE-6B42-1557-EBE7-E9ABE3131167"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="1071DC71-E6BE-3AC5-9220-AD1DBBE82916" schemaObject="29F73E7E-6ED0-6D22-A8E7-E516F10B9427" name="UK_AUTH_REFRESH_TOKEN__HASH">
+<sourceConnName>APP_CURSOR</sourceConnName>
+<sourceObjSchema>APP_CURSOR</sourceObjSchema>
+<sourceObjName>UK_AUTH_REFRESH_TOKEN__HASH</sourceObjName>
+<createdBy>bohor</createdBy>
+<createdTime>2026-05-28 18:10:08 UTC</createdTime>
+<ownerDesignName>mer</ownerDesignName>
+<indexState>Unique Plain Index</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="8308DFEF-1512-6859-58A8-16B8C3E83E03"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="E4A3AFC8-CB3E-FA64-1FC6-97490356ECDB" name="FK_AUTH_REFRESH_TOKEN__APP_USER">
+<createdBy>bohor</createdBy>
+<createdTime>2026-05-28 18:10:17 UTC</createdTime>
+<ownerDesignName>mer</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="D48854FF-BDB9-71C6-F187-B4A3F4AEFC56"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+<tableCheckConstraints itemClass="oracle.dbtools.crest.model.design.constraint.TableLevelConstraint">
+<tableCheckConstraint name="CK_AUTH_REFRESH_TOKEN__DATES" directorySegmentName="seg_0" id="1AB0CB1B-3281-7C12-3416-EBDA167BE010">
+<sourceConnName>APP_CURSOR</sourceConnName>
+<sourceObjSchema>APP_CURSOR</sourceObjSchema>
+<sourceObjName>CK_AUTH_REFRESH_TOKEN__DATES</sourceObjName>
+<createdBy>bohor</createdBy>
+<createdTime>2026-05-28 18:10:16 UTC</createdTime>
+<ownerDesignName>mer</ownerDesignName>
+<rule><![CDATA[expires_at > issued_at]]></rule>
+</tableCheckConstraint>
+</tableCheckConstraints>
+</Table>

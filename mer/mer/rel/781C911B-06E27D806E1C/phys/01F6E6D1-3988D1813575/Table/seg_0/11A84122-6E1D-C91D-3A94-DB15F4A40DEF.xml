@@ -1,0 +1,113 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<TableProxyOraclev20c class="oracle.dbtools.crest.model.design.storage.oracle.v20c.TableProxyOraclev20c" name="flyway_schema_history" directorySegmentName="seg_0" id="11A84122-6E1D-C91D-3A94-DB15F4A40DEF">
+<createdBy>bohor</createdBy>
+<createdTime>2026-05-28 18:10:03 UTC</createdTime>
+<ownerDesignName>mer</ownerDesignName>
+<nameHasQuotes>true</nameHasQuotes>
+<schemaObject>29F73E7E-6ED0-6D22-A8E7-E516F10B9427</schemaObject>
+<logging>YES</logging>
+<partitionedRowMovement>DISABLE</partitionedRowMovement>
+<segment>A10205B5-24D3-6CC3-DC2F-D790A7ED9F40</segment>
+<tableSpace>A9CDD5BB-B30C-C03F-9D3A-2B16AA0E0BD7</tableSpace>
+<temporaryChanged>false</temporaryChanged>
+<accessDriverType>oracle_loader</accessDriverType>
+<rejectLimit></rejectLimit>
+<inMemory>NO</inMemory>
+<columnProxies itemClass="oracle.dbtools.crest.model.design.storage.oracle.v12c.ColumnProxyOraclev12c">
+<ColumnProxy name="version" id="0FE4C300-4C7D-D602-C7D8-5903FE60479C">
+<createdBy>bohor</createdBy>
+<createdTime>2026-05-28 18:10:04 UTC</createdTime>
+<ownerDesignName>mer</ownerDesignName>
+<nameHasQuotes>true</nameHasQuotes>
+</ColumnProxy>
+<ColumnProxy name="execution_time" id="285BE12A-16EE-5B30-A9AA-D2023075F1A3">
+<createdBy>bohor</createdBy>
+<createdTime>2026-05-28 18:10:04 UTC</createdTime>
+<ownerDesignName>mer</ownerDesignName>
+<nameHasQuotes>true</nameHasQuotes>
+</ColumnProxy>
+<ColumnProxy name="installed_on" id="7E14496D-6DCE-B2AF-5AC8-E9F4D45BF647">
+<createdBy>bohor</createdBy>
+<createdTime>2026-05-28 18:10:04 UTC</createdTime>
+<ownerDesignName>mer</ownerDesignName>
+<nameHasQuotes>true</nameHasQuotes>
+<defaultValue>CURRENT_TIMESTAMP</defaultValue>
+</ColumnProxy>
+<ColumnProxy name="description" id="7F6C0075-D86D-2200-2CB9-F0AD2BF6F734">
+<createdBy>bohor</createdBy>
+<createdTime>2026-05-28 18:10:04 UTC</createdTime>
+<ownerDesignName>mer</ownerDesignName>
+<nameHasQuotes>true</nameHasQuotes>
+</ColumnProxy>
+<ColumnProxy name="script" id="80AAE0E9-95B3-03DA-E2A9-C2FE32BB084A">
+<createdBy>bohor</createdBy>
+<createdTime>2026-05-28 18:10:04 UTC</createdTime>
+<ownerDesignName>mer</ownerDesignName>
+<nameHasQuotes>true</nameHasQuotes>
+</ColumnProxy>
+<ColumnProxy name="installed_by" id="880AA7EA-0F0C-4BE3-1DB2-0AC4F1337BA5">
+<createdBy>bohor</createdBy>
+<createdTime>2026-05-28 18:10:04 UTC</createdTime>
+<ownerDesignName>mer</ownerDesignName>
+<nameHasQuotes>true</nameHasQuotes>
+</ColumnProxy>
+<ColumnProxy name="installed_rank" id="C1C0ACE9-81E9-7EF1-E4B5-99964969538F">
+<createdBy>bohor</createdBy>
+<createdTime>2026-05-28 18:10:04 UTC</createdTime>
+<ownerDesignName>mer</ownerDesignName>
+<nameHasQuotes>true</nameHasQuotes>
+</ColumnProxy>
+<ColumnProxy name="success" id="D0E1EA54-14B6-B7C8-B075-AF2E40188DB4">
+<createdBy>bohor</createdBy>
+<createdTime>2026-05-28 18:10:04 UTC</createdTime>
+<ownerDesignName>mer</ownerDesignName>
+<nameHasQuotes>true</nameHasQuotes>
+</ColumnProxy>
+<ColumnProxy name="checksum" id="DC2F79F8-FC75-8CC4-E195-AF8EF13E15F3">
+<createdBy>bohor</createdBy>
+<createdTime>2026-05-28 18:10:04 UTC</createdTime>
+<ownerDesignName>mer</ownerDesignName>
+<nameHasQuotes>true</nameHasQuotes>
+</ColumnProxy>
+<ColumnProxy name="type" id="E823EE13-9887-A859-C2D2-7EBBF303C08C">
+<createdBy>bohor</createdBy>
+<createdTime>2026-05-28 18:10:04 UTC</createdTime>
+<ownerDesignName>mer</ownerDesignName>
+<nameHasQuotes>true</nameHasQuotes>
+</ColumnProxy>
+</columnProxies>
+<indexProxies>
+<IndexProxy class="oracle.dbtools.crest.model.design.storage.oracle.v10g.IndexProxyOraclev10g" name="flyway_schema_history_s_idx" id="552DFA5B-8A7B-AE84-1910-811623A5A9EA">
+<createdBy>bohor</createdBy>
+<createdTime>2026-05-28 18:10:08 UTC</createdTime>
+<ownerDesignName>mer</ownerDesignName>
+<nameHasQuotes>true</nameHasQuotes>
+<schemaObject>29F73E7E-6ED0-6D22-A8E7-E516F10B9427</schemaObject>
+<segment>16C73C0A-478A-4DAD-61E5-F3A0B4061226</segment>
+<tableSpace>A9CDD5BB-B30C-C03F-9D3A-2B16AA0E0BD7</tableSpace>
+</IndexProxy>
+<IndexProxy class="oracle.dbtools.crest.model.design.storage.oracle.v10g.IndexProxyOraclev10g" name="flyway_schema_history_pk" id="6DFCABBF-4E5F-21C4-5497-67C6E2BD32A9">
+<createdBy>bohor</createdBy>
+<createdTime>2026-05-28 18:10:08 UTC</createdTime>
+<ownerDesignName>mer</ownerDesignName>
+<nameHasQuotes>true</nameHasQuotes>
+<schemaObject>29F73E7E-6ED0-6D22-A8E7-E516F10B9427</schemaObject>
+<segment>16C73C0A-478A-4DAD-61E5-F3A0B4061226</segment>
+<tableSpace>A9CDD5BB-B30C-C03F-9D3A-2B16AA0E0BD7</tableSpace>
+</IndexProxy>
+</indexProxies>
+<primaryKeys>
+<PrimaryKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.PKProxyOraclev10g" name="flyway_schema_history_pk" id="FE41CA03-ACD2-5EEC-DEFF-8F818979A256">
+<createdBy>bohor</createdBy>
+<createdTime>2026-05-28 18:10:12 UTC</createdTime>
+<ownerDesignName>mer</ownerDesignName>
+<nameHasQuotes>true</nameHasQuotes>
+<segment>16C73C0A-478A-4DAD-61E5-F3A0B4061226</segment>
+<tableSpace>A9CDD5BB-B30C-C03F-9D3A-2B16AA0E0BD7</tableSpace>
+<existingIndex>6DFCABBF-4E5F-21C4-5497-67C6E2BD32A9</existingIndex>
+<indexSegment>16C73C0A-478A-4DAD-61E5-F3A0B4061226</indexSegment>
+<indexSort>SORTED</indexSort>
+<usingIndex>BY INDEX NAME</usingIndex>
+</PrimaryKey>
+</primaryKeys>
+</TableProxyOraclev20c>

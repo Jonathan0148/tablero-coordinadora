@@ -1,0 +1,181 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<TableProxyOraclev20c class="oracle.dbtools.crest.model.design.storage.oracle.v20c.TableProxyOraclev20c" name="TEAM_MEMBER" directorySegmentName="seg_0" id="5B9F3D66-52DB-26A2-7B38-0CAAEBA98A87">
+<createdBy>bohor</createdBy>
+<createdTime>2026-05-28 18:10:03 UTC</createdTime>
+<ownerDesignName>mer</ownerDesignName>
+<schemaObject>29F73E7E-6ED0-6D22-A8E7-E516F10B9427</schemaObject>
+<logging>YES</logging>
+<partitionedRowMovement>DISABLE</partitionedRowMovement>
+<segment>A10205B5-24D3-6CC3-DC2F-D790A7ED9F40</segment>
+<tableSpace>A9CDD5BB-B30C-C03F-9D3A-2B16AA0E0BD7</tableSpace>
+<temporaryChanged>false</temporaryChanged>
+<accessDriverType>oracle_loader</accessDriverType>
+<rejectLimit></rejectLimit>
+<inMemory>NO</inMemory>
+<columnProxies itemClass="oracle.dbtools.crest.model.design.storage.oracle.v12c.ColumnProxyOraclev12c">
+<ColumnProxy name="LEGACY_ID" id="12B85C8D-433C-87E4-D38B-C27EAFF27888">
+<createdBy>bohor</createdBy>
+<createdTime>2026-05-28 18:10:04 UTC</createdTime>
+<ownerDesignName>mer</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="DEFAULT_ROLE_ID" id="20F40679-8DD9-2A42-8403-C64861C20EB9">
+<createdBy>bohor</createdBy>
+<createdTime>2026-05-28 18:10:04 UTC</createdTime>
+<ownerDesignName>mer</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="UPDATED_AT" id="315F780C-8EFB-7C46-8E93-5E49A7674820">
+<createdBy>bohor</createdBy>
+<createdTime>2026-05-28 18:10:04 UTC</createdTime>
+<ownerDesignName>mer</ownerDesignName>
+<defaultValue>SYSTIMESTAMP</defaultValue>
+</ColumnProxy>
+<ColumnProxy name="DELETED_AT" id="73C16FEB-3847-E7E5-FE95-58A8447506B5">
+<createdBy>bohor</createdBy>
+<createdTime>2026-05-28 18:10:04 UTC</createdTime>
+<ownerDesignName>mer</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="TEAM_MEMBER_ID" id="73CB2DC1-BD20-989C-DEB3-2138664B2869">
+<createdBy>bohor</createdBy>
+<createdTime>2026-05-28 18:10:04 UTC</createdTime>
+<ownerDesignName>mer</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="NAME" id="73E06581-0946-3F78-A415-DB9711680AFD">
+<createdBy>bohor</createdBy>
+<createdTime>2026-05-28 18:10:04 UTC</createdTime>
+<ownerDesignName>mer</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="UPDATED_BY" id="86DC1968-6140-2A69-3B74-F9D759996ED1">
+<createdBy>bohor</createdBy>
+<createdTime>2026-05-28 18:10:04 UTC</createdTime>
+<ownerDesignName>mer</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="DELETED_BY" id="8CDC2F59-BAAD-9421-6C85-0A7FD9341841">
+<createdBy>bohor</createdBy>
+<createdTime>2026-05-28 18:10:04 UTC</createdTime>
+<ownerDesignName>mer</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="EMAIL" id="96BAC69D-4AFC-90CF-2BA5-FCE5091B5674">
+<createdBy>bohor</createdBy>
+<createdTime>2026-05-28 18:10:04 UTC</createdTime>
+<ownerDesignName>mer</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="ACTIVE" id="9783CFEB-5D40-55D5-4EBC-C5FA1B80E769">
+<createdBy>bohor</createdBy>
+<createdTime>2026-05-28 18:10:04 UTC</createdTime>
+<ownerDesignName>mer</ownerDesignName>
+<defaultValue>&apos;Y&apos;</defaultValue>
+</ColumnProxy>
+<ColumnProxy name="CREATED_AT" id="A5FFAB9A-78E5-B289-4743-DE669C4005EE">
+<createdBy>bohor</createdBy>
+<createdTime>2026-05-28 18:10:04 UTC</createdTime>
+<ownerDesignName>mer</ownerDesignName>
+<defaultValue>SYSTIMESTAMP</defaultValue>
+</ColumnProxy>
+<ColumnProxy name="IS_DELETED" id="D657214F-DDBD-D01A-DC12-1517693BFE41">
+<createdBy>bohor</createdBy>
+<createdTime>2026-05-28 18:10:04 UTC</createdTime>
+<ownerDesignName>mer</ownerDesignName>
+<defaultValue>&apos;N&apos;</defaultValue>
+</ColumnProxy>
+<ColumnProxy name="NOTES" id="DD0BCE1F-B914-E0DB-E699-F12DE522CB0E">
+<createdBy>bohor</createdBy>
+<createdTime>2026-05-28 18:10:04 UTC</createdTime>
+<ownerDesignName>mer</ownerDesignName>
+</ColumnProxy>
+<ColumnProxy name="CREATED_BY" id="F7EFFE77-7EEB-1CA6-9EF5-47DB17414523">
+<createdBy>bohor</createdBy>
+<createdTime>2026-05-28 18:10:04 UTC</createdTime>
+<ownerDesignName>mer</ownerDesignName>
+</ColumnProxy>
+</columnProxies>
+<indexProxies>
+<IndexProxy class="oracle.dbtools.crest.model.design.storage.oracle.v10g.IndexProxyOraclev10g" name="IX_TEAM_MEMBER__DEFAULT_ROLE" id="36ED43CC-619D-A970-CDD2-084E67AE7A3D">
+<createdBy>bohor</createdBy>
+<createdTime>2026-05-28 18:10:08 UTC</createdTime>
+<ownerDesignName>mer</ownerDesignName>
+<schemaObject>29F73E7E-6ED0-6D22-A8E7-E516F10B9427</schemaObject>
+<segment>16C73C0A-478A-4DAD-61E5-F3A0B4061226</segment>
+<tableSpace>A9CDD5BB-B30C-C03F-9D3A-2B16AA0E0BD7</tableSpace>
+</IndexProxy>
+<IndexProxy class="oracle.dbtools.crest.model.design.storage.oracle.v10g.IndexProxyOraclev10g" name="PK_TEAM_MEMBER" id="3C9D7E1E-C844-F736-950A-BD3DB149B6ED">
+<createdBy>bohor</createdBy>
+<createdTime>2026-05-28 18:10:08 UTC</createdTime>
+<ownerDesignName>mer</ownerDesignName>
+<schemaObject>29F73E7E-6ED0-6D22-A8E7-E516F10B9427</schemaObject>
+<segment>16C73C0A-478A-4DAD-61E5-F3A0B4061226</segment>
+<tableSpace>A9CDD5BB-B30C-C03F-9D3A-2B16AA0E0BD7</tableSpace>
+</IndexProxy>
+<IndexProxy class="oracle.dbtools.crest.model.design.storage.oracle.v10g.IndexProxyOraclev10g" name="IX_TEAM_MEMBER__ACTIVE" id="5B96F5A7-0255-E5D5-31DF-8029456D069D">
+<createdBy>bohor</createdBy>
+<createdTime>2026-05-28 18:10:08 UTC</createdTime>
+<ownerDesignName>mer</ownerDesignName>
+<schemaObject>29F73E7E-6ED0-6D22-A8E7-E516F10B9427</schemaObject>
+<segment>16C73C0A-478A-4DAD-61E5-F3A0B4061226</segment>
+<tableSpace>A9CDD5BB-B30C-C03F-9D3A-2B16AA0E0BD7</tableSpace>
+</IndexProxy>
+<IndexProxy class="oracle.dbtools.crest.model.design.storage.oracle.v10g.IndexProxyOraclev10g" name="UK_TEAM_MEMBER__LEGACY_ID" id="5EADB433-F6A7-9D1D-6ACF-831AD4E725DF">
+<createdBy>bohor</createdBy>
+<createdTime>2026-05-28 18:10:08 UTC</createdTime>
+<ownerDesignName>mer</ownerDesignName>
+<schemaObject>29F73E7E-6ED0-6D22-A8E7-E516F10B9427</schemaObject>
+<segment>16C73C0A-478A-4DAD-61E5-F3A0B4061226</segment>
+<tableSpace>A9CDD5BB-B30C-C03F-9D3A-2B16AA0E0BD7</tableSpace>
+</IndexProxy>
+<IndexProxy class="oracle.dbtools.crest.model.design.storage.oracle.v10g.IndexProxyOraclev10g" name="IX_TEAM_MEMBER__NAME" id="ECB444BE-6EBF-9C50-9B91-8250B42DFB22">
+<createdBy>bohor</createdBy>
+<createdTime>2026-05-28 18:10:08 UTC</createdTime>
+<ownerDesignName>mer</ownerDesignName>
+<schemaObject>29F73E7E-6ED0-6D22-A8E7-E516F10B9427</schemaObject>
+<segment>16C73C0A-478A-4DAD-61E5-F3A0B4061226</segment>
+<tableSpace>A9CDD5BB-B30C-C03F-9D3A-2B16AA0E0BD7</tableSpace>
+</IndexProxy>
+</indexProxies>
+<foreignKeys>
+<ForeignKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.FKProxyOraclev10g" name="FK_TEAM_MEMBER__TECH_ROLE" id="1AAEAEC6-DC03-EE29-8F1F-69F47EA9E7F9">
+<createdBy>bohor</createdBy>
+<createdTime>2026-05-28 18:10:17 UTC</createdTime>
+<ownerDesignName>mer</ownerDesignName>
+</ForeignKey>
+</foreignKeys>
+<lobStorages>
+<LobStorage class="oracle.dbtools.crest.model.design.storage.oracle.v11g.LobStorageOraclev11g" name="SYS_LOB0000077219C00007$$" id="BBFB34D3-2CD3-703E-394E-1A718BA7F0D6">
+<createdBy>bohor</createdBy>
+<createdTime>2026-05-28 18:10:17 UTC</createdTime>
+<ownerDesignName>mer</ownerDesignName>
+<cache>NOCACHE</cache>
+<chunk>8192</chunk>
+<column>NOTES</column>
+<compression>NO</compression>
+<duplication>KEEP_DUPLICATES</duplication>
+<logging>YES</logging>
+<tableSpace>A9CDD5BB-B30C-C03F-9D3A-2B16AA0E0BD7</tableSpace>
+<lobStorageType>SECUREFILE</lobStorageType>
+</LobStorage>
+</lobStorages>
+<primaryKeys>
+<PrimaryKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.PKProxyOraclev10g" name="PK_TEAM_MEMBER" id="1303776E-7AE9-302D-FEB1-EC82413ACC7C">
+<createdBy>bohor</createdBy>
+<createdTime>2026-05-28 18:10:12 UTC</createdTime>
+<ownerDesignName>mer</ownerDesignName>
+<segment>16C73C0A-478A-4DAD-61E5-F3A0B4061226</segment>
+<tableSpace>A9CDD5BB-B30C-C03F-9D3A-2B16AA0E0BD7</tableSpace>
+<existingIndex>3C9D7E1E-C844-F736-950A-BD3DB149B6ED</existingIndex>
+<indexSegment>16C73C0A-478A-4DAD-61E5-F3A0B4061226</indexSegment>
+<indexSort>SORTED</indexSort>
+<usingIndex>BY INDEX NAME</usingIndex>
+</PrimaryKey>
+</primaryKeys>
+<uniqueKeys>
+<UniqueKey class="oracle.dbtools.crest.model.design.storage.oracle.v10g.UniqueOraclev10g" name="UK_TEAM_MEMBER__LEGACY_ID" id="5CD30067-B846-8EBE-C5F3-0C10D358B0FB">
+<createdBy>bohor</createdBy>
+<createdTime>2026-05-28 18:10:12 UTC</createdTime>
+<ownerDesignName>mer</ownerDesignName>
+<segment>16C73C0A-478A-4DAD-61E5-F3A0B4061226</segment>
+<tableSpace>A9CDD5BB-B30C-C03F-9D3A-2B16AA0E0BD7</tableSpace>
+<existingIndex>5EADB433-F6A7-9D1D-6ACF-831AD4E725DF</existingIndex>
+<indexSegment>16C73C0A-478A-4DAD-61E5-F3A0B4061226</indexSegment>
+<indexSort>SORTED</indexSort>
+<usingIndex>BY INDEX NAME</usingIndex>
+</UniqueKey>
+</uniqueKeys>
+</TableProxyOraclev20c>

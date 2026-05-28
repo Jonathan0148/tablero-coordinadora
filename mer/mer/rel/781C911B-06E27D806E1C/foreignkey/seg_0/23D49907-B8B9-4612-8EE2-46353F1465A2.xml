@@ -1,0 +1,19 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="23D49907-B8B9-4612-8EE2-46353F1465A2" containerWithKeyObject="3AC9633F-35CA-168E-9893-0AD432D29143" localFKIndex="B146641B-F1CE-4042-7E75-F8EB68FEA915" name="FK_KANBAN_CARD__PROJECT">
+<sourceConnName>APP_CURSOR</sourceConnName>
+<sourceObjSchema>APP_CURSOR</sourceObjSchema>
+<sourceObjName>FK_KANBAN_CARD__PROJECT</sourceObjName>
+<createdBy>bohor</createdBy>
+<createdTime>2026-05-28 18:10:17 UTC</createdTime>
+<ownerDesignName>mer</ownerDesignName>
+<referredTableLongName>APP_CURSOR.PROJECT</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>5336836B-C802-31E5-8313-FA9BDDC55B10</referredTableID>
+<keyObject>6D83DF61-6046-2348-616E-CE409B3A005E</keyObject>
+<referredKeyID>6D83DF61-6046-2348-616E-CE409B3A005E</referredKeyID>
+<mandatory>false</mandatory>
+<refColNames>PROJECT_ID</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

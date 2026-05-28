@@ -2,7 +2,8 @@
 
 import { useQuery } from "@tanstack/react-query";
 import Link from "next/link";
-import { AlertTriangle, ArrowRight, Calendar, Clock, FileText, Landmark } from "lucide-react";
+import { ArrowRight, Calendar, Clock, FileText, Landmark } from "lucide-react";
+import { CoordinationPanel } from "@/modules/dashboard/coordination-panel";
 import { dashboardService, projectService } from "@/services/project.service";
 import { Badge } from "@/shared/components/badge";
 import { Card, CardContent, CardHeader } from "@/shared/components/card";
@@ -129,46 +130,7 @@ export function DashboardView() {
         ]}
       />
 
-      {/* Panel coordinación premium */}
-      {d.coordinationProjects.length > 0 && (
-        <Card className="overflow-hidden border-red-200/80 shadow-md">
-          <div className="border-b border-red-100 bg-gradient-to-r from-red-50 to-white px-5 py-4">
-            <div className="flex items-center gap-2">
-              <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-red-100 text-red-700">
-                <AlertTriangle className="h-4 w-4" />
-              </div>
-              <div>
-                <h3 className="font-semibold text-red-900">Acción de coordinación requerida</h3>
-                <p className="text-xs text-red-700/80">{d.coordinationProjects.length} proyecto(s) pendientes de decisión</p>
-              </div>
-            </div>
-          </div>
-          <CardContent className="divide-y divide-slate-100 p-0">
-            {d.coordinationProjects.map((p) => (
-              <Link
-                key={p.projectId}
-                href={`/projects?open=${p.projectId}`}
-                className="flex items-start justify-between gap-4 px-5 py-4 transition hover:bg-red-50/30"
-              >
-                <div className="min-w-0">
-                  <p className="font-semibold text-slate-900">{p.projectName}</p>
-                  {p.coordinationDesc && (
-                    <p className="mt-1 text-sm text-slate-600">
-                      <span className="font-medium text-red-700">Coordinación:</span> {p.coordinationDesc}
-                    </p>
-                  )}
-                  {p.responsibleAreaName && p.responsibleAction && (
-                    <p className="mt-1 text-xs text-amber-800">
-                      {p.responsibleAreaName}: {p.responsibleAction}
-                    </p>
-                  )}
-                </div>
-                <ArrowRight className="mt-1 h-4 w-4 shrink-0 text-slate-400" />
-              </Link>
-            ))}
-          </CardContent>
-        </Card>
-      )}
+      <CoordinationPanel projects={d.coordinationProjects} />
 
       <div className="grid gap-4 xl:grid-cols-3">
         <Card className="xl:col-span-2">

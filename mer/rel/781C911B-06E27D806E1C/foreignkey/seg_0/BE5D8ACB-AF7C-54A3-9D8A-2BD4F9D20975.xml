@@ -1,0 +1,19 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="BE5D8ACB-AF7C-54A3-9D8A-2BD4F9D20975" containerWithKeyObject="5336836B-C802-31E5-8313-FA9BDDC55B10" localFKIndex="D3E51C73-B635-A680-4208-2821ECFCD31F" name="FK_PROJECT__PIPELINE_STATUS">
+<sourceConnName>APP_CURSOR</sourceConnName>
+<sourceObjSchema>APP_CURSOR</sourceObjSchema>
+<sourceObjName>FK_PROJECT__PIPELINE_STATUS</sourceObjName>
+<createdBy>bohor</createdBy>
+<createdTime>2026-05-28 18:10:17 UTC</createdTime>
+<ownerDesignName>mer</ownerDesignName>
+<referredTableLongName>APP_CURSOR.PIPELINE_STATUS</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>91F6D17A-3FEE-A8AE-CE7C-1717D8EB3DC2</referredTableID>
+<keyObject>918D236A-B07A-BFB3-455D-DDF74ACE2612</keyObject>
+<referredKeyID>918D236A-B07A-BFB3-455D-DDF74ACE2612</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>PIPELINE_STATUS_ID</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

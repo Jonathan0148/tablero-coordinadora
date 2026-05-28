@@ -1,0 +1,199 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="15893429-DEC7-6197-0E04-0B094AD1B9D0" schemaObject="29F73E7E-6ED0-6D22-A8E7-E516F10B9427" name="MIGRATION_ERROR">
+<sourceConnName>APP_CURSOR</sourceConnName>
+<sourceObjSchema>APP_CURSOR</sourceObjSchema>
+<sourceObjName>MIGRATION_ERROR</sourceObjName>
+<createdBy>bohor</createdBy>
+<createdTime>2026-05-28 18:10:03 UTC</createdTime>
+<ownerDesignName>mer</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="MIGRATION_ERROR_ID" id="FEA008E7-5219-6B14-5A82-883FA7F6A0B3">
+<sourceConnName>APP_CURSOR</sourceConnName>
+<sourceObjSchema>MIGRATION_ERROR</sourceObjSchema>
+<sourceObjName>MIGRATION_ERROR_ID</sourceObjName>
+<createdBy>bohor</createdBy>
+<createdTime>2026-05-28 18:10:04 UTC</createdTime>
+<ownerDesignName>mer</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>19</dataTypePrecision>
+<dataTypeScale>0</dataTypeScale>
+<ownDataTypeParameters>,19,0</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="MIGRATION_BATCH_ID" id="B448E423-9AC4-55DF-4095-0CA6180A1563">
+<sourceConnName>APP_CURSOR</sourceConnName>
+<sourceObjSchema>MIGRATION_ERROR</sourceObjSchema>
+<sourceObjName>MIGRATION_BATCH_ID</sourceObjName>
+<createdBy>bohor</createdBy>
+<createdTime>2026-05-28 18:10:04 UTC</createdTime>
+<ownerDesignName>mer</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>19</dataTypePrecision>
+<dataTypeScale>0</dataTypeScale>
+<ownDataTypeParameters>,19,0</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="D6061E0D-93C4-DF28-99EE-1516F53B1EDA" referredColumn="540C2F85-60EF-D6BB-5BA1-55B66F9C69A1"/>
+</associations>
+</Column>
+<Column name="ENTITY_TYPE" id="09E19C33-BA84-D27C-FD07-2EDB65706A19">
+<sourceConnName>APP_CURSOR</sourceConnName>
+<sourceObjSchema>MIGRATION_ERROR</sourceObjSchema>
+<sourceObjName>ENTITY_TYPE</sourceObjName>
+<createdBy>bohor</createdBy>
+<createdTime>2026-05-28 18:10:04 UTC</createdTime>
+<ownerDesignName>mer</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>80 CHAR</dataTypeSize>
+<ownDataTypeParameters>80 CHAR,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="LEGACY_ID" id="9B7D69D6-5366-B5C1-2E2E-32ACEE1387B6">
+<sourceConnName>APP_CURSOR</sourceConnName>
+<sourceObjSchema>MIGRATION_ERROR</sourceObjSchema>
+<sourceObjName>LEGACY_ID</sourceObjName>
+<createdBy>bohor</createdBy>
+<createdTime>2026-05-28 18:10:04 UTC</createdTime>
+<ownerDesignName>mer</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100 CHAR</dataTypeSize>
+<ownDataTypeParameters>100 CHAR,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="ERROR_CODE" id="99AC32A2-8C91-CE3D-2DAD-4C49147C953B">
+<sourceConnName>APP_CURSOR</sourceConnName>
+<sourceObjSchema>MIGRATION_ERROR</sourceObjSchema>
+<sourceObjName>ERROR_CODE</sourceObjName>
+<createdBy>bohor</createdBy>
+<createdTime>2026-05-28 18:10:04 UTC</createdTime>
+<ownerDesignName>mer</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>80 CHAR</dataTypeSize>
+<ownDataTypeParameters>80 CHAR,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="ERROR_MESSAGE" id="2DD327A8-9CE9-D751-7D1A-1600A62599E6">
+<sourceConnName>APP_CURSOR</sourceConnName>
+<sourceObjSchema>MIGRATION_ERROR</sourceObjSchema>
+<sourceObjName>ERROR_MESSAGE</sourceObjName>
+<createdBy>bohor</createdBy>
+<createdTime>2026-05-28 18:10:04 UTC</createdTime>
+<ownerDesignName>mer</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>1000 CHAR</dataTypeSize>
+<ownDataTypeParameters>1000 CHAR,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="RAW_PATH" id="0BE2BBD8-DB2E-8A6A-6D07-866AC9F77482">
+<sourceConnName>APP_CURSOR</sourceConnName>
+<sourceObjSchema>MIGRATION_ERROR</sourceObjSchema>
+<sourceObjName>RAW_PATH</sourceObjName>
+<createdBy>bohor</createdBy>
+<createdTime>2026-05-28 18:10:04 UTC</createdTime>
+<ownerDesignName>mer</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>500 CHAR</dataTypeSize>
+<ownDataTypeParameters>500 CHAR,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="CREATED_AT" id="F82F4835-E8F9-AC2C-A593-41653DF199B8">
+<sourceConnName>APP_CURSOR</sourceConnName>
+<sourceObjSchema>MIGRATION_ERROR</sourceObjSchema>
+<sourceObjName>CREATED_AT</sourceObjName>
+<createdBy>bohor</createdBy>
+<createdTime>2026-05-28 18:10:04 UTC</createdTime>
+<ownerDesignName>mer</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT046</logicalDatatype>
+<dataTypePrecision>6</dataTypePrecision>
+<defaultValue>SYSTIMESTAMP</defaultValue>
+<ownDataTypeParameters>,6,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="EE63933E-A1F3-D70C-EEC0-E573BACE4934" name="PK_MIGRATION_ERROR">
+<sourceConnName>APP_CURSOR</sourceConnName>
+<sourceObjSchema>APP_CURSOR</sourceObjSchema>
+<sourceObjName>PK_MIGRATION_ERROR</sourceObjName>
+<createdBy>bohor</createdBy>
+<createdTime>2026-05-28 18:10:12 UTC</createdTime>
+<ownerDesignName>mer</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="FEA008E7-5219-6B14-5A82-883FA7F6A0B3"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="4563E3AF-2658-9E73-3641-D24747A4E9BA" schemaObject="29F73E7E-6ED0-6D22-A8E7-E516F10B9427" name="IX_MIGRATION_ERROR__BATCH">
+<sourceConnName>APP_CURSOR</sourceConnName>
+<sourceObjSchema>APP_CURSOR</sourceObjSchema>
+<sourceObjName>IX_MIGRATION_ERROR__BATCH</sourceObjName>
+<createdBy>bohor</createdBy>
+<createdTime>2026-05-28 18:10:08 UTC</createdTime>
+<ownerDesignName>mer</ownerDesignName>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="B448E423-9AC4-55DF-4095-0CA6180A1563"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="2D937493-686A-5201-130A-09A7D955E43B" schemaObject="29F73E7E-6ED0-6D22-A8E7-E516F10B9427" name="IX_MIGRATION_ERROR__ENTITY">
+<sourceConnName>APP_CURSOR</sourceConnName>
+<sourceObjSchema>APP_CURSOR</sourceObjSchema>
+<sourceObjName>IX_MIGRATION_ERROR__ENTITY</sourceObjName>
+<createdBy>bohor</createdBy>
+<createdTime>2026-05-28 18:10:08 UTC</createdTime>
+<ownerDesignName>mer</ownerDesignName>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="09E19C33-BA84-D27C-FD07-2EDB65706A19"/>
+<colUsage columnID="9B7D69D6-5366-B5C1-2E2E-32ACEE1387B6"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="4390D918-E980-6561-EF3F-83C4A6D76EB2" schemaObject="29F73E7E-6ED0-6D22-A8E7-E516F10B9427" name="PK_MIGRATION_ERROR">
+<sourceConnName>APP_CURSOR</sourceConnName>
+<sourceObjSchema>APP_CURSOR</sourceObjSchema>
+<sourceObjName>PK_MIGRATION_ERROR</sourceObjName>
+<createdBy>bohor</createdBy>
+<createdTime>2026-05-28 18:10:08 UTC</createdTime>
+<ownerDesignName>mer</ownerDesignName>
+<indexState>Unique Plain Index</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="FEA008E7-5219-6B14-5A82-883FA7F6A0B3"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="3542D610-FF6A-A09B-EAEC-6409B2D99E5B" name="FK_MIGRATION_ERROR__MIGRATION_BATCH">
+<createdBy>bohor</createdBy>
+<createdTime>2026-05-28 18:10:17 UTC</createdTime>
+<ownerDesignName>mer</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="B448E423-9AC4-55DF-4095-0CA6180A1563"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

@@ -1,0 +1,162 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="E969F78A-E54A-D51E-43C3-93D3341030D8" schemaObject="29F73E7E-6ED0-6D22-A8E7-E516F10B9427" name="STG_LEGACY_BACKUP">
+<sourceConnName>APP_CURSOR</sourceConnName>
+<sourceObjSchema>APP_CURSOR</sourceObjSchema>
+<sourceObjName>STG_LEGACY_BACKUP</sourceObjName>
+<createdBy>bohor</createdBy>
+<createdTime>2026-05-28 18:10:03 UTC</createdTime>
+<ownerDesignName>mer</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="STG_LEGACY_BACKUP_ID" id="7281CAC9-7285-8C3B-7100-1713D67D55FB">
+<sourceConnName>APP_CURSOR</sourceConnName>
+<sourceObjSchema>STG_LEGACY_BACKUP</sourceObjSchema>
+<sourceObjName>STG_LEGACY_BACKUP_ID</sourceObjName>
+<createdBy>bohor</createdBy>
+<createdTime>2026-05-28 18:10:04 UTC</createdTime>
+<ownerDesignName>mer</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>19</dataTypePrecision>
+<dataTypeScale>0</dataTypeScale>
+<ownDataTypeParameters>,19,0</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="MIGRATION_BATCH_ID" id="221D912F-5DA0-1526-2F3C-B2B3AA1417A8">
+<sourceConnName>APP_CURSOR</sourceConnName>
+<sourceObjSchema>STG_LEGACY_BACKUP</sourceObjSchema>
+<sourceObjName>MIGRATION_BATCH_ID</sourceObjName>
+<createdBy>bohor</createdBy>
+<createdTime>2026-05-28 18:10:04 UTC</createdTime>
+<ownerDesignName>mer</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>19</dataTypePrecision>
+<dataTypeScale>0</dataTypeScale>
+<ownDataTypeParameters>,19,0</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="0B7FA919-C67B-6960-EC90-24A6CC6F5D74" referredColumn="540C2F85-60EF-D6BB-5BA1-55B66F9C69A1"/>
+</associations>
+</Column>
+<Column name="SOURCE_FILE_NAME" id="0017E29E-BFFC-1A43-321A-E27235D54E96">
+<sourceConnName>APP_CURSOR</sourceConnName>
+<sourceObjSchema>STG_LEGACY_BACKUP</sourceObjSchema>
+<sourceObjName>SOURCE_FILE_NAME</sourceObjName>
+<createdBy>bohor</createdBy>
+<createdTime>2026-05-28 18:10:04 UTC</createdTime>
+<ownerDesignName>mer</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>300 CHAR</dataTypeSize>
+<ownDataTypeParameters>300 CHAR,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="RAW_JSON" id="B45FCBD4-6F74-7D13-98A2-698C2D97BD83">
+<sourceConnName>APP_CURSOR</sourceConnName>
+<sourceObjSchema>STG_LEGACY_BACKUP</sourceObjSchema>
+<sourceObjName>RAW_JSON</sourceObjName>
+<createdBy>bohor</createdBy>
+<createdTime>2026-05-28 18:10:04 UTC</createdTime>
+<ownerDesignName>mer</ownerDesignName>
+<constraintName>CK_STG_LEGACY_BACKUP__JSON</constraintName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT028</logicalDatatype>
+<dataTypeSize>4000</dataTypeSize>
+<checkConstraint>
+<implementationDef dbType="Generic Constraint" definition="raw_json IS JSON"/>
+<implementationDef dbType="Oracle Database 21c" definition="raw_json IS JSON"/>
+</checkConstraint>
+<ownDataTypeParameters>4000,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="LOADED_AT" id="AFF23C75-11AD-8E36-6E44-3796CE8E9A39">
+<sourceConnName>APP_CURSOR</sourceConnName>
+<sourceObjSchema>STG_LEGACY_BACKUP</sourceObjSchema>
+<sourceObjName>LOADED_AT</sourceObjName>
+<createdBy>bohor</createdBy>
+<createdTime>2026-05-28 18:10:04 UTC</createdTime>
+<ownerDesignName>mer</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT046</logicalDatatype>
+<dataTypePrecision>6</dataTypePrecision>
+<defaultValue>SYSTIMESTAMP</defaultValue>
+<ownDataTypeParameters>,6,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="LOADED_BY" id="8ACB9348-A0AB-59B1-B171-585E3564E9C4">
+<sourceConnName>APP_CURSOR</sourceConnName>
+<sourceObjSchema>STG_LEGACY_BACKUP</sourceObjSchema>
+<sourceObjName>LOADED_BY</sourceObjName>
+<createdBy>bohor</createdBy>
+<createdTime>2026-05-28 18:10:04 UTC</createdTime>
+<ownerDesignName>mer</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>19</dataTypePrecision>
+<dataTypeScale>0</dataTypeScale>
+<ownDataTypeParameters>,19,0</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="C4D91A54-8082-C902-B232-C37AC79779EB" name="PK_STG_LEGACY_BACKUP">
+<sourceConnName>APP_CURSOR</sourceConnName>
+<sourceObjSchema>APP_CURSOR</sourceObjSchema>
+<sourceObjName>PK_STG_LEGACY_BACKUP</sourceObjName>
+<createdBy>bohor</createdBy>
+<createdTime>2026-05-28 18:10:12 UTC</createdTime>
+<ownerDesignName>mer</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="7281CAC9-7285-8C3B-7100-1713D67D55FB"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="013016A3-B084-4F5B-9093-2C7977688B91" schemaObject="29F73E7E-6ED0-6D22-A8E7-E516F10B9427" name="IX_STG_LEGACY_BACKUP__BATCH">
+<sourceConnName>APP_CURSOR</sourceConnName>
+<sourceObjSchema>APP_CURSOR</sourceObjSchema>
+<sourceObjName>IX_STG_LEGACY_BACKUP__BATCH</sourceObjName>
+<createdBy>bohor</createdBy>
+<createdTime>2026-05-28 18:10:08 UTC</createdTime>
+<ownerDesignName>mer</ownerDesignName>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="221D912F-5DA0-1526-2F3C-B2B3AA1417A8"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="770F42AA-13A8-67FB-9C53-38EF7B15112B" schemaObject="29F73E7E-6ED0-6D22-A8E7-E516F10B9427" name="PK_STG_LEGACY_BACKUP">
+<sourceConnName>APP_CURSOR</sourceConnName>
+<sourceObjSchema>APP_CURSOR</sourceObjSchema>
+<sourceObjName>PK_STG_LEGACY_BACKUP</sourceObjName>
+<createdBy>bohor</createdBy>
+<createdTime>2026-05-28 18:10:08 UTC</createdTime>
+<ownerDesignName>mer</ownerDesignName>
+<indexState>Unique Plain Index</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="7281CAC9-7285-8C3B-7100-1713D67D55FB"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="A17DDF43-90FF-D03D-8FB4-949D05E0FB6E" name="FK_STG_LEGACY_BACKUP__MIGRATION_BATCH">
+<createdBy>bohor</createdBy>
+<createdTime>2026-05-28 18:10:17 UTC</createdTime>
+<ownerDesignName>mer</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="221D912F-5DA0-1526-2F3C-B2B3AA1417A8"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

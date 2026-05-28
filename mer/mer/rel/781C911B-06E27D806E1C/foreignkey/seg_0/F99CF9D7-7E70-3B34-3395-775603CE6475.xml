@@ -1,0 +1,19 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="F99CF9D7-7E70-3B34-3395-775603CE6475" containerWithKeyObject="3FB65570-C8B7-26A7-785F-F74DD5ECB24C" localFKIndex="76C213C4-146D-8461-CFF9-36E2D04BB714" name="FK_NOTIFICATION_REMINDER__KANBAN">
+<sourceConnName>APP_CURSOR</sourceConnName>
+<sourceObjSchema>APP_CURSOR</sourceObjSchema>
+<sourceObjName>FK_NOTIFICATION_REMINDER__KANBAN</sourceObjName>
+<createdBy>bohor</createdBy>
+<createdTime>2026-05-28 18:10:17 UTC</createdTime>
+<ownerDesignName>mer</ownerDesignName>
+<referredTableLongName>APP_CURSOR.KANBAN_CARD</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>3AC9633F-35CA-168E-9893-0AD432D29143</referredTableID>
+<keyObject>418469A2-5BC0-4D2F-EC3C-EFECC4D76DE7</keyObject>
+<referredKeyID>418469A2-5BC0-4D2F-EC3C-EFECC4D76DE7</referredKeyID>
+<mandatory>false</mandatory>
+<refColNames>KANBAN_CARD_ID</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

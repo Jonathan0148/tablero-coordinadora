@@ -1,0 +1,300 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="421D394A-2386-C334-F4BB-681432AB865E" schemaObject="29F73E7E-6ED0-6D22-A8E7-E516F10B9427" name="OKR_ACTIVITY_MILESTONE">
+<sourceConnName>APP_CURSOR</sourceConnName>
+<sourceObjSchema>APP_CURSOR</sourceObjSchema>
+<sourceObjName>OKR_ACTIVITY_MILESTONE</sourceObjName>
+<createdBy>bohor</createdBy>
+<createdTime>2026-05-28 18:10:03 UTC</createdTime>
+<ownerDesignName>mer</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="OKR_ACTIVITY_MILESTONE_ID" id="09585372-0672-A7EA-CDFF-CF2C41BD43B1">
+<sourceConnName>APP_CURSOR</sourceConnName>
+<sourceObjSchema>OKR_ACTIVITY_MILESTONE</sourceObjSchema>
+<sourceObjName>OKR_ACTIVITY_MILESTONE_ID</sourceObjName>
+<createdBy>bohor</createdBy>
+<createdTime>2026-05-28 18:10:04 UTC</createdTime>
+<ownerDesignName>mer</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>19</dataTypePrecision>
+<dataTypeScale>0</dataTypeScale>
+<ownDataTypeParameters>,19,0</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="OKR_ACTIVITY_ID" id="D98465B8-98CA-AD3B-9DA0-84C4BFFA60DD">
+<sourceConnName>APP_CURSOR</sourceConnName>
+<sourceObjSchema>OKR_ACTIVITY_MILESTONE</sourceObjSchema>
+<sourceObjName>OKR_ACTIVITY_ID</sourceObjName>
+<createdBy>bohor</createdBy>
+<createdTime>2026-05-28 18:10:04 UTC</createdTime>
+<ownerDesignName>mer</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>19</dataTypePrecision>
+<dataTypeScale>0</dataTypeScale>
+<ownDataTypeParameters>,19,0</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="E3ECD21F-A2A4-2924-9189-2BF7418386A7" referredColumn="07AD64D2-32FC-A1C9-50C3-C0E80A1578FF"/>
+</associations>
+</Column>
+<Column name="QUARTER_CODE" id="3FD2518D-67D4-2C8D-1812-6BAE6733CBBD">
+<sourceConnName>APP_CURSOR</sourceConnName>
+<sourceObjSchema>OKR_ACTIVITY_MILESTONE</sourceObjSchema>
+<sourceObjName>QUARTER_CODE</sourceObjName>
+<createdBy>bohor</createdBy>
+<createdTime>2026-05-28 18:10:04 UTC</createdTime>
+<ownerDesignName>mer</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20 CHAR</dataTypeSize>
+<ownDataTypeParameters>20 CHAR,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="QUARTER_LABEL" id="7A78A98F-38B3-9D33-6A8B-6434E24942EA">
+<sourceConnName>APP_CURSOR</sourceConnName>
+<sourceObjSchema>OKR_ACTIVITY_MILESTONE</sourceObjSchema>
+<sourceObjName>QUARTER_LABEL</sourceObjName>
+<createdBy>bohor</createdBy>
+<createdTime>2026-05-28 18:10:04 UTC</createdTime>
+<ownerDesignName>mer</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>30 CHAR</dataTypeSize>
+<ownDataTypeParameters>30 CHAR,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="MONTH_ABBR" id="49DF7C7E-F7FD-46E9-50A6-239354026198">
+<sourceConnName>APP_CURSOR</sourceConnName>
+<sourceObjSchema>OKR_ACTIVITY_MILESTONE</sourceObjSchema>
+<sourceObjName>MONTH_ABBR</sourceObjName>
+<createdBy>bohor</createdBy>
+<createdTime>2026-05-28 18:10:04 UTC</createdTime>
+<ownerDesignName>mer</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>20 CHAR</dataTypeSize>
+<ownDataTypeParameters>20 CHAR,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="PCT" id="15087E3A-CE66-EE33-764A-E97D58FCF655">
+<sourceConnName>APP_CURSOR</sourceConnName>
+<sourceObjSchema>OKR_ACTIVITY_MILESTONE</sourceObjSchema>
+<sourceObjName>PCT</sourceObjName>
+<createdBy>bohor</createdBy>
+<createdTime>2026-05-28 18:10:04 UTC</createdTime>
+<ownerDesignName>mer</ownerDesignName>
+<constraintName>CK_OKR_ACTIVITY_MILESTONE__PCT</constraintName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>5</dataTypePrecision>
+<dataTypeScale>2</dataTypeScale>
+<checkConstraint>
+<implementationDef dbType="Generic Constraint" definition="pct &gt;= 0 AND pct &lt;= 100"/>
+<implementationDef dbType="Oracle Database 21c" definition="pct &gt;= 0 AND pct &lt;= 100"/>
+</checkConstraint>
+<ownDataTypeParameters>,5,2</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="SORT_ORDER" id="80C27A2A-EA6F-0C55-5A96-C1DF530BB59A">
+<sourceConnName>APP_CURSOR</sourceConnName>
+<sourceObjSchema>OKR_ACTIVITY_MILESTONE</sourceObjSchema>
+<sourceObjName>SORT_ORDER</sourceObjName>
+<createdBy>bohor</createdBy>
+<createdTime>2026-05-28 18:10:04 UTC</createdTime>
+<ownerDesignName>mer</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>5</dataTypePrecision>
+<dataTypeScale>0</dataTypeScale>
+<defaultValue>0</defaultValue>
+<ownDataTypeParameters>,5,0</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="CREATED_AT" id="0053FEAD-8597-50A8-19C4-C3258B634F95">
+<sourceConnName>APP_CURSOR</sourceConnName>
+<sourceObjSchema>OKR_ACTIVITY_MILESTONE</sourceObjSchema>
+<sourceObjName>CREATED_AT</sourceObjName>
+<createdBy>bohor</createdBy>
+<createdTime>2026-05-28 18:10:04 UTC</createdTime>
+<ownerDesignName>mer</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT046</logicalDatatype>
+<dataTypePrecision>6</dataTypePrecision>
+<defaultValue>SYSTIMESTAMP</defaultValue>
+<ownDataTypeParameters>,6,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="UPDATED_AT" id="546B08E0-3017-EFE5-2BF3-AF0ADDE14C8E">
+<sourceConnName>APP_CURSOR</sourceConnName>
+<sourceObjSchema>OKR_ACTIVITY_MILESTONE</sourceObjSchema>
+<sourceObjName>UPDATED_AT</sourceObjName>
+<createdBy>bohor</createdBy>
+<createdTime>2026-05-28 18:10:04 UTC</createdTime>
+<ownerDesignName>mer</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT046</logicalDatatype>
+<dataTypePrecision>6</dataTypePrecision>
+<defaultValue>SYSTIMESTAMP</defaultValue>
+<ownDataTypeParameters>,6,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="IS_DELETED" id="45425A81-7EA2-A4C7-CF58-D2B8150A856D">
+<sourceConnName>APP_CURSOR</sourceConnName>
+<sourceObjSchema>OKR_ACTIVITY_MILESTONE</sourceObjSchema>
+<sourceObjName>IS_DELETED</sourceObjName>
+<createdBy>bohor</createdBy>
+<createdTime>2026-05-28 18:10:04 UTC</createdTime>
+<ownerDesignName>mer</ownerDesignName>
+<constraintName>CK_OKR_ACTIVITY_MILESTONE__DELETED</constraintName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT025</logicalDatatype>
+<dataTypeSize>1 BYTE</dataTypeSize>
+<listOfValues>
+<valueDef value="&apos;N&apos;" description=""/>
+<valueDef value="&apos;Y&apos;" description=""/>
+</listOfValues>
+<defaultValue>&apos;N&apos;</defaultValue>
+<ownDataTypeParameters>1 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="DELETED_AT" id="B9B79646-A803-2417-AD8E-D53A05E82EB5">
+<sourceConnName>APP_CURSOR</sourceConnName>
+<sourceObjSchema>OKR_ACTIVITY_MILESTONE</sourceObjSchema>
+<sourceObjName>DELETED_AT</sourceObjName>
+<createdBy>bohor</createdBy>
+<createdTime>2026-05-28 18:10:04 UTC</createdTime>
+<ownerDesignName>mer</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT046</logicalDatatype>
+<dataTypePrecision>6</dataTypePrecision>
+<ownDataTypeParameters>,6,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="CREATED_BY" id="2E06F0FE-24D8-3B50-D7B5-B9F0414DB408">
+<sourceConnName>APP_CURSOR</sourceConnName>
+<sourceObjSchema>OKR_ACTIVITY_MILESTONE</sourceObjSchema>
+<sourceObjName>CREATED_BY</sourceObjName>
+<createdBy>bohor</createdBy>
+<createdTime>2026-05-28 18:10:04 UTC</createdTime>
+<ownerDesignName>mer</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>128 CHAR</dataTypeSize>
+<ownDataTypeParameters>128 CHAR,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="UPDATED_BY" id="B6E49B4A-2F4E-C2E5-CBDB-EC6E3A668E4B">
+<sourceConnName>APP_CURSOR</sourceConnName>
+<sourceObjSchema>OKR_ACTIVITY_MILESTONE</sourceObjSchema>
+<sourceObjName>UPDATED_BY</sourceObjName>
+<createdBy>bohor</createdBy>
+<createdTime>2026-05-28 18:10:04 UTC</createdTime>
+<ownerDesignName>mer</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>128 CHAR</dataTypeSize>
+<ownDataTypeParameters>128 CHAR,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="DELETED_BY" id="15460E29-BDBF-9D0C-A645-531021561833">
+<sourceConnName>APP_CURSOR</sourceConnName>
+<sourceObjSchema>OKR_ACTIVITY_MILESTONE</sourceObjSchema>
+<sourceObjName>DELETED_BY</sourceObjName>
+<createdBy>bohor</createdBy>
+<createdTime>2026-05-28 18:10:04 UTC</createdTime>
+<ownerDesignName>mer</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>128 CHAR</dataTypeSize>
+<ownDataTypeParameters>128 CHAR,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="C7F81D45-F133-C8D0-3393-0F4688729B73" name="PK_OKR_ACTIVITY_MILESTONE">
+<sourceConnName>APP_CURSOR</sourceConnName>
+<sourceObjSchema>APP_CURSOR</sourceObjSchema>
+<sourceObjName>PK_OKR_ACTIVITY_MILESTONE</sourceObjName>
+<createdBy>bohor</createdBy>
+<createdTime>2026-05-28 18:10:12 UTC</createdTime>
+<ownerDesignName>mer</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="09585372-0672-A7EA-CDFF-CF2C41BD43B1"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="CA001F40-7EE1-5848-E319-A62559CE2DBC" schemaObject="29F73E7E-6ED0-6D22-A8E7-E516F10B9427" name="IX_OKR_ACTIVITY_MILESTONE__ACTIVITY">
+<sourceConnName>APP_CURSOR</sourceConnName>
+<sourceObjSchema>APP_CURSOR</sourceObjSchema>
+<sourceObjName>IX_OKR_ACTIVITY_MILESTONE__ACTIVITY</sourceObjName>
+<createdBy>bohor</createdBy>
+<createdTime>2026-05-28 18:10:08 UTC</createdTime>
+<ownerDesignName>mer</ownerDesignName>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="D98465B8-98CA-AD3B-9DA0-84C4BFFA60DD"/>
+<colUsage columnID="80C27A2A-EA6F-0C55-5A96-C1DF530BB59A"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="B036D060-D04E-D9B6-970B-85520104ED47" schemaObject="29F73E7E-6ED0-6D22-A8E7-E516F10B9427" name="IX_OKR_ACTIVITY_MILESTONE__QUARTER">
+<sourceConnName>APP_CURSOR</sourceConnName>
+<sourceObjSchema>APP_CURSOR</sourceObjSchema>
+<sourceObjName>IX_OKR_ACTIVITY_MILESTONE__QUARTER</sourceObjName>
+<createdBy>bohor</createdBy>
+<createdTime>2026-05-28 18:10:08 UTC</createdTime>
+<ownerDesignName>mer</ownerDesignName>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="3FD2518D-67D4-2C8D-1812-6BAE6733CBBD"/>
+<colUsage columnID="7A78A98F-38B3-9D33-6A8B-6434E24942EA"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="049EDD30-D0AC-C842-DB46-50605136F7E3" schemaObject="29F73E7E-6ED0-6D22-A8E7-E516F10B9427" name="PK_OKR_ACTIVITY_MILESTONE">
+<sourceConnName>APP_CURSOR</sourceConnName>
+<sourceObjSchema>APP_CURSOR</sourceObjSchema>
+<sourceObjName>PK_OKR_ACTIVITY_MILESTONE</sourceObjName>
+<createdBy>bohor</createdBy>
+<createdTime>2026-05-28 18:10:08 UTC</createdTime>
+<ownerDesignName>mer</ownerDesignName>
+<indexState>Unique Plain Index</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="09585372-0672-A7EA-CDFF-CF2C41BD43B1"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="8EA97E96-52D1-80EC-4596-75A49585544C" name="FK_OKR_ACTIVITY_MILESTONE__ACTIVITY">
+<createdBy>bohor</createdBy>
+<createdTime>2026-05-28 18:10:17 UTC</createdTime>
+<ownerDesignName>mer</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="D98465B8-98CA-AD3B-9DA0-84C4BFFA60DD"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

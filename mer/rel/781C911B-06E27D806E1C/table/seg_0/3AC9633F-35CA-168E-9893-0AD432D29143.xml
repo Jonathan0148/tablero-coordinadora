@@ -1,0 +1,454 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="3AC9633F-35CA-168E-9893-0AD432D29143" schemaObject="29F73E7E-6ED0-6D22-A8E7-E516F10B9427" name="KANBAN_CARD">
+<sourceConnName>APP_CURSOR</sourceConnName>
+<sourceObjSchema>APP_CURSOR</sourceObjSchema>
+<sourceObjName>KANBAN_CARD</sourceObjName>
+<createdBy>bohor</createdBy>
+<createdTime>2026-05-28 18:10:03 UTC</createdTime>
+<ownerDesignName>mer</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="KANBAN_CARD_ID" id="D7DD47BA-F931-0128-1101-0CA29E278B93">
+<sourceConnName>APP_CURSOR</sourceConnName>
+<sourceObjSchema>KANBAN_CARD</sourceObjSchema>
+<sourceObjName>KANBAN_CARD_ID</sourceObjName>
+<createdBy>bohor</createdBy>
+<createdTime>2026-05-28 18:10:04 UTC</createdTime>
+<ownerDesignName>mer</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>19</dataTypePrecision>
+<dataTypeScale>0</dataTypeScale>
+<ownDataTypeParameters>,19,0</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="LEGACY_ID" id="32DA495D-1A9D-C21B-B8AC-34E1211B40F8">
+<sourceConnName>APP_CURSOR</sourceConnName>
+<sourceObjSchema>KANBAN_CARD</sourceObjSchema>
+<sourceObjName>LEGACY_ID</sourceObjName>
+<createdBy>bohor</createdBy>
+<createdTime>2026-05-28 18:10:04 UTC</createdTime>
+<ownerDesignName>mer</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100 CHAR</dataTypeSize>
+<ownDataTypeParameters>100 CHAR,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="TEXT" id="E0A41ACB-01FD-D16E-BF56-E099FC7D23B0">
+<sourceConnName>APP_CURSOR</sourceConnName>
+<sourceObjSchema>KANBAN_CARD</sourceObjSchema>
+<sourceObjName>TEXT</sourceObjName>
+<createdBy>bohor</createdBy>
+<createdTime>2026-05-28 18:10:04 UTC</createdTime>
+<ownerDesignName>mer</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT028</logicalDatatype>
+<dataTypeSize>4000</dataTypeSize>
+<ownDataTypeParameters>4000,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="WORK_AREA_ID" id="2F689A52-C0D2-8F1A-3F43-3DB4D83E4D4E">
+<sourceConnName>APP_CURSOR</sourceConnName>
+<sourceObjSchema>KANBAN_CARD</sourceObjSchema>
+<sourceObjName>WORK_AREA_ID</sourceObjName>
+<createdBy>bohor</createdBy>
+<createdTime>2026-05-28 18:10:04 UTC</createdTime>
+<ownerDesignName>mer</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>19</dataTypePrecision>
+<dataTypeScale>0</dataTypeScale>
+<ownDataTypeParameters>,19,0</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="E22DB662-D815-E4BD-DD4A-8E08C3ACF5C5" referredColumn="DECCBF21-375D-B229-1C3A-7CF9BCE9BF7A"/>
+</associations>
+</Column>
+<Column name="PRIORITY_LEVEL_ID" id="40FC356B-4B10-263E-44F9-69A123D97CF5">
+<sourceConnName>APP_CURSOR</sourceConnName>
+<sourceObjSchema>KANBAN_CARD</sourceObjSchema>
+<sourceObjName>PRIORITY_LEVEL_ID</sourceObjName>
+<createdBy>bohor</createdBy>
+<createdTime>2026-05-28 18:10:04 UTC</createdTime>
+<ownerDesignName>mer</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>19</dataTypePrecision>
+<dataTypeScale>0</dataTypeScale>
+<ownDataTypeParameters>,19,0</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="01FB2B7F-C631-BB33-0520-7BD91695EADE" referredColumn="CA29FCC3-69B4-81B5-CE0A-04CD7268224E"/>
+</associations>
+</Column>
+<Column name="KANBAN_STATUS_ID" id="90A4C231-EA84-83E9-0B2A-447B26DC79A2">
+<sourceConnName>APP_CURSOR</sourceConnName>
+<sourceObjSchema>KANBAN_CARD</sourceObjSchema>
+<sourceObjName>KANBAN_STATUS_ID</sourceObjName>
+<createdBy>bohor</createdBy>
+<createdTime>2026-05-28 18:10:04 UTC</createdTime>
+<ownerDesignName>mer</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>19</dataTypePrecision>
+<dataTypeScale>0</dataTypeScale>
+<ownDataTypeParameters>,19,0</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="F9E97B2F-7139-202B-DB4F-548CA2B7E4B5" referredColumn="C0E7BC21-4204-0218-9329-F125293A9177"/>
+</associations>
+</Column>
+<Column name="DUE_DATE" id="C5553D33-55A8-DF87-7711-38B2BE6B2FCD">
+<sourceConnName>APP_CURSOR</sourceConnName>
+<sourceObjSchema>KANBAN_CARD</sourceObjSchema>
+<sourceObjName>DUE_DATE</sourceObjName>
+<createdBy>bohor</createdBy>
+<createdTime>2026-05-28 18:10:04 UTC</createdTime>
+<ownerDesignName>mer</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<dataTypeSize>7</dataTypeSize>
+<ownDataTypeParameters>7,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="REMINDER_AT" id="9B856680-8B8E-7FD6-A345-DB16544BF294">
+<sourceConnName>APP_CURSOR</sourceConnName>
+<sourceObjSchema>KANBAN_CARD</sourceObjSchema>
+<sourceObjName>REMINDER_AT</sourceObjName>
+<createdBy>bohor</createdBy>
+<createdTime>2026-05-28 18:10:04 UTC</createdTime>
+<ownerDesignName>mer</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT046</logicalDatatype>
+<dataTypePrecision>6</dataTypePrecision>
+<ownDataTypeParameters>,6,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="PROJECT_ID" id="9F2C2FC5-909C-230C-0DFA-8AC24DDB9215">
+<sourceConnName>APP_CURSOR</sourceConnName>
+<sourceObjSchema>KANBAN_CARD</sourceObjSchema>
+<sourceObjName>PROJECT_ID</sourceObjName>
+<createdBy>bohor</createdBy>
+<createdTime>2026-05-28 18:10:04 UTC</createdTime>
+<ownerDesignName>mer</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>19</dataTypePrecision>
+<dataTypeScale>0</dataTypeScale>
+<ownDataTypeParameters>,19,0</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="23D49907-B8B9-4612-8EE2-46353F1465A2" referredColumn="B68970FB-0AE2-A179-6FB6-52A20FF359E8"/>
+</associations>
+</Column>
+<Column name="CREATED_AT_ORIGINAL" id="7C7F9F91-C994-F7DF-0FCD-9F18D9C870D7">
+<sourceConnName>APP_CURSOR</sourceConnName>
+<sourceObjSchema>KANBAN_CARD</sourceObjSchema>
+<sourceObjName>CREATED_AT_ORIGINAL</sourceObjName>
+<createdBy>bohor</createdBy>
+<createdTime>2026-05-28 18:10:04 UTC</createdTime>
+<ownerDesignName>mer</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT046</logicalDatatype>
+<dataTypePrecision>6</dataTypePrecision>
+<ownDataTypeParameters>,6,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="CREATED_AT" id="8A3EBC28-5FB4-4E19-547D-A20EF80C8ECF">
+<sourceConnName>APP_CURSOR</sourceConnName>
+<sourceObjSchema>KANBAN_CARD</sourceObjSchema>
+<sourceObjName>CREATED_AT</sourceObjName>
+<createdBy>bohor</createdBy>
+<createdTime>2026-05-28 18:10:04 UTC</createdTime>
+<ownerDesignName>mer</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT046</logicalDatatype>
+<dataTypePrecision>6</dataTypePrecision>
+<defaultValue>SYSTIMESTAMP</defaultValue>
+<ownDataTypeParameters>,6,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="UPDATED_AT" id="36D0BC50-2D78-E09D-EE23-5CA8FA7A3996">
+<sourceConnName>APP_CURSOR</sourceConnName>
+<sourceObjSchema>KANBAN_CARD</sourceObjSchema>
+<sourceObjName>UPDATED_AT</sourceObjName>
+<createdBy>bohor</createdBy>
+<createdTime>2026-05-28 18:10:04 UTC</createdTime>
+<ownerDesignName>mer</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT046</logicalDatatype>
+<dataTypePrecision>6</dataTypePrecision>
+<defaultValue>SYSTIMESTAMP</defaultValue>
+<ownDataTypeParameters>,6,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="IS_DELETED" id="4D847DB1-D349-9EAD-D767-C8295EA77073">
+<sourceConnName>APP_CURSOR</sourceConnName>
+<sourceObjSchema>KANBAN_CARD</sourceObjSchema>
+<sourceObjName>IS_DELETED</sourceObjName>
+<createdBy>bohor</createdBy>
+<createdTime>2026-05-28 18:10:04 UTC</createdTime>
+<ownerDesignName>mer</ownerDesignName>
+<constraintName>CK_KANBAN_CARD__DELETED</constraintName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT025</logicalDatatype>
+<dataTypeSize>1 BYTE</dataTypeSize>
+<listOfValues>
+<valueDef value="&apos;N&apos;" description=""/>
+<valueDef value="&apos;Y&apos;" description=""/>
+</listOfValues>
+<defaultValue>&apos;N&apos;</defaultValue>
+<ownDataTypeParameters>1 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="DELETED_AT" id="993AD2C8-146A-C859-D82B-F506E9ADF098">
+<sourceConnName>APP_CURSOR</sourceConnName>
+<sourceObjSchema>KANBAN_CARD</sourceObjSchema>
+<sourceObjName>DELETED_AT</sourceObjName>
+<createdBy>bohor</createdBy>
+<createdTime>2026-05-28 18:10:04 UTC</createdTime>
+<ownerDesignName>mer</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT046</logicalDatatype>
+<dataTypePrecision>6</dataTypePrecision>
+<ownDataTypeParameters>,6,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="CREATED_BY" id="7BBF2AAB-DCBA-F5A8-9E4E-BB350B59EDF3">
+<sourceConnName>APP_CURSOR</sourceConnName>
+<sourceObjSchema>KANBAN_CARD</sourceObjSchema>
+<sourceObjName>CREATED_BY</sourceObjName>
+<createdBy>bohor</createdBy>
+<createdTime>2026-05-28 18:10:04 UTC</createdTime>
+<ownerDesignName>mer</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>128 CHAR</dataTypeSize>
+<ownDataTypeParameters>128 CHAR,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="UPDATED_BY" id="D11FD082-E1BE-10EE-B89A-28EBBA1792CC">
+<sourceConnName>APP_CURSOR</sourceConnName>
+<sourceObjSchema>KANBAN_CARD</sourceObjSchema>
+<sourceObjName>UPDATED_BY</sourceObjName>
+<createdBy>bohor</createdBy>
+<createdTime>2026-05-28 18:10:04 UTC</createdTime>
+<ownerDesignName>mer</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>128 CHAR</dataTypeSize>
+<ownDataTypeParameters>128 CHAR,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="DELETED_BY" id="DEA3CC87-E528-FC92-27C6-ED972D53DED0">
+<sourceConnName>APP_CURSOR</sourceConnName>
+<sourceObjSchema>KANBAN_CARD</sourceObjSchema>
+<sourceObjName>DELETED_BY</sourceObjName>
+<createdBy>bohor</createdBy>
+<createdTime>2026-05-28 18:10:04 UTC</createdTime>
+<ownerDesignName>mer</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>128 CHAR</dataTypeSize>
+<ownDataTypeParameters>128 CHAR,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="418469A2-5BC0-4D2F-EC3C-EFECC4D76DE7" name="PK_KANBAN_CARD">
+<sourceConnName>APP_CURSOR</sourceConnName>
+<sourceObjSchema>APP_CURSOR</sourceObjSchema>
+<sourceObjName>PK_KANBAN_CARD</sourceObjName>
+<createdBy>bohor</createdBy>
+<createdTime>2026-05-28 18:10:12 UTC</createdTime>
+<ownerDesignName>mer</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="D7DD47BA-F931-0128-1101-0CA29E278B93"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="270D7BD7-B782-A0FE-9D9D-200E0AE93693" name="UK_KANBAN_CARD__LEGACY_ID">
+<sourceConnName>APP_CURSOR</sourceConnName>
+<sourceObjSchema>APP_CURSOR</sourceObjSchema>
+<sourceObjName>UK_KANBAN_CARD__LEGACY_ID</sourceObjName>
+<createdBy>bohor</createdBy>
+<createdTime>2026-05-28 18:10:12 UTC</createdTime>
+<ownerDesignName>mer</ownerDesignName>
+<indexState>Unique Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="32DA495D-1A9D-C21B-B8AC-34E1211B40F8"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="A0F1C359-B367-1D42-4D25-BEBD79A59D8A" schemaObject="29F73E7E-6ED0-6D22-A8E7-E516F10B9427" name="IX_KANBAN_CARD__AREA">
+<sourceConnName>APP_CURSOR</sourceConnName>
+<sourceObjSchema>APP_CURSOR</sourceObjSchema>
+<sourceObjName>IX_KANBAN_CARD__AREA</sourceObjName>
+<createdBy>bohor</createdBy>
+<createdTime>2026-05-28 18:10:08 UTC</createdTime>
+<ownerDesignName>mer</ownerDesignName>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="2F689A52-C0D2-8F1A-3F43-3DB4D83E4D4E"/>
+<colUsage columnID="4D847DB1-D349-9EAD-D767-C8295EA77073"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="6E8242B1-0FFD-3FE2-7809-6A4537C40E4A" schemaObject="29F73E7E-6ED0-6D22-A8E7-E516F10B9427" name="IX_KANBAN_CARD__DUE_DATE">
+<sourceConnName>APP_CURSOR</sourceConnName>
+<sourceObjSchema>APP_CURSOR</sourceObjSchema>
+<sourceObjName>IX_KANBAN_CARD__DUE_DATE</sourceObjName>
+<createdBy>bohor</createdBy>
+<createdTime>2026-05-28 18:10:08 UTC</createdTime>
+<ownerDesignName>mer</ownerDesignName>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="C5553D33-55A8-DF87-7711-38B2BE6B2FCD"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="C725968D-70F9-ED79-06B0-4706854CF3C1" schemaObject="29F73E7E-6ED0-6D22-A8E7-E516F10B9427" name="IX_KANBAN_CARD__PRIORITY">
+<sourceConnName>APP_CURSOR</sourceConnName>
+<sourceObjSchema>APP_CURSOR</sourceObjSchema>
+<sourceObjName>IX_KANBAN_CARD__PRIORITY</sourceObjName>
+<createdBy>bohor</createdBy>
+<createdTime>2026-05-28 18:10:08 UTC</createdTime>
+<ownerDesignName>mer</ownerDesignName>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="40FC356B-4B10-263E-44F9-69A123D97CF5"/>
+<colUsage columnID="4D847DB1-D349-9EAD-D767-C8295EA77073"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="CE009974-8826-7E7D-B22B-2BA661E8D3F6" schemaObject="29F73E7E-6ED0-6D22-A8E7-E516F10B9427" name="IX_KANBAN_CARD__PROJECT">
+<sourceConnName>APP_CURSOR</sourceConnName>
+<sourceObjSchema>APP_CURSOR</sourceObjSchema>
+<sourceObjName>IX_KANBAN_CARD__PROJECT</sourceObjName>
+<createdBy>bohor</createdBy>
+<createdTime>2026-05-28 18:10:08 UTC</createdTime>
+<ownerDesignName>mer</ownerDesignName>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="9F2C2FC5-909C-230C-0DFA-8AC24DDB9215"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="ACF74110-77F2-5A2A-1187-30FC64FA061B" schemaObject="29F73E7E-6ED0-6D22-A8E7-E516F10B9427" name="IX_KANBAN_CARD__REMINDER">
+<sourceConnName>APP_CURSOR</sourceConnName>
+<sourceObjSchema>APP_CURSOR</sourceObjSchema>
+<sourceObjName>IX_KANBAN_CARD__REMINDER</sourceObjName>
+<createdBy>bohor</createdBy>
+<createdTime>2026-05-28 18:10:08 UTC</createdTime>
+<ownerDesignName>mer</ownerDesignName>
+<indexExpression>SYS_EXTRACT_UTC(&quot;REMINDER_AT&quot;)</indexExpression>
+<isSurrogateKey>false</isSurrogateKey>
+</ind_PK_UK>
+<ind_PK_UK id="B4E3FF85-F530-9C5B-D747-CFD244A7E613" schemaObject="29F73E7E-6ED0-6D22-A8E7-E516F10B9427" name="IX_KANBAN_CARD__STATUS">
+<sourceConnName>APP_CURSOR</sourceConnName>
+<sourceObjSchema>APP_CURSOR</sourceObjSchema>
+<sourceObjName>IX_KANBAN_CARD__STATUS</sourceObjName>
+<createdBy>bohor</createdBy>
+<createdTime>2026-05-28 18:10:08 UTC</createdTime>
+<ownerDesignName>mer</ownerDesignName>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="90A4C231-EA84-83E9-0B2A-447B26DC79A2"/>
+<colUsage columnID="4D847DB1-D349-9EAD-D767-C8295EA77073"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="6394E4CA-3528-85DA-2AD4-8B53CBF23536" schemaObject="29F73E7E-6ED0-6D22-A8E7-E516F10B9427" name="PK_KANBAN_CARD">
+<sourceConnName>APP_CURSOR</sourceConnName>
+<sourceObjSchema>APP_CURSOR</sourceObjSchema>
+<sourceObjName>PK_KANBAN_CARD</sourceObjName>
+<createdBy>bohor</createdBy>
+<createdTime>2026-05-28 18:10:08 UTC</createdTime>
+<ownerDesignName>mer</ownerDesignName>
+<indexState>Unique Plain Index</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="D7DD47BA-F931-0128-1101-0CA29E278B93"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="351A7AA9-34F0-630F-3FAC-AF7122D9D342" schemaObject="29F73E7E-6ED0-6D22-A8E7-E516F10B9427" name="UK_KANBAN_CARD__LEGACY_ID">
+<sourceConnName>APP_CURSOR</sourceConnName>
+<sourceObjSchema>APP_CURSOR</sourceObjSchema>
+<sourceObjName>UK_KANBAN_CARD__LEGACY_ID</sourceObjName>
+<createdBy>bohor</createdBy>
+<createdTime>2026-05-28 18:10:08 UTC</createdTime>
+<ownerDesignName>mer</ownerDesignName>
+<indexState>Unique Plain Index</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="32DA495D-1A9D-C21B-B8AC-34E1211B40F8"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="ED6592FE-50BA-B295-35B1-1E3A53A45F8D" name="FK_KANBAN_CARD__KANBAN_STATUS">
+<createdBy>bohor</createdBy>
+<createdTime>2026-05-28 18:10:17 UTC</createdTime>
+<ownerDesignName>mer</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="90A4C231-EA84-83E9-0B2A-447B26DC79A2"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="D30534A7-4B74-BA42-E792-54895F16E373" name="FK_KANBAN_CARD__PRIORITY_LEVEL">
+<createdBy>bohor</createdBy>
+<createdTime>2026-05-28 18:10:17 UTC</createdTime>
+<ownerDesignName>mer</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="40FC356B-4B10-263E-44F9-69A123D97CF5"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="B146641B-F1CE-4042-7E75-F8EB68FEA915" name="FK_KANBAN_CARD__PROJECT">
+<createdBy>bohor</createdBy>
+<createdTime>2026-05-28 18:10:17 UTC</createdTime>
+<ownerDesignName>mer</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="9F2C2FC5-909C-230C-0DFA-8AC24DDB9215"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="E486CEAE-FC72-6206-23BE-CA8EBD631886" name="FK_KANBAN_CARD__WORK_AREA">
+<createdBy>bohor</createdBy>
+<createdTime>2026-05-28 18:10:17 UTC</createdTime>
+<ownerDesignName>mer</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="2F689A52-C0D2-8F1A-3F43-3DB4D83E4D4E"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

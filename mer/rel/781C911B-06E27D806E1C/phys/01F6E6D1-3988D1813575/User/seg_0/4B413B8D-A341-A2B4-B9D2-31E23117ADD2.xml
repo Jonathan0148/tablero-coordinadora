@@ -1,0 +1,9 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<UserOraclev10g class="oracle.dbtools.crest.model.design.storage.oracle.v10g.UserOraclev10g" name="APP_CURSOR" directorySegmentName="seg_0" id="4B413B8D-A341-A2B4-B9D2-31E23117ADD2">
+<sourceConnName>APP_CURSOR</sourceConnName>
+<sourceObjName>APP_CURSOR</sourceObjName>
+<createdBy>bohor</createdBy>
+<createdTime>2026-05-28 18:10:01 UTC</createdTime>
+<ownerDesignName>mer</ownerDesignName>
+<schemaObject>29F73E7E-6ED0-6D22-A8E7-E516F10B9427</schemaObject>
+</UserOraclev10g>

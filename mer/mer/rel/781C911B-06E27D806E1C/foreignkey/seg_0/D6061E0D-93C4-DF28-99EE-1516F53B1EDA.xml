@@ -1,0 +1,19 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="D6061E0D-93C4-DF28-99EE-1516F53B1EDA" containerWithKeyObject="15893429-DEC7-6197-0E04-0B094AD1B9D0" localFKIndex="3542D610-FF6A-A09B-EAEC-6409B2D99E5B" name="FK_MIGRATION_ERROR__MIGRATION_BATCH">
+<sourceConnName>APP_CURSOR</sourceConnName>
+<sourceObjSchema>APP_CURSOR</sourceObjSchema>
+<sourceObjName>FK_MIGRATION_ERROR__MIGRATION_BATCH</sourceObjName>
+<createdBy>bohor</createdBy>
+<createdTime>2026-05-28 18:10:17 UTC</createdTime>
+<ownerDesignName>mer</ownerDesignName>
+<referredTableLongName>APP_CURSOR.MIGRATION_BATCH</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>F8FA5861-C7DA-F05F-E92D-39C5F55CB042</referredTableID>
+<keyObject>89FF35A3-96BC-56FF-85FE-CA20B20911BE</keyObject>
+<referredKeyID>89FF35A3-96BC-56FF-85FE-CA20B20911BE</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>MIGRATION_BATCH_ID</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

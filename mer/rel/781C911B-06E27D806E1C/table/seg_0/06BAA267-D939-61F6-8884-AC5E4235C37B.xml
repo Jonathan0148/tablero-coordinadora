@@ -1,0 +1,324 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="06BAA267-D939-61F6-8884-AC5E4235C37B" schemaObject="29F73E7E-6ED0-6D22-A8E7-E516F10B9427" name="LEGACY_ID_MAP">
+<sourceConnName>APP_CURSOR</sourceConnName>
+<sourceObjSchema>APP_CURSOR</sourceObjSchema>
+<sourceObjName>LEGACY_ID_MAP</sourceObjName>
+<createdBy>bohor</createdBy>
+<createdTime>2026-05-28 18:10:03 UTC</createdTime>
+<ownerDesignName>mer</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="LEGACY_ID_MAP_ID" id="81B4E13C-B878-1D3B-B347-F46BA1A534FE">
+<sourceConnName>APP_CURSOR</sourceConnName>
+<sourceObjSchema>LEGACY_ID_MAP</sourceObjSchema>
+<sourceObjName>LEGACY_ID_MAP_ID</sourceObjName>
+<createdBy>bohor</createdBy>
+<createdTime>2026-05-28 18:10:04 UTC</createdTime>
+<ownerDesignName>mer</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>19</dataTypePrecision>
+<dataTypeScale>0</dataTypeScale>
+<ownDataTypeParameters>,19,0</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="MIGRATION_BATCH_ID" id="1D7E66E2-54C9-75B7-175C-E9991E32BBE4">
+<sourceConnName>APP_CURSOR</sourceConnName>
+<sourceObjSchema>LEGACY_ID_MAP</sourceObjSchema>
+<sourceObjName>MIGRATION_BATCH_ID</sourceObjName>
+<createdBy>bohor</createdBy>
+<createdTime>2026-05-28 18:10:04 UTC</createdTime>
+<ownerDesignName>mer</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>19</dataTypePrecision>
+<dataTypeScale>0</dataTypeScale>
+<ownDataTypeParameters>,19,0</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="CC6BC02B-94A7-7345-7272-40236894F4C4" referredColumn="540C2F85-60EF-D6BB-5BA1-55B66F9C69A1"/>
+</associations>
+</Column>
+<Column name="ENTITY_TYPE" id="AF3E792E-24B3-0BC1-2EA5-E2C035A42B95">
+<sourceConnName>APP_CURSOR</sourceConnName>
+<sourceObjSchema>LEGACY_ID_MAP</sourceObjSchema>
+<sourceObjName>ENTITY_TYPE</sourceObjName>
+<createdBy>bohor</createdBy>
+<createdTime>2026-05-28 18:10:04 UTC</createdTime>
+<ownerDesignName>mer</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>80 CHAR</dataTypeSize>
+<ownDataTypeParameters>80 CHAR,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="LEGACY_ID" id="99700031-4EB8-4AE8-1CC5-136071E5AE06">
+<sourceConnName>APP_CURSOR</sourceConnName>
+<sourceObjSchema>LEGACY_ID_MAP</sourceObjSchema>
+<sourceObjName>LEGACY_ID</sourceObjName>
+<createdBy>bohor</createdBy>
+<createdTime>2026-05-28 18:10:04 UTC</createdTime>
+<ownerDesignName>mer</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100 CHAR</dataTypeSize>
+<ownDataTypeParameters>100 CHAR,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="NEW_ENTITY_TABLE" id="B76A9817-9A6D-6C3B-0029-451365299802">
+<sourceConnName>APP_CURSOR</sourceConnName>
+<sourceObjSchema>LEGACY_ID_MAP</sourceObjSchema>
+<sourceObjName>NEW_ENTITY_TABLE</sourceObjName>
+<createdBy>bohor</createdBy>
+<createdTime>2026-05-28 18:10:04 UTC</createdTime>
+<ownerDesignName>mer</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>80 CHAR</dataTypeSize>
+<ownDataTypeParameters>80 CHAR,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="NEW_ENTITY_ID" id="81929790-AFF3-A6FC-0E4A-CD3FA6808DC0">
+<sourceConnName>APP_CURSOR</sourceConnName>
+<sourceObjSchema>LEGACY_ID_MAP</sourceObjSchema>
+<sourceObjName>NEW_ENTITY_ID</sourceObjName>
+<createdBy>bohor</createdBy>
+<createdTime>2026-05-28 18:10:04 UTC</createdTime>
+<ownerDesignName>mer</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>19</dataTypePrecision>
+<dataTypeScale>0</dataTypeScale>
+<ownDataTypeParameters>,19,0</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="NOTES" id="80F9089D-A5E4-9655-E42B-3F42D8EF56FF">
+<sourceConnName>APP_CURSOR</sourceConnName>
+<sourceObjSchema>LEGACY_ID_MAP</sourceObjSchema>
+<sourceObjName>NOTES</sourceObjName>
+<createdBy>bohor</createdBy>
+<createdTime>2026-05-28 18:10:04 UTC</createdTime>
+<ownerDesignName>mer</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>500 CHAR</dataTypeSize>
+<ownDataTypeParameters>500 CHAR,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="CREATED_AT" id="D172FB90-DBA7-0E5D-6CA0-11F719B99898">
+<sourceConnName>APP_CURSOR</sourceConnName>
+<sourceObjSchema>LEGACY_ID_MAP</sourceObjSchema>
+<sourceObjName>CREATED_AT</sourceObjName>
+<createdBy>bohor</createdBy>
+<createdTime>2026-05-28 18:10:04 UTC</createdTime>
+<ownerDesignName>mer</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT046</logicalDatatype>
+<dataTypePrecision>6</dataTypePrecision>
+<defaultValue>SYSTIMESTAMP</defaultValue>
+<ownDataTypeParameters>,6,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="UPDATED_AT" id="6A278F7A-7A59-C300-55D7-28A8F8B44708">
+<sourceConnName>APP_CURSOR</sourceConnName>
+<sourceObjSchema>LEGACY_ID_MAP</sourceObjSchema>
+<sourceObjName>UPDATED_AT</sourceObjName>
+<createdBy>bohor</createdBy>
+<createdTime>2026-05-28 18:10:04 UTC</createdTime>
+<ownerDesignName>mer</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT046</logicalDatatype>
+<dataTypePrecision>6</dataTypePrecision>
+<defaultValue>SYSTIMESTAMP</defaultValue>
+<ownDataTypeParameters>,6,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="IS_DELETED" id="4DF76A11-76D3-B61B-FFCD-8B55161C7DA5">
+<sourceConnName>APP_CURSOR</sourceConnName>
+<sourceObjSchema>LEGACY_ID_MAP</sourceObjSchema>
+<sourceObjName>IS_DELETED</sourceObjName>
+<createdBy>bohor</createdBy>
+<createdTime>2026-05-28 18:10:04 UTC</createdTime>
+<ownerDesignName>mer</ownerDesignName>
+<constraintName>CK_LEGACY_ID_MAP__DELETED</constraintName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT025</logicalDatatype>
+<dataTypeSize>1 BYTE</dataTypeSize>
+<listOfValues>
+<valueDef value="&apos;N&apos;" description=""/>
+<valueDef value="&apos;Y&apos;" description=""/>
+</listOfValues>
+<defaultValue>&apos;N&apos;</defaultValue>
+<ownDataTypeParameters>1 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="DELETED_AT" id="DCD515C6-4522-9E18-8B17-F35CAABE838B">
+<sourceConnName>APP_CURSOR</sourceConnName>
+<sourceObjSchema>LEGACY_ID_MAP</sourceObjSchema>
+<sourceObjName>DELETED_AT</sourceObjName>
+<createdBy>bohor</createdBy>
+<createdTime>2026-05-28 18:10:04 UTC</createdTime>
+<ownerDesignName>mer</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT046</logicalDatatype>
+<dataTypePrecision>6</dataTypePrecision>
+<ownDataTypeParameters>,6,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="CREATED_BY" id="8B05368D-C65D-99C2-4A13-D0A957BFB44F">
+<sourceConnName>APP_CURSOR</sourceConnName>
+<sourceObjSchema>LEGACY_ID_MAP</sourceObjSchema>
+<sourceObjName>CREATED_BY</sourceObjName>
+<createdBy>bohor</createdBy>
+<createdTime>2026-05-28 18:10:04 UTC</createdTime>
+<ownerDesignName>mer</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>128 CHAR</dataTypeSize>
+<ownDataTypeParameters>128 CHAR,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="UPDATED_BY" id="A8508D1E-E853-0937-B7BB-4D21C0B9290D">
+<sourceConnName>APP_CURSOR</sourceConnName>
+<sourceObjSchema>LEGACY_ID_MAP</sourceObjSchema>
+<sourceObjName>UPDATED_BY</sourceObjName>
+<createdBy>bohor</createdBy>
+<createdTime>2026-05-28 18:10:04 UTC</createdTime>
+<ownerDesignName>mer</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>128 CHAR</dataTypeSize>
+<ownDataTypeParameters>128 CHAR,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="DELETED_BY" id="F748E261-E199-8D38-12BF-ED828F39D2F5">
+<sourceConnName>APP_CURSOR</sourceConnName>
+<sourceObjSchema>LEGACY_ID_MAP</sourceObjSchema>
+<sourceObjName>DELETED_BY</sourceObjName>
+<createdBy>bohor</createdBy>
+<createdTime>2026-05-28 18:10:04 UTC</createdTime>
+<ownerDesignName>mer</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>128 CHAR</dataTypeSize>
+<ownDataTypeParameters>128 CHAR,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="26C8B313-7FA5-E419-7425-2224DE25084E" name="PK_LEGACY_ID_MAP">
+<sourceConnName>APP_CURSOR</sourceConnName>
+<sourceObjSchema>APP_CURSOR</sourceObjSchema>
+<sourceObjName>PK_LEGACY_ID_MAP</sourceObjName>
+<createdBy>bohor</createdBy>
+<createdTime>2026-05-28 18:10:12 UTC</createdTime>
+<ownerDesignName>mer</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="81B4E13C-B878-1D3B-B347-F46BA1A534FE"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="1D7240F3-EE84-6C64-4CB9-ADDAA4DF5BC0" name="UK_LEGACY_ID_MAP__BATCH_ENTITY">
+<sourceConnName>APP_CURSOR</sourceConnName>
+<sourceObjSchema>APP_CURSOR</sourceObjSchema>
+<sourceObjName>UK_LEGACY_ID_MAP__BATCH_ENTITY</sourceObjName>
+<createdBy>bohor</createdBy>
+<createdTime>2026-05-28 18:10:12 UTC</createdTime>
+<ownerDesignName>mer</ownerDesignName>
+<indexState>Unique Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="1D7E66E2-54C9-75B7-175C-E9991E32BBE4"/>
+<colUsage columnID="AF3E792E-24B3-0BC1-2EA5-E2C035A42B95"/>
+<colUsage columnID="99700031-4EB8-4AE8-1CC5-136071E5AE06"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="25C22C8B-0DB1-240C-6E70-3EECA0611618" schemaObject="29F73E7E-6ED0-6D22-A8E7-E516F10B9427" name="IX_LEGACY_ID_MAP__ENTITY_LEGACY">
+<sourceConnName>APP_CURSOR</sourceConnName>
+<sourceObjSchema>APP_CURSOR</sourceObjSchema>
+<sourceObjName>IX_LEGACY_ID_MAP__ENTITY_LEGACY</sourceObjName>
+<createdBy>bohor</createdBy>
+<createdTime>2026-05-28 18:10:08 UTC</createdTime>
+<ownerDesignName>mer</ownerDesignName>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="AF3E792E-24B3-0BC1-2EA5-E2C035A42B95"/>
+<colUsage columnID="99700031-4EB8-4AE8-1CC5-136071E5AE06"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="3ADCC6C2-0EFE-DD47-3D08-6818EEFD90E3" schemaObject="29F73E7E-6ED0-6D22-A8E7-E516F10B9427" name="IX_LEGACY_ID_MAP__NEW_ENTITY">
+<sourceConnName>APP_CURSOR</sourceConnName>
+<sourceObjSchema>APP_CURSOR</sourceObjSchema>
+<sourceObjName>IX_LEGACY_ID_MAP__NEW_ENTITY</sourceObjName>
+<createdBy>bohor</createdBy>
+<createdTime>2026-05-28 18:10:08 UTC</createdTime>
+<ownerDesignName>mer</ownerDesignName>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="B76A9817-9A6D-6C3B-0029-451365299802"/>
+<colUsage columnID="81929790-AFF3-A6FC-0E4A-CD3FA6808DC0"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="7FFECBA3-532B-6BEE-5C9B-10B5490E964F" schemaObject="29F73E7E-6ED0-6D22-A8E7-E516F10B9427" name="PK_LEGACY_ID_MAP">
+<sourceConnName>APP_CURSOR</sourceConnName>
+<sourceObjSchema>APP_CURSOR</sourceObjSchema>
+<sourceObjName>PK_LEGACY_ID_MAP</sourceObjName>
+<createdBy>bohor</createdBy>
+<createdTime>2026-05-28 18:10:08 UTC</createdTime>
+<ownerDesignName>mer</ownerDesignName>
+<indexState>Unique Plain Index</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="81B4E13C-B878-1D3B-B347-F46BA1A534FE"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="41D3FB6F-3A70-CC02-301C-609FF8512F15" schemaObject="29F73E7E-6ED0-6D22-A8E7-E516F10B9427" name="UK_LEGACY_ID_MAP__BATCH_ENTITY">
+<sourceConnName>APP_CURSOR</sourceConnName>
+<sourceObjSchema>APP_CURSOR</sourceObjSchema>
+<sourceObjName>UK_LEGACY_ID_MAP__BATCH_ENTITY</sourceObjName>
+<createdBy>bohor</createdBy>
+<createdTime>2026-05-28 18:10:08 UTC</createdTime>
+<ownerDesignName>mer</ownerDesignName>
+<indexState>Unique Plain Index</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="1D7E66E2-54C9-75B7-175C-E9991E32BBE4"/>
+<colUsage columnID="AF3E792E-24B3-0BC1-2EA5-E2C035A42B95"/>
+<colUsage columnID="99700031-4EB8-4AE8-1CC5-136071E5AE06"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="7CB99D51-4A28-426F-9E46-AE56C1D213EE" name="FK_LEGACY_ID_MAP__MIGRATION_BATCH">
+<createdBy>bohor</createdBy>
+<createdTime>2026-05-28 18:10:17 UTC</createdTime>
+<ownerDesignName>mer</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="1D7E66E2-54C9-75B7-175C-E9991E32BBE4"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

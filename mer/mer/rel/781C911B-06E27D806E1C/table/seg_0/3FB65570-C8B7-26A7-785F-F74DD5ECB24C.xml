@@ -1,0 +1,344 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="3FB65570-C8B7-26A7-785F-F74DD5ECB24C" schemaObject="29F73E7E-6ED0-6D22-A8E7-E516F10B9427" name="NOTIFICATION_REMINDER">
+<sourceConnName>APP_CURSOR</sourceConnName>
+<sourceObjSchema>APP_CURSOR</sourceObjSchema>
+<sourceObjName>NOTIFICATION_REMINDER</sourceObjName>
+<createdBy>bohor</createdBy>
+<createdTime>2026-05-28 18:10:03 UTC</createdTime>
+<ownerDesignName>mer</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="NOTIFICATION_REMINDER_ID" id="16E8C4E1-FE42-9D19-33BB-2EDF943D02E6">
+<sourceConnName>APP_CURSOR</sourceConnName>
+<sourceObjSchema>NOTIFICATION_REMINDER</sourceObjSchema>
+<sourceObjName>NOTIFICATION_REMINDER_ID</sourceObjName>
+<createdBy>bohor</createdBy>
+<createdTime>2026-05-28 18:10:04 UTC</createdTime>
+<ownerDesignName>mer</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>19</dataTypePrecision>
+<dataTypeScale>0</dataTypeScale>
+<ownDataTypeParameters>,19,0</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="KANBAN_CARD_ID" id="530DC055-B4C5-C6FC-D348-8BC0792EC11E">
+<sourceConnName>APP_CURSOR</sourceConnName>
+<sourceObjSchema>NOTIFICATION_REMINDER</sourceObjSchema>
+<sourceObjName>KANBAN_CARD_ID</sourceObjName>
+<createdBy>bohor</createdBy>
+<createdTime>2026-05-28 18:10:04 UTC</createdTime>
+<ownerDesignName>mer</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>19</dataTypePrecision>
+<dataTypeScale>0</dataTypeScale>
+<ownDataTypeParameters>,19,0</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="F99CF9D7-7E70-3B34-3395-775603CE6475" referredColumn="D7DD47BA-F931-0128-1101-0CA29E278B93"/>
+</associations>
+</Column>
+<Column name="PROJECT_UPDATE_ID" id="CFB7C31C-59E5-E32F-75ED-2B24646E63FB">
+<sourceConnName>APP_CURSOR</sourceConnName>
+<sourceObjSchema>NOTIFICATION_REMINDER</sourceObjSchema>
+<sourceObjName>PROJECT_UPDATE_ID</sourceObjName>
+<createdBy>bohor</createdBy>
+<createdTime>2026-05-28 18:10:04 UTC</createdTime>
+<ownerDesignName>mer</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>19</dataTypePrecision>
+<dataTypeScale>0</dataTypeScale>
+<ownDataTypeParameters>,19,0</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="3A9011FE-2568-B450-0354-4F9BA7ADC933" referredColumn="BBA678F3-AFE2-25B2-3962-7213C308E330"/>
+</associations>
+</Column>
+<Column name="REMINDER_AT" id="5C6036EE-F8AC-9FC5-5A09-8D1625A04FFD">
+<sourceConnName>APP_CURSOR</sourceConnName>
+<sourceObjSchema>NOTIFICATION_REMINDER</sourceObjSchema>
+<sourceObjName>REMINDER_AT</sourceObjName>
+<createdBy>bohor</createdBy>
+<createdTime>2026-05-28 18:10:04 UTC</createdTime>
+<ownerDesignName>mer</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT046</logicalDatatype>
+<dataTypePrecision>6</dataTypePrecision>
+<ownDataTypeParameters>,6,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="STATUS" id="260E568A-7BE8-3F1E-801C-FB125526A8C0">
+<sourceConnName>APP_CURSOR</sourceConnName>
+<sourceObjSchema>NOTIFICATION_REMINDER</sourceObjSchema>
+<sourceObjName>STATUS</sourceObjName>
+<createdBy>bohor</createdBy>
+<createdTime>2026-05-28 18:10:04 UTC</createdTime>
+<ownerDesignName>mer</ownerDesignName>
+<constraintName>CK_NOTIFICATION_REMINDER__STATUS</constraintName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>30 CHAR</dataTypeSize>
+<listOfValues>
+<valueDef value="&apos;CANCELLED&apos;" description=""/>
+<valueDef value="&apos;FAILED&apos;" description=""/>
+<valueDef value="&apos;PENDING&apos;" description=""/>
+<valueDef value="&apos;SENT&apos;" description=""/>
+</listOfValues>
+<defaultValue>&apos;PENDING&apos;</defaultValue>
+<ownDataTypeParameters>30 CHAR,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="SENT_AT" id="7ADAB39A-294F-E8E3-0240-D57244156436">
+<sourceConnName>APP_CURSOR</sourceConnName>
+<sourceObjSchema>NOTIFICATION_REMINDER</sourceObjSchema>
+<sourceObjName>SENT_AT</sourceObjName>
+<createdBy>bohor</createdBy>
+<createdTime>2026-05-28 18:10:04 UTC</createdTime>
+<ownerDesignName>mer</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT046</logicalDatatype>
+<dataTypePrecision>6</dataTypePrecision>
+<ownDataTypeParameters>,6,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="CHANNEL" id="6351104A-289B-7EF5-E7F7-BE873F47FF67">
+<sourceConnName>APP_CURSOR</sourceConnName>
+<sourceObjSchema>NOTIFICATION_REMINDER</sourceObjSchema>
+<sourceObjName>CHANNEL</sourceObjName>
+<createdBy>bohor</createdBy>
+<createdTime>2026-05-28 18:10:04 UTC</createdTime>
+<ownerDesignName>mer</ownerDesignName>
+<constraintName>CK_NOTIFICATION_REMINDER__CHANNEL</constraintName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>30 CHAR</dataTypeSize>
+<listOfValues>
+<valueDef value="&apos;EMAIL&apos;" description=""/>
+<valueDef value="&apos;IN_APP&apos;" description=""/>
+</listOfValues>
+<defaultValue>&apos;IN_APP&apos;</defaultValue>
+<ownDataTypeParameters>30 CHAR,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="CREATED_AT" id="542138C7-32AD-BF5B-84EA-C8D806D29F50">
+<sourceConnName>APP_CURSOR</sourceConnName>
+<sourceObjSchema>NOTIFICATION_REMINDER</sourceObjSchema>
+<sourceObjName>CREATED_AT</sourceObjName>
+<createdBy>bohor</createdBy>
+<createdTime>2026-05-28 18:10:04 UTC</createdTime>
+<ownerDesignName>mer</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT046</logicalDatatype>
+<dataTypePrecision>6</dataTypePrecision>
+<defaultValue>SYSTIMESTAMP</defaultValue>
+<ownDataTypeParameters>,6,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="UPDATED_AT" id="5266F540-C067-9ECB-E7C8-0A687B85144F">
+<sourceConnName>APP_CURSOR</sourceConnName>
+<sourceObjSchema>NOTIFICATION_REMINDER</sourceObjSchema>
+<sourceObjName>UPDATED_AT</sourceObjName>
+<createdBy>bohor</createdBy>
+<createdTime>2026-05-28 18:10:04 UTC</createdTime>
+<ownerDesignName>mer</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT046</logicalDatatype>
+<dataTypePrecision>6</dataTypePrecision>
+<defaultValue>SYSTIMESTAMP</defaultValue>
+<ownDataTypeParameters>,6,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="IS_DELETED" id="CBC62775-4D54-0D63-3FF5-39D5569A003A">
+<sourceConnName>APP_CURSOR</sourceConnName>
+<sourceObjSchema>NOTIFICATION_REMINDER</sourceObjSchema>
+<sourceObjName>IS_DELETED</sourceObjName>
+<createdBy>bohor</createdBy>
+<createdTime>2026-05-28 18:10:04 UTC</createdTime>
+<ownerDesignName>mer</ownerDesignName>
+<constraintName>CK_NOTIFICATION_REMINDER__DELETED</constraintName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT025</logicalDatatype>
+<dataTypeSize>1 BYTE</dataTypeSize>
+<listOfValues>
+<valueDef value="&apos;N&apos;" description=""/>
+<valueDef value="&apos;Y&apos;" description=""/>
+</listOfValues>
+<defaultValue>&apos;N&apos;</defaultValue>
+<ownDataTypeParameters>1 BYTE,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="DELETED_AT" id="10BBE74F-05FF-1897-3B60-8CA65B077FFD">
+<sourceConnName>APP_CURSOR</sourceConnName>
+<sourceObjSchema>NOTIFICATION_REMINDER</sourceObjSchema>
+<sourceObjName>DELETED_AT</sourceObjName>
+<createdBy>bohor</createdBy>
+<createdTime>2026-05-28 18:10:04 UTC</createdTime>
+<ownerDesignName>mer</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT046</logicalDatatype>
+<dataTypePrecision>6</dataTypePrecision>
+<ownDataTypeParameters>,6,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="CREATED_BY" id="06482FB2-59D3-D132-FF0E-BF6285F0F424">
+<sourceConnName>APP_CURSOR</sourceConnName>
+<sourceObjSchema>NOTIFICATION_REMINDER</sourceObjSchema>
+<sourceObjName>CREATED_BY</sourceObjName>
+<createdBy>bohor</createdBy>
+<createdTime>2026-05-28 18:10:04 UTC</createdTime>
+<ownerDesignName>mer</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>128 CHAR</dataTypeSize>
+<ownDataTypeParameters>128 CHAR,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="UPDATED_BY" id="F20FF641-90A5-F0D5-E767-692F093390A5">
+<sourceConnName>APP_CURSOR</sourceConnName>
+<sourceObjSchema>NOTIFICATION_REMINDER</sourceObjSchema>
+<sourceObjName>UPDATED_BY</sourceObjName>
+<createdBy>bohor</createdBy>
+<createdTime>2026-05-28 18:10:04 UTC</createdTime>
+<ownerDesignName>mer</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>128 CHAR</dataTypeSize>
+<ownDataTypeParameters>128 CHAR,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="DELETED_BY" id="81100F63-F69D-428E-8664-C93B08257992">
+<sourceConnName>APP_CURSOR</sourceConnName>
+<sourceObjSchema>NOTIFICATION_REMINDER</sourceObjSchema>
+<sourceObjName>DELETED_BY</sourceObjName>
+<createdBy>bohor</createdBy>
+<createdTime>2026-05-28 18:10:04 UTC</createdTime>
+<ownerDesignName>mer</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>128 CHAR</dataTypeSize>
+<ownDataTypeParameters>128 CHAR,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="422F8AAC-D335-AEF1-78B4-799895151BA1" name="PK_NOTIFICATION_REMINDER">
+<sourceConnName>APP_CURSOR</sourceConnName>
+<sourceObjSchema>APP_CURSOR</sourceObjSchema>
+<sourceObjName>PK_NOTIFICATION_REMINDER</sourceObjName>
+<createdBy>bohor</createdBy>
+<createdTime>2026-05-28 18:10:12 UTC</createdTime>
+<ownerDesignName>mer</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="16E8C4E1-FE42-9D19-33BB-2EDF943D02E6"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="2E2F67F4-F893-30FF-B60D-68273DC22C55" schemaObject="29F73E7E-6ED0-6D22-A8E7-E516F10B9427" name="IX_NOTIFICATION_REMINDER__KANBAN">
+<sourceConnName>APP_CURSOR</sourceConnName>
+<sourceObjSchema>APP_CURSOR</sourceObjSchema>
+<sourceObjName>IX_NOTIFICATION_REMINDER__KANBAN</sourceObjName>
+<createdBy>bohor</createdBy>
+<createdTime>2026-05-28 18:10:08 UTC</createdTime>
+<ownerDesignName>mer</ownerDesignName>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="530DC055-B4C5-C6FC-D348-8BC0792EC11E"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="7E4CC5E1-EA0E-F9A9-9276-6AB69CEDF3AA" schemaObject="29F73E7E-6ED0-6D22-A8E7-E516F10B9427" name="IX_NOTIFICATION_REMINDER__PROJECT_UPDATE">
+<sourceConnName>APP_CURSOR</sourceConnName>
+<sourceObjSchema>APP_CURSOR</sourceObjSchema>
+<sourceObjName>IX_NOTIFICATION_REMINDER__PROJECT_UPDATE</sourceObjName>
+<createdBy>bohor</createdBy>
+<createdTime>2026-05-28 18:10:08 UTC</createdTime>
+<ownerDesignName>mer</ownerDesignName>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="CFB7C31C-59E5-E32F-75ED-2B24646E63FB"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="00CDEFE2-9A8E-A90F-C195-F7B850D78BCA" schemaObject="29F73E7E-6ED0-6D22-A8E7-E516F10B9427" name="IX_NOTIFICATION_REMINDER__STATUS_TIME">
+<sourceConnName>APP_CURSOR</sourceConnName>
+<sourceObjSchema>APP_CURSOR</sourceObjSchema>
+<sourceObjName>IX_NOTIFICATION_REMINDER__STATUS_TIME</sourceObjName>
+<createdBy>bohor</createdBy>
+<createdTime>2026-05-28 18:10:08 UTC</createdTime>
+<ownerDesignName>mer</ownerDesignName>
+<indexExpression>STATUS, SYS_EXTRACT_UTC(&quot;REMINDER_AT&quot;), IS_DELETED</indexExpression>
+<isSurrogateKey>false</isSurrogateKey>
+</ind_PK_UK>
+<ind_PK_UK id="C14A40A5-8C7C-05E1-852F-542FBC324A22" schemaObject="29F73E7E-6ED0-6D22-A8E7-E516F10B9427" name="PK_NOTIFICATION_REMINDER">
+<sourceConnName>APP_CURSOR</sourceConnName>
+<sourceObjSchema>APP_CURSOR</sourceObjSchema>
+<sourceObjName>PK_NOTIFICATION_REMINDER</sourceObjName>
+<createdBy>bohor</createdBy>
+<createdTime>2026-05-28 18:10:08 UTC</createdTime>
+<ownerDesignName>mer</ownerDesignName>
+<indexState>Unique Plain Index</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="16E8C4E1-FE42-9D19-33BB-2EDF943D02E6"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="76C213C4-146D-8461-CFF9-36E2D04BB714" name="FK_NOTIFICATION_REMINDER__KANBAN">
+<createdBy>bohor</createdBy>
+<createdTime>2026-05-28 18:10:17 UTC</createdTime>
+<ownerDesignName>mer</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="530DC055-B4C5-C6FC-D348-8BC0792EC11E"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="25FAF0F0-19E6-228A-75F9-8ACFCDBB20BD" name="FK_NOTIFICATION_REMINDER__PROJECT_UPDATE">
+<createdBy>bohor</createdBy>
+<createdTime>2026-05-28 18:10:17 UTC</createdTime>
+<ownerDesignName>mer</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="CFB7C31C-59E5-E32F-75ED-2B24646E63FB"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+<tableCheckConstraints itemClass="oracle.dbtools.crest.model.design.constraint.TableLevelConstraint">
+<tableCheckConstraint name="CK_NOTIFICATION_REMINDER__TARGET" directorySegmentName="seg_0" id="8E3A99C0-6D1D-E25C-0DF8-4711A6DF4ADE">
+<sourceConnName>APP_CURSOR</sourceConnName>
+<sourceObjSchema>APP_CURSOR</sourceObjSchema>
+<sourceObjName>CK_NOTIFICATION_REMINDER__TARGET</sourceObjName>
+<createdBy>bohor</createdBy>
+<createdTime>2026-05-28 18:10:16 UTC</createdTime>
+<ownerDesignName>mer</ownerDesignName>
+<rule><![CDATA[
+    kanban_card_id IS NOT NULL OR project_update_id IS NOT NULL
+  ]]></rule>
+</tableCheckConstraint>
+</tableCheckConstraints>
+</Table>

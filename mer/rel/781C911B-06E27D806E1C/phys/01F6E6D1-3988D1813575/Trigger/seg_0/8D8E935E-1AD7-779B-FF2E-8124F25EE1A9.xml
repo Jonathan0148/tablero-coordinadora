@@ -1,0 +1,17 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<TriggerOraclev10g class="oracle.dbtools.crest.model.design.storage.oracle.v10g.TriggerOraclev10g" name="TRG_PROJECT_UPDATE_NO_DELETE" directorySegmentName="seg_0" id="8D8E935E-1AD7-779B-FF2E-8124F25EE1A9">
+<sourceConnName>APP_CURSOR</sourceConnName>
+<sourceObjSchema>APP_CURSOR</sourceObjSchema>
+<sourceObjName>TRG_PROJECT_UPDATE_NO_DELETE</sourceObjName>
+<createdBy>bohor</createdBy>
+<createdTime>2026-05-28 18:10:16 UTC</createdTime>
+<ownerDesignName>mer</ownerDesignName>
+<actions>DELETE</actions>
+<body><![CDATA[BEGIN
+  RAISE_APPLICATION_ERROR(-20003, 'Physical delete is forbidden for project_update. Use administrative soft delete.');
+END;
+]]></body>
+<triggerTime>BEFORE</triggerTime>
+<owner>4B413B8D-A341-A2B4-B9D2-31E23117ADD2</owner>
+<table>70CD601D-DC7A-0BA6-89E1-FEB706FC7146</table>
+</TriggerOraclev10g>

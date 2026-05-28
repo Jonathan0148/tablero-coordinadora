@@ -1,0 +1,294 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="7C671F02-C30C-EACA-9717-93054187AF44" schemaObject="29F73E7E-6ED0-6D22-A8E7-E516F10B9427" name="AUDIT_EVENT">
+<sourceConnName>APP_CURSOR</sourceConnName>
+<sourceObjSchema>APP_CURSOR</sourceObjSchema>
+<sourceObjName>AUDIT_EVENT</sourceObjName>
+<createdBy>bohor</createdBy>
+<createdTime>2026-05-28 18:10:03 UTC</createdTime>
+<ownerDesignName>mer</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="AUDIT_EVENT_ID" id="570E122B-C647-7985-DF44-F2AB7E84E06E">
+<sourceConnName>APP_CURSOR</sourceConnName>
+<sourceObjSchema>AUDIT_EVENT</sourceObjSchema>
+<sourceObjName>AUDIT_EVENT_ID</sourceObjName>
+<createdBy>bohor</createdBy>
+<createdTime>2026-05-28 18:10:04 UTC</createdTime>
+<ownerDesignName>mer</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>19</dataTypePrecision>
+<dataTypeScale>0</dataTypeScale>
+<ownDataTypeParameters>,19,0</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="EVENT_TYPE" id="25A2A446-BE70-73CB-4A3A-6C7BEAB09EA7">
+<sourceConnName>APP_CURSOR</sourceConnName>
+<sourceObjSchema>AUDIT_EVENT</sourceObjSchema>
+<sourceObjName>EVENT_TYPE</sourceObjName>
+<createdBy>bohor</createdBy>
+<createdTime>2026-05-28 18:10:04 UTC</createdTime>
+<ownerDesignName>mer</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>80 CHAR</dataTypeSize>
+<ownDataTypeParameters>80 CHAR,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="ENTITY_NAME" id="399CF5A2-3388-159D-D9E6-9829A2316A50">
+<sourceConnName>APP_CURSOR</sourceConnName>
+<sourceObjSchema>AUDIT_EVENT</sourceObjSchema>
+<sourceObjName>ENTITY_NAME</sourceObjName>
+<createdBy>bohor</createdBy>
+<createdTime>2026-05-28 18:10:04 UTC</createdTime>
+<ownerDesignName>mer</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>80 CHAR</dataTypeSize>
+<ownDataTypeParameters>80 CHAR,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="ENTITY_ID" id="84E71875-C932-115A-F75B-81A5631B2517">
+<sourceConnName>APP_CURSOR</sourceConnName>
+<sourceObjSchema>AUDIT_EVENT</sourceObjSchema>
+<sourceObjName>ENTITY_ID</sourceObjName>
+<createdBy>bohor</createdBy>
+<createdTime>2026-05-28 18:10:04 UTC</createdTime>
+<ownerDesignName>mer</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>19</dataTypePrecision>
+<dataTypeScale>0</dataTypeScale>
+<ownDataTypeParameters>,19,0</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="LEGACY_ID" id="AD3F3F2A-AB6C-1756-3374-0FDBBADF641F">
+<sourceConnName>APP_CURSOR</sourceConnName>
+<sourceObjSchema>AUDIT_EVENT</sourceObjSchema>
+<sourceObjName>LEGACY_ID</sourceObjName>
+<createdBy>bohor</createdBy>
+<createdTime>2026-05-28 18:10:04 UTC</createdTime>
+<ownerDesignName>mer</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>100 CHAR</dataTypeSize>
+<ownDataTypeParameters>100 CHAR,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="ACTION" id="16BCF888-BE00-AF08-13EF-2E4B248FFF74">
+<sourceConnName>APP_CURSOR</sourceConnName>
+<sourceObjSchema>AUDIT_EVENT</sourceObjSchema>
+<sourceObjName>ACTION</sourceObjName>
+<createdBy>bohor</createdBy>
+<createdTime>2026-05-28 18:10:04 UTC</createdTime>
+<ownerDesignName>mer</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>80 CHAR</dataTypeSize>
+<ownDataTypeParameters>80 CHAR,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="SUMMARY" id="451F89B1-96CD-8D25-4540-AF169215F897">
+<sourceConnName>APP_CURSOR</sourceConnName>
+<sourceObjSchema>AUDIT_EVENT</sourceObjSchema>
+<sourceObjName>SUMMARY</sourceObjName>
+<createdBy>bohor</createdBy>
+<createdTime>2026-05-28 18:10:04 UTC</createdTime>
+<ownerDesignName>mer</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>1000 CHAR</dataTypeSize>
+<ownDataTypeParameters>1000 CHAR,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="BEFORE_HASH" id="14C92DAD-D14D-821B-83A8-89C77C022102">
+<sourceConnName>APP_CURSOR</sourceConnName>
+<sourceObjSchema>AUDIT_EVENT</sourceObjSchema>
+<sourceObjName>BEFORE_HASH</sourceObjName>
+<createdBy>bohor</createdBy>
+<createdTime>2026-05-28 18:10:04 UTC</createdTime>
+<ownerDesignName>mer</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>128 CHAR</dataTypeSize>
+<ownDataTypeParameters>128 CHAR,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="AFTER_HASH" id="E359A2AC-6243-99C7-0057-C5F6B1A4EF93">
+<sourceConnName>APP_CURSOR</sourceConnName>
+<sourceObjSchema>AUDIT_EVENT</sourceObjSchema>
+<sourceObjName>AFTER_HASH</sourceObjName>
+<createdBy>bohor</createdBy>
+<createdTime>2026-05-28 18:10:04 UTC</createdTime>
+<ownerDesignName>mer</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>128 CHAR</dataTypeSize>
+<ownDataTypeParameters>128 CHAR,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="PERFORMED_BY" id="BC4C711E-3EB2-A977-9F09-A4BE59A89BA8">
+<sourceConnName>APP_CURSOR</sourceConnName>
+<sourceObjSchema>AUDIT_EVENT</sourceObjSchema>
+<sourceObjName>PERFORMED_BY</sourceObjName>
+<createdBy>bohor</createdBy>
+<createdTime>2026-05-28 18:10:04 UTC</createdTime>
+<ownerDesignName>mer</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<dataTypePrecision>19</dataTypePrecision>
+<dataTypeScale>0</dataTypeScale>
+<ownDataTypeParameters>,19,0</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="9439A71F-DAC5-3A00-61FB-9CBC73ED5EB1" referredColumn="880D4EA4-0744-033E-555A-B40E68AFDE35"/>
+</associations>
+</Column>
+<Column name="PERFORMED_AT" id="8C3B1E3E-BF39-B160-00C7-C31D8DE8AD3E">
+<sourceConnName>APP_CURSOR</sourceConnName>
+<sourceObjSchema>AUDIT_EVENT</sourceObjSchema>
+<sourceObjName>PERFORMED_AT</sourceObjName>
+<createdBy>bohor</createdBy>
+<createdTime>2026-05-28 18:10:04 UTC</createdTime>
+<ownerDesignName>mer</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT046</logicalDatatype>
+<dataTypePrecision>6</dataTypePrecision>
+<defaultValue>SYSTIMESTAMP</defaultValue>
+<ownDataTypeParameters>,6,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="IP_ADDRESS" id="511AB26C-E06E-6CAC-99CC-BB49EFA5A0F0">
+<sourceConnName>APP_CURSOR</sourceConnName>
+<sourceObjSchema>AUDIT_EVENT</sourceObjSchema>
+<sourceObjName>IP_ADDRESS</sourceObjName>
+<createdBy>bohor</createdBy>
+<createdTime>2026-05-28 18:10:04 UTC</createdTime>
+<ownerDesignName>mer</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>64 CHAR</dataTypeSize>
+<ownDataTypeParameters>64 CHAR,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="USER_AGENT" id="528CF1E1-C402-7B95-64C4-72D49D96FD91">
+<sourceConnName>APP_CURSOR</sourceConnName>
+<sourceObjSchema>AUDIT_EVENT</sourceObjSchema>
+<sourceObjName>USER_AGENT</sourceObjName>
+<createdBy>bohor</createdBy>
+<createdTime>2026-05-28 18:10:04 UTC</createdTime>
+<ownerDesignName>mer</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<dataTypeSize>500 CHAR</dataTypeSize>
+<ownDataTypeParameters>500 CHAR,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="223FF304-984B-00C5-9D20-71450C0F6F74" name="PK_AUDIT_EVENT">
+<sourceConnName>APP_CURSOR</sourceConnName>
+<sourceObjSchema>APP_CURSOR</sourceObjSchema>
+<sourceObjName>PK_AUDIT_EVENT</sourceObjName>
+<createdBy>bohor</createdBy>
+<createdTime>2026-05-28 18:10:12 UTC</createdTime>
+<ownerDesignName>mer</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="570E122B-C647-7985-DF44-F2AB7E84E06E"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="BE15CB96-9DC9-9668-DC88-84B42485EDEC" schemaObject="29F73E7E-6ED0-6D22-A8E7-E516F10B9427" name="IX_AUDIT_EVENT__ENTITY">
+<sourceConnName>APP_CURSOR</sourceConnName>
+<sourceObjSchema>APP_CURSOR</sourceObjSchema>
+<sourceObjName>IX_AUDIT_EVENT__ENTITY</sourceObjName>
+<createdBy>bohor</createdBy>
+<createdTime>2026-05-28 18:10:08 UTC</createdTime>
+<ownerDesignName>mer</ownerDesignName>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="399CF5A2-3388-159D-D9E6-9829A2316A50"/>
+<colUsage columnID="84E71875-C932-115A-F75B-81A5631B2517"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="1A9E4738-C34F-F077-59D1-822F75E4267F" schemaObject="29F73E7E-6ED0-6D22-A8E7-E516F10B9427" name="IX_AUDIT_EVENT__EVENT_TYPE">
+<sourceConnName>APP_CURSOR</sourceConnName>
+<sourceObjSchema>APP_CURSOR</sourceObjSchema>
+<sourceObjName>IX_AUDIT_EVENT__EVENT_TYPE</sourceObjName>
+<createdBy>bohor</createdBy>
+<createdTime>2026-05-28 18:10:08 UTC</createdTime>
+<ownerDesignName>mer</ownerDesignName>
+<indexExpression>EVENT_TYPE, SYS_EXTRACT_UTC(&quot;PERFORMED_AT&quot;) DESC</indexExpression>
+<isSurrogateKey>false</isSurrogateKey>
+</ind_PK_UK>
+<ind_PK_UK id="BE759290-95ED-D6D1-24CC-B668BAC939DD" schemaObject="29F73E7E-6ED0-6D22-A8E7-E516F10B9427" name="IX_AUDIT_EVENT__PERFORMED_AT">
+<sourceConnName>APP_CURSOR</sourceConnName>
+<sourceObjSchema>APP_CURSOR</sourceObjSchema>
+<sourceObjName>IX_AUDIT_EVENT__PERFORMED_AT</sourceObjName>
+<createdBy>bohor</createdBy>
+<createdTime>2026-05-28 18:10:08 UTC</createdTime>
+<ownerDesignName>mer</ownerDesignName>
+<indexExpression>SYS_EXTRACT_UTC(&quot;PERFORMED_AT&quot;) DESC</indexExpression>
+<isSurrogateKey>false</isSurrogateKey>
+</ind_PK_UK>
+<ind_PK_UK id="90454682-49DD-9F5D-A507-ED7B30BBCCBE" schemaObject="29F73E7E-6ED0-6D22-A8E7-E516F10B9427" name="IX_AUDIT_EVENT__PERFORMED_BY">
+<sourceConnName>APP_CURSOR</sourceConnName>
+<sourceObjSchema>APP_CURSOR</sourceObjSchema>
+<sourceObjName>IX_AUDIT_EVENT__PERFORMED_BY</sourceObjName>
+<createdBy>bohor</createdBy>
+<createdTime>2026-05-28 18:10:08 UTC</createdTime>
+<ownerDesignName>mer</ownerDesignName>
+<indexExpression>PERFORMED_BY, SYS_EXTRACT_UTC(&quot;PERFORMED_AT&quot;) DESC</indexExpression>
+<isSurrogateKey>false</isSurrogateKey>
+</ind_PK_UK>
+<ind_PK_UK id="C74D0710-9CE1-DA8D-C565-9D81C79A8FB9" schemaObject="29F73E7E-6ED0-6D22-A8E7-E516F10B9427" name="PK_AUDIT_EVENT">
+<sourceConnName>APP_CURSOR</sourceConnName>
+<sourceObjSchema>APP_CURSOR</sourceObjSchema>
+<sourceObjName>PK_AUDIT_EVENT</sourceObjName>
+<createdBy>bohor</createdBy>
+<createdTime>2026-05-28 18:10:08 UTC</createdTime>
+<ownerDesignName>mer</ownerDesignName>
+<indexState>Unique Plain Index</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="570E122B-C647-7985-DF44-F2AB7E84E06E"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="A8EBE095-5019-DEA2-6675-CC315A9ACBC8" name="FK_AUDIT_EVENT__PERFORMED_BY">
+<createdBy>bohor</createdBy>
+<createdTime>2026-05-28 18:10:17 UTC</createdTime>
+<ownerDesignName>mer</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="BC4C711E-3EB2-A977-9F09-A4BE59A89BA8"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

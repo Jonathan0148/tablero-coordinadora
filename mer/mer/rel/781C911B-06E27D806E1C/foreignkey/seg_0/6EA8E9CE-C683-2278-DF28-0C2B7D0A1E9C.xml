@@ -1,0 +1,19 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="6EA8E9CE-C683-2278-DF28-0C2B7D0A1E9C" containerWithKeyObject="70CD601D-DC7A-0BA6-89E1-FEB706FC7146" localFKIndex="0882040B-69AF-2F97-1491-F389515AED64" name="FK_PROJECT_UPDATE__TRAFFIC_LIGHT">
+<sourceConnName>APP_CURSOR</sourceConnName>
+<sourceObjSchema>APP_CURSOR</sourceObjSchema>
+<sourceObjName>FK_PROJECT_UPDATE__TRAFFIC_LIGHT</sourceObjName>
+<createdBy>bohor</createdBy>
+<createdTime>2026-05-28 18:10:17 UTC</createdTime>
+<ownerDesignName>mer</ownerDesignName>
+<referredTableLongName>APP_CURSOR.TRAFFIC_LIGHT</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>612C39BE-FEB8-67C9-475B-4594FA6BB2DB</referredTableID>
+<keyObject>C5672043-2643-610B-029E-05D0511C3A3A</keyObject>
+<referredKeyID>C5672043-2643-610B-029E-05D0511C3A3A</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>TRAFFIC_LIGHT_ID</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

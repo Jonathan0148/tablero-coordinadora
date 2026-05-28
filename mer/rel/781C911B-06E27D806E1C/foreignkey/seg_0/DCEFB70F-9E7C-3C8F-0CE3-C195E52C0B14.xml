@@ -1,0 +1,19 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="DCEFB70F-9E7C-3C8F-0CE3-C195E52C0B14" containerWithKeyObject="68B705D1-9C4B-72E1-A005-F37E904DECCA" localFKIndex="E4A3AFC8-CB3E-FA64-1FC6-97490356ECDB" name="FK_AUTH_REFRESH_TOKEN__APP_USER">
+<sourceConnName>APP_CURSOR</sourceConnName>
+<sourceObjSchema>APP_CURSOR</sourceObjSchema>
+<sourceObjName>FK_AUTH_REFRESH_TOKEN__APP_USER</sourceObjName>
+<createdBy>bohor</createdBy>
+<createdTime>2026-05-28 18:10:17 UTC</createdTime>
+<ownerDesignName>mer</ownerDesignName>
+<referredTableLongName>APP_CURSOR.APP_USER</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>149DA98F-D22E-ABD3-25A7-D9849CEEFB79</referredTableID>
+<keyObject>249E3AF9-481B-EBCF-A3C9-6B34426FF08A</keyObject>
+<referredKeyID>249E3AF9-481B-EBCF-A3C9-6B34426FF08A</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>USER_ID</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

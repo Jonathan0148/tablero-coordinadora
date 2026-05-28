@@ -1,0 +1,19 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="527EBAB7-3569-6335-23B7-5BC767B45052" containerWithKeyObject="A8797418-48A3-E03A-B4BE-51B5111A541A" localFKIndex="8B8CCE4D-1044-403F-CAFC-E7664E9C5FC8" name="FK_ACTIVITY_LOG__WORK_AREA">
+<sourceConnName>APP_CURSOR</sourceConnName>
+<sourceObjSchema>APP_CURSOR</sourceObjSchema>
+<sourceObjName>FK_ACTIVITY_LOG__WORK_AREA</sourceObjName>
+<createdBy>bohor</createdBy>
+<createdTime>2026-05-28 18:10:17 UTC</createdTime>
+<ownerDesignName>mer</ownerDesignName>
+<referredTableLongName>APP_CURSOR.WORK_AREA</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>85B679C4-F4F3-82A1-6ABC-BF2DF557D8E2</referredTableID>
+<keyObject>2138A650-1DE1-878C-890F-3A67D00CBF4D</keyObject>
+<referredKeyID>2138A650-1DE1-878C-890F-3A67D00CBF4D</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>WORK_AREA_ID</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

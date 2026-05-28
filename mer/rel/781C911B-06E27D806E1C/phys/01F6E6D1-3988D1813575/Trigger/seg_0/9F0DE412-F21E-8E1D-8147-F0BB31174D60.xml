@@ -1,0 +1,45 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<TriggerOraclev10g class="oracle.dbtools.crest.model.design.storage.oracle.v10g.TriggerOraclev10g" name="TRG_APP_USER_AUDIT_BIU" directorySegmentName="seg_0" id="9F0DE412-F21E-8E1D-8147-F0BB31174D60">
+<sourceConnName>APP_CURSOR</sourceConnName>
+<sourceObjSchema>APP_CURSOR</sourceObjSchema>
+<sourceObjName>TRG_APP_USER_AUDIT_BIU</sourceObjName>
+<createdBy>bohor</createdBy>
+<createdTime>2026-05-28 18:10:16 UTC</createdTime>
+<ownerDesignName>mer</ownerDesignName>
+<actions>INSERT, UPDATE</actions>
+<body><![CDATA[DECLARE
+  v_session_user VARCHAR2(128 CHAR);
+BEGIN
+  v_session_user := SYS_CONTEXT('USERENV', 'SESSION_USER');
+  IF INSERTING THEN
+    IF :NEW.created_at IS NULL THEN
+      :NEW.created_at := SYSTIMESTAMP;
+    END IF;
+    IF :NEW.updated_at IS NULL THEN
+      :NEW.updated_at := :NEW.created_at;
+    END IF;
+    IF :NEW.created_by IS NULL THEN
+      :NEW.created_by := v_session_user;
+    END IF;
+    IF :NEW.updated_by IS NULL THEN
+      :NEW.updated_by := NVL(:NEW.created_by, v_session_user);
+    END IF;
+  ELSE
+    :NEW.created_at := :OLD.created_at;
+    :NEW.created_by := :OLD.created_by;
+    :NEW.updated_at := SYSTIMESTAMP;
+    :NEW.updated_by := v_session_user;
+    IF :OLD.is_deleted = 'N' AND :NEW.is_deleted = 'Y' THEN
+      IF :NEW.deleted_at IS NULL THEN
+        :NEW.deleted_at := SYSTIMESTAMP;
+      END IF;
+      IF :NEW.deleted_by IS NULL THEN
+        :NEW.deleted_by := v_session_user;
+      END IF;
+    END IF;
+  END IF;
+END;]]></body>
+<triggerTime>BEFORE</triggerTime>
+<owner>4B413B8D-A341-A2B4-B9D2-31E23117ADD2</owner>
+<table>149DA98F-D22E-ABD3-25A7-D9849CEEFB79</table>
+</TriggerOraclev10g>
