@@ -3,7 +3,8 @@ export type ThemePresetId =
   | "dark-graphite"
   | "cream-minimal"
   | "midnight-blue"
-  | "modern-emerald";
+  | "modern-emerald"
+  | "orchid-executive";
 
 export type NavbarStyle = "glass" | "solid";
 export type RadiusSize = "sm" | "md" | "lg";
@@ -25,6 +26,7 @@ export type ThemePreset = {
   description: string;
   colorScheme: "light" | "dark";
   preview: [string, string, string];
+  previewGradient?: string;
   accentDefault: string;
   sidebarDefault: string;
   backgroundDefault: string;
@@ -108,6 +110,19 @@ export const THEME_PRESETS: ThemePreset[] = [
     sidebarDefault: "#0f1714",
     backgroundDefault: "#0c1210",
     surfaceDefault: "#151f1b",
+  },
+  {
+    id: "orchid-executive",
+    name: "Orchid Executive",
+    description: "Ciruela suave con acentos lavanda y violeta",
+    colorScheme: "dark",
+    preview: ["#1a1523", "#f5e6f0", "#9b87f5"],
+    previewGradient:
+      "linear-gradient(135deg, #1a1523 0%, #2d2240 38%, #c9a8d8 72%, #9b87f5 100%)",
+    accentDefault: "#9b87f5",
+    sidebarDefault: "#181222",
+    backgroundDefault: "#1a1523",
+    surfaceDefault: "#231c2e",
   },
 ];
 

@@ -86,6 +86,6 @@ export function readThemeFromStorage(): ThemeStateSnapshot | null {
 }
 
 export function buildThemeBootstrapScript(): string {
-  const darkPresets = ["dark-graphite", "midnight-blue", "modern-emerald"];
+  const darkPresets = ["dark-graphite", "midnight-blue", "modern-emerald", "orchid-executive"];
   return `(function(){try{var k=${JSON.stringify(THEME_STORAGE_KEY)};var dark=${JSON.stringify(darkPresets)};var r=localStorage.getItem(k);if(!r)return;var p=JSON.parse(r);var s=p.state||p;if(!s||!s.preset)return;var d=document.documentElement;var c=s.customizations||{};d.setAttribute("data-theme",s.preset);d.setAttribute("data-color-scheme",dark.indexOf(s.preset)>=0?"dark":"light");d.setAttribute("data-density",c.density||"default");d.setAttribute("data-navbar-style",c.navbarStyle||"glass");if(c.accentColor)d.style.setProperty("--app-accent",c.accentColor);if(c.sidebarColor)d.style.setProperty("--app-sidebar",c.sidebarColor);if(c.backgroundTone)d.style.setProperty("--app-bg",c.backgroundTone);if(c.cardTone)d.style.setProperty("--app-surface",c.cardTone);}catch(e){}})();`;
 }

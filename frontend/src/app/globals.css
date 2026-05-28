@@ -125,6 +125,31 @@
   --app-shadow-lg: 0 12px 36px rgba(0, 0, 0, 0.35);
 }
 
+[data-theme="orchid-executive"] {
+  color-scheme: dark;
+  --preset-navbar-glass: rgba(26, 21, 35, 0.86);
+  --preset-navbar-solid: #1a1523;
+  --app-bg: #1a1523;
+  --app-fg: #f4eef8;
+  --app-muted: #a593b5;
+  --app-border: color-mix(in srgb, #6b5a7d 35%, transparent);
+  --app-border-subtle: transparent;
+  --app-surface: #231c2e;
+  --app-surface-muted: #1e1828;
+  --app-accent: #9b87f5;
+  --app-accent-hover: #8470e8;
+  --app-accent-fg: #ffffff;
+  --app-sidebar: #181222;
+  --app-sidebar-fg: #9d8db0;
+  --app-sidebar-active: #9b87f5;
+  --app-sidebar-active-fg: #ffffff;
+  --app-navbar: var(--preset-navbar-glass);
+  --app-hover: #2a2238;
+  --app-input-bg: #231c2e;
+  --app-shadow: 0 1px 2px rgba(26, 21, 35, 0.35);
+  --app-shadow-lg: 0 10px 32px rgba(45, 34, 64, 0.45);
+}
+
 [data-navbar-style="solid"] {
   --app-navbar: var(--preset-navbar-solid);
 }

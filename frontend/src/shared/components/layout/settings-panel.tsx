@@ -12,9 +12,33 @@ import {
   type DensitySize,
   type NavbarStyle,
   type RadiusSize,
+  type ThemePreset,
   type ThemePresetId,
 } from "@/shared/theme/theme-presets";
 import { useThemeStore } from "@/shared/theme/theme-store";
+
+function buildPreviewGradient(item: ThemePreset): string {
+  if (item.previewGradient) return item.previewGradient;
+  const [base, mid, accent] = item.preview;
+  return `linear-gradient(135deg, ${base} 0%, ${mid} 52%, ${accent} 100%)`;
+}
+
+function ThemePreviewSwatch({ item, selected }: { item: ThemePreset; selected: boolean }) {
+  return (
+    <div
+      className={cn(
+        "relative h-11 w-[4.5rem] shrink-0 overflow-hidden rounded-xl shadow-sm transition",
+        selected && "ring-2 ring-app-accent/40 ring-offset-1 ring-offset-app-surface",
+      )}
+      style={{ background: buildPreviewGradient(item) }}
+      aria-hidden
+    >
+      <div className="absolute inset-0 bg-gradient-to-br from-white/10 via-transparent to-black/10" />
+      <div className="absolute bottom-1.5 left-2 h-1 w-6 rounded-full bg-white/25 backdrop-blur-[1px]" />
+      <div className="absolute bottom-1.5 right-1.5 h-2 w-2 rounded-full bg-white/35" />
+    </div>
+  );
+}
 
 function hasCustomizations(custom: typeof DEFAULT_CUSTOMIZATIONS): boolean {
   return (
@@ -160,7 +184,7 @@ export function SettingsPanel() {
           <div className="flex-1 space-y-8 overflow-y-auto px-5 py-5">
             <section className="space-y-3">
               <SectionTitle>Temas predefinidos</SectionTitle>
-              <div className="grid gap-2">
+              <div className="grid gap-2.5">
                 {THEME_PRESETS.map((item) => {
                   const selected = item.id === preset;
                   return (
@@ -169,27 +193,19 @@ export function SettingsPanel() {
                       type="button"
                       onClick={() => setPreset(item.id as ThemePresetId)}
                       className={cn(
-                        "flex w-full items-center gap-3 rounded-app p-3 text-left transition",
+                        "flex w-full items-center gap-3.5 rounded-app p-3 text-left transition duration-200",
                         selected
-                          ? "bg-app-hover"
+                          ? "bg-app-hover shadow-[var(--app-shadow)]"
                           : "bg-app-surface-muted hover:bg-app-hover",
                       )}
                     >
-                      <div className="flex -space-x-1">
-                        {item.preview.map((color) => (
-                          <span
-                            key={color}
-                            className="h-6 w-6 rounded-full border border-white/20 shadow-sm"
-                            style={{ backgroundColor: color }}
-                          />
-                        ))}
-                      </div>
+                      <ThemePreviewSwatch item={item} selected={selected} />
                       <div className="min-w-0 flex-1">
                         <p className="text-sm font-semibold text-app-fg">{item.name}</p>
                         <p className="truncate text-xs text-app-muted">{item.description}</p>
                       </div>
                       {selected && (
-                        <span className="flex h-6 w-6 items-center justify-center rounded-full bg-app-accent text-app-accent-fg">
+                        <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-app-accent text-app-accent-fg shadow-sm">
                           <Check className="h-3.5 w-3.5" />
                         </span>
                       )}
