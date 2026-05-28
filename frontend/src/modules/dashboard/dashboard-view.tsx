@@ -4,6 +4,7 @@ import { useQuery } from "@tanstack/react-query";
 import Link from "next/link";
 import { ArrowRight, Calendar, Clock, FileText, Landmark } from "lucide-react";
 import { CoordinationPanel } from "@/modules/dashboard/coordination-panel";
+import { ExecutiveStatusBreakdown } from "@/modules/dashboard/executive-status-breakdown";
 import { dashboardService, projectService } from "@/services/project.service";
 import { Badge } from "@/shared/components/badge";
 import { Card, CardContent, CardHeader } from "@/shared/components/card";
@@ -13,7 +14,6 @@ import { PageSkeleton } from "@/shared/components/feedback/skeleton";
 import { TrafficLightBadge } from "@/shared/components/traffic-light-badge";
 import { ErrorState } from "@/shared/components/state";
 import { alertTone, groupAlerts } from "@/shared/utils/alerts";
-import { EXECUTIVE_STATUSES } from "@/shared/utils/constants";
 import { fmtDate, fmtDateTime } from "@/shared/utils/format";
 import { cn } from "@/shared/utils/cn";
 
@@ -103,7 +103,6 @@ export function DashboardView() {
     pipelineAgg[key] = (pipelineAgg[key] ?? 0) + 1;
   });
   const maxPipeline = Math.max(...Object.values(pipelineAgg), 1);
-  const maxExec = Math.max(...Object.values(d.executiveStatusBreakdown ?? {}), 1);
   const maxTl = Math.max(...Object.values(d.trafficLightCounts ?? {}), 1);
   const alertGroups = groupAlerts(alerts.data ?? []).slice(0, 4);
 
@@ -133,14 +132,10 @@ export function DashboardView() {
       <CoordinationPanel projects={d.coordinationProjects} />
 
       <div className="grid gap-4 xl:grid-cols-3">
-        <Card className="xl:col-span-2">
-          <CardHeader><h3 className="text-sm font-semibold">Estado ejecutivo</h3></CardHeader>
-          <CardContent className="space-y-1">
-            {EXECUTIVE_STATUSES.map((s) => (
-              <MetricBar key={s.code} label={s.label} count={d.executiveStatusBreakdown?.[s.code] ?? 0} max={maxExec} />
-            ))}
-          </CardContent>
-        </Card>
+        <ExecutiveStatusBreakdown
+          breakdown={d.executiveStatusBreakdown ?? {}}
+          totalProjects={d.totalProjects}
+        />
         <Card>
           <CardHeader><h3 className="text-sm font-semibold">Distribución semáforo</h3></CardHeader>
           <CardContent className="space-y-1">

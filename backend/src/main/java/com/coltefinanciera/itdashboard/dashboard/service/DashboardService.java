@@ -26,6 +26,9 @@ public class DashboardService {
 
     private static final Set<String> HIGH_STOPPER_IMPACTS = Set.of("ALTO", "CRITICO");
     private static final List<String> TRAFFIC_LIGHT_ORDER = List.of("ROJO", "AMARILLO", "VERDE", "GRIS");
+    private static final List<String> EXECUTIVE_STATUS_ORDER = List.of(
+            "EN_CURSO", "EN_RIESGO", "BLOQUEADO", "REQUIERE_DECISION", "COMPLETADO"
+    );
 
     private final ProjectRepository projectRepository;
     private final ProjectEnrichmentService enrichmentService;
@@ -69,7 +72,7 @@ public class DashboardService {
     public ExecutiveDashboardResponse executiveDashboard() {
         List<ProjectContext> contexts = loadProjectContexts();
         Map<String, Long> trafficLightCounts = initTrafficLightCounts();
-        Map<String, Long> executiveStatusBreakdown = new LinkedHashMap<>();
+        Map<String, Long> executiveStatusBreakdown = initExecutiveStatusBreakdown();
         long stopperCount = 0;
         long staleCount = 0;
         long coordinationCount = 0;
@@ -85,7 +88,7 @@ public class DashboardService {
                 if ("Y".equals(update.getHasStopper())) {
                     stopperCount++;
                 }
-                executiveStatusBreakdown.merge(update.getExecutiveStatus().getName(), 1L, Long::sum);
+                executiveStatusBreakdown.merge(update.getExecutiveStatus().getCode(), 1L, Long::sum);
                 if ("Y".equals(update.getRequiresCoordination())) {
                     coordinationCount++;
                     coordinationProjects.add(new DashboardCoordinationProjectItem(
@@ -419,6 +422,12 @@ public class DashboardService {
                     return new ProjectContext(project, latestUpdate, leadNames.get(project.getId()), staleDays, trafficLightCode);
                 })
                 .toList();
+    }
+
+    private Map<String, Long> initExecutiveStatusBreakdown() {
+        Map<String, Long> counts = new LinkedHashMap<>();
+        EXECUTIVE_STATUS_ORDER.forEach(code -> counts.put(code, 0L));
+        return counts;
     }
 
     private Map<String, Long> initTrafficLightCounts() {
