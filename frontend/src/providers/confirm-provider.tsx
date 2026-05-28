@@ -61,20 +61,20 @@ function ConfirmDialogUI({
         <AlertDialog.Content
           className={cn(
             "fixed left-1/2 top-1/2 z-[101] w-[calc(100%-2rem)] max-w-md -translate-x-1/2 -translate-y-1/2",
-            "rounded-2xl border border-slate-200 bg-white p-6 shadow-2xl outline-none",
+            "rounded-app bg-app-surface p-6 shadow-[var(--app-shadow-lg)] outline-none",
             "animate-in fade-in-0 zoom-in-95 duration-200",
           )}
         >
           <div className="flex gap-4">
-            <div className={cn("flex h-11 w-11 shrink-0 items-center justify-center rounded-xl", styles.iconWrap)}>
+            <div className={cn("flex h-11 w-11 shrink-0 items-center justify-center rounded-app", styles.iconWrap)}>
               <Icon className={cn("h-5 w-5", styles.iconColor)} />
             </div>
             <div className="min-w-0 flex-1">
-              <AlertDialog.Title className="text-base font-semibold text-slate-900">
+              <AlertDialog.Title className="text-base font-semibold text-app-fg">
                 {request.title}
               </AlertDialog.Title>
               {request.description && (
-                <AlertDialog.Description className="mt-2 text-sm leading-relaxed text-slate-600">
+                <AlertDialog.Description className="mt-2 text-sm leading-relaxed text-app-muted">
                   {request.description}
                 </AlertDialog.Description>
               )}

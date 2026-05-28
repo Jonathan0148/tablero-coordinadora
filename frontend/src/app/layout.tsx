@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import { AppProviders } from "@/providers/app-providers";
+import { ThemeBootstrapScript } from "@/shared/theme/theme-bootstrap-script";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -26,8 +27,13 @@ export default function RootLayout({
   return (
     <html
       lang="es"
+      data-theme="light-executive"
+      data-density="default"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
+      <head>
+        <ThemeBootstrapScript />
+      </head>
       <body className="min-h-full">
         <AppProviders>{children}</AppProviders>
       </body>

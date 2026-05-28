@@ -52,12 +52,12 @@ export function AppSidebar({ collapsed, onToggle, hasPermission }: AppSidebarPro
 
   return (
     <aside
-      className="fixed inset-y-0 left-0 z-20 hidden flex-col border-r border-slate-200 bg-white transition-[width] duration-300 ease-in-out lg:flex"
+      className="fixed inset-y-0 left-0 z-20 hidden flex-col bg-app-sidebar shadow-[var(--app-shadow)] transition-[width] duration-300 ease-in-out lg:flex"
       style={{ width }}
     >
       <div
         className={cn(
-          "flex h-16 shrink-0 items-center border-b border-slate-100 transition-all duration-300",
+          "flex h-16 shrink-0 items-center transition-all duration-300",
           collapsed ? "justify-center px-2" : "gap-3 px-4",
         )}
       >
@@ -72,8 +72,8 @@ export function AppSidebar({ collapsed, onToggle, hasPermission }: AppSidebarPro
           />
           {!collapsed && (
             <div className="min-w-0">
-              <p className="truncate text-sm font-bold text-slate-900">IT Dashboard</p>
-              <p className="truncate text-[10px] font-medium uppercase tracking-wider text-slate-400">
+              <p className="truncate text-sm font-bold text-app-fg">IT Dashboard</p>
+              <p className="truncate text-[10px] font-medium uppercase tracking-wider text-app-muted">
                 Coltefinanciera
               </p>
             </div>
@@ -91,11 +91,11 @@ export function AppSidebar({ collapsed, onToggle, hasPermission }: AppSidebarPro
               href={item.href}
               title={collapsed ? item.label : undefined}
               className={cn(
-                "group relative flex items-center rounded-xl text-sm font-medium transition-all duration-200",
+                "group relative flex items-center rounded-app text-sm font-medium transition-all duration-200",
                 collapsed ? "justify-center px-0 py-3" : "gap-3 px-3 py-2.5",
                 active
-                  ? "bg-slate-950 text-white shadow-sm"
-                  : "text-slate-600 hover:bg-slate-100 hover:text-slate-950",
+                  ? "bg-app-sidebar-active text-app-sidebar-active-fg"
+                  : "text-app-sidebar-fg hover:bg-app-hover hover:text-app-fg",
               )}
             >
               <Icon className="h-[18px] w-[18px] shrink-0" />
@@ -104,7 +104,7 @@ export function AppSidebar({ collapsed, onToggle, hasPermission }: AppSidebarPro
                 <span
                   className={cn(
                     "pointer-events-none absolute left-full z-50 ml-2 whitespace-nowrap rounded-lg",
-                    "border border-slate-200 bg-slate-900 px-2.5 py-1.5 text-xs font-medium text-white shadow-lg",
+                    "bg-app-accent px-2.5 py-1.5 text-xs font-medium text-app-accent-fg shadow-[var(--app-shadow-lg)]",
                     "opacity-0 transition-opacity duration-150 group-hover:opacity-100",
                   )}
                 >
@@ -116,13 +116,13 @@ export function AppSidebar({ collapsed, onToggle, hasPermission }: AppSidebarPro
         })}
       </nav>
 
-      <div className="shrink-0 border-t border-slate-100 p-2">
+      <div className="shrink-0 p-2">
         <button
           type="button"
           onClick={onToggle}
           aria-label={collapsed ? "Expandir menú" : "Colapsar menú"}
           className={cn(
-            "flex w-full items-center rounded-xl py-2.5 text-slate-500 transition hover:bg-slate-100 hover:text-slate-800",
+            "flex w-full items-center rounded-app py-2.5 text-app-muted transition hover:bg-app-hover hover:text-app-fg",
             collapsed ? "justify-center" : "gap-2 px-3",
           )}
         >

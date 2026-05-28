@@ -59,19 +59,19 @@ export function FilterToolbar({
     <div
       ref={containerRef}
       className={cn(
-        "rounded-2xl border border-slate-200 bg-white/95 shadow-sm backdrop-blur",
+        "rounded-app bg-app-surface/90 shadow-[var(--app-shadow)] backdrop-blur",
         sticky && "sticky top-14 z-[5]",
       )}
     >
       <div className="flex flex-wrap items-center gap-2 p-3">
         {onSearchChange !== undefined && (
           <div className="relative min-w-[200px] flex-1">
-            <Search className="pointer-events-none absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-slate-400" />
+            <Search className="pointer-events-none absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-app-muted" />
             <input
               value={search ?? ""}
               onChange={(e) => onSearchChange(e.target.value)}
               placeholder={searchPlaceholder}
-              className="h-9 w-full rounded-xl border border-slate-200 bg-slate-50/80 pl-9 pr-3 text-sm outline-none transition focus:border-slate-400 focus:bg-white focus:ring-2 focus:ring-slate-200/60"
+              className="h-9 w-full rounded-app bg-app-input px-3 pl-9 text-sm text-app-fg outline-none transition focus:bg-app-surface focus:ring-2 focus:ring-app-border/50"
             />
           </div>
         )}
@@ -89,13 +89,13 @@ export function FilterToolbar({
           <Button
             type="button"
             variant="secondary"
-            className={cn("h-8 px-3 text-xs", advancedOpen && "border-slate-300 bg-slate-100")}
+            className={cn("h-8 px-3 text-xs", advancedOpen && "border-app-border bg-app-hover")}
             onClick={() => setAdvancedOpen(!advancedOpen)}
           >
             <SlidersHorizontal className="mr-1.5 h-3.5 w-3.5" />
             Filtros
             {activeCount > 0 && (
-              <span className="ml-1.5 rounded-full bg-slate-900 px-1.5 py-0.5 text-[10px] text-white">
+              <span className="ml-1.5 rounded-full bg-app-accent px-1.5 py-0.5 text-[10px] text-app-accent-fg">
                 {activeCount}
               </span>
             )}
@@ -105,7 +105,7 @@ export function FilterToolbar({
           <button
             type="button"
             onClick={onClear}
-            className="inline-flex h-8 items-center gap-1 px-2 text-xs text-slate-500 transition hover:text-slate-800"
+            className="inline-flex h-8 cursor-pointer items-center gap-1 px-2 text-xs text-app-muted transition hover:text-app-fg"
           >
             <X className="h-3.5 w-3.5" /> Limpiar
           </button>
@@ -113,16 +113,16 @@ export function FilterToolbar({
       </div>
 
       {advancedOpen && advanced && (
-        <div className="border-t border-slate-100 px-3 pb-3 pt-2">
+        <div className="px-3 pb-3 pt-2">
           <div className="mb-2 flex items-center justify-between">
-            <span className="text-[11px] font-semibold uppercase tracking-wide text-slate-400">
+            <span className="text-[11px] font-semibold uppercase tracking-wide text-app-muted">
               Filtros avanzados
             </span>
             <button
               type="button"
               aria-label="Cerrar filtros"
               onClick={() => setAdvancedOpen(false)}
-              className="rounded-lg p-1 text-slate-400 transition hover:bg-slate-100 hover:text-slate-700"
+              className="rounded-lg p-1 text-app-muted transition hover:bg-app-hover hover:text-app-fg"
             >
               <X className="h-3.5 w-3.5" />
             </button>

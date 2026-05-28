@@ -22,17 +22,17 @@ export function FilterChip({
       type="button"
       onClick={onClick}
       className={cn(
-        "inline-flex h-8 items-center gap-1.5 rounded-lg px-2.5 text-xs font-semibold transition-all duration-200",
-        "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-slate-300",
+        "inline-flex h-8 cursor-pointer items-center gap-1.5 rounded-[calc(var(--app-radius)-0.25rem)] px-2.5 text-xs font-semibold transition-all duration-200",
+        "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-app-border",
         tone === "default" && (active
-          ? "bg-slate-900 text-white shadow-sm"
-          : "bg-slate-100 text-slate-600 hover:bg-slate-200"),
+          ? "bg-app-accent text-app-accent-fg"
+          : "bg-app-hover text-app-muted hover:text-app-fg"),
         tone === "signal" && (active
-          ? "bg-amber-600 text-white shadow-sm"
-          : "bg-slate-100 text-slate-600 hover:bg-amber-50 hover:text-amber-800"),
+          ? "bg-amber-600 text-white"
+          : "bg-app-hover text-app-muted hover:bg-amber-500/10 hover:text-amber-700"),
         tone === "pipeline" && (active
-          ? "bg-slate-900 text-white shadow-sm ring-1 ring-slate-900"
-          : "border border-slate-200 bg-white text-slate-600 hover:border-slate-300 hover:bg-slate-50"),
+          ? "bg-app-accent text-app-accent-fg"
+          : "bg-app-surface-muted text-app-muted hover:bg-app-hover hover:text-app-fg"),
         className,
       )}
     >

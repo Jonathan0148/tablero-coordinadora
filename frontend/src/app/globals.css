@@ -1,24 +1,267 @@
 @import "tailwindcss";
 
-:root {
-  --background: #f8fafc;
-  --foreground: #0f172a;
+/* ── Theme tokens ── */
+:root,
+[data-theme="light-executive"] {
+  color-scheme: light;
+  --preset-navbar-glass: rgba(255, 255, 255, 0.82);
+  --preset-navbar-solid: #ffffff;
+  --app-bg: #f8fafc;
+  --app-fg: #0f172a;
+  --app-muted: #64748b;
+  --app-border: color-mix(in srgb, #cbd5e1 55%, transparent);
+  --app-border-subtle: transparent;
+  --app-surface: #ffffff;
+  --app-surface-muted: #f1f5f9;
+  --app-accent: #0f172a;
+  --app-accent-hover: #1e293b;
+  --app-accent-fg: #ffffff;
+  --app-sidebar: #ffffff;
+  --app-sidebar-fg: #64748b;
+  --app-sidebar-active: #0f172a;
+  --app-sidebar-active-fg: #ffffff;
+  --app-navbar: var(--preset-navbar-glass);
+  --app-hover: #f1f5f9;
+  --app-input-bg: #f8fafc;
+  --app-shadow: 0 1px 2px rgba(15, 23, 42, 0.04);
+  --app-shadow-lg: 0 8px 30px rgba(15, 23, 42, 0.08);
+  --app-radius: 0.875rem;
+  --app-density-scale: 1;
+}
+
+[data-theme="dark-graphite"] {
+  color-scheme: dark;
+  --preset-navbar-glass: rgba(24, 24, 27, 0.88);
+  --preset-navbar-solid: #18181b;
+  --app-bg: #09090b;
+  --app-fg: #fafafa;
+  --app-muted: #a1a1aa;
+  --app-border: color-mix(in srgb, #3f3f46 45%, transparent);
+  --app-border-subtle: transparent;
+  --app-surface: #18181b;
+  --app-surface-muted: #111113;
+  --app-accent: #fafafa;
+  --app-accent-hover: #e4e4e7;
+  --app-accent-fg: #09090b;
+  --app-sidebar: #0f0f11;
+  --app-sidebar-fg: #a1a1aa;
+  --app-sidebar-active: #fafafa;
+  --app-sidebar-active-fg: #09090b;
+  --app-hover: #27272a;
+  --app-input-bg: #18181b;
+  --app-shadow: 0 1px 2px rgba(0, 0, 0, 0.25);
+  --app-shadow-lg: 0 12px 36px rgba(0, 0, 0, 0.35);
+}
+
+[data-theme="cream-minimal"] {
+  color-scheme: light;
+  --preset-navbar-glass: rgba(255, 253, 249, 0.88);
+  --preset-navbar-solid: #fffdf9;
+  --app-bg: #faf8f5;
+  --app-fg: #44403c;
+  --app-muted: #78716c;
+  --app-border: color-mix(in srgb, #d6d3d1 50%, transparent);
+  --app-border-subtle: transparent;
+  --app-surface: #fffdf9;
+  --app-surface-muted: #f5f5f4;
+  --app-accent: #57534e;
+  --app-accent-hover: #44403c;
+  --app-accent-fg: #fffdf9;
+  --app-sidebar: #fffdf9;
+  --app-sidebar-fg: #78716c;
+  --app-sidebar-active: #57534e;
+  --app-sidebar-active-fg: #fffdf9;
+  --app-hover: #f5f5f4;
+  --app-input-bg: #faf8f5;
+  --app-shadow: 0 1px 2px rgba(68, 64, 60, 0.05);
+  --app-shadow-lg: 0 8px 30px rgba(68, 64, 60, 0.08);
+}
+
+[data-theme="midnight-blue"] {
+  color-scheme: dark;
+  --preset-navbar-glass: rgba(17, 24, 39, 0.88);
+  --preset-navbar-solid: #111827;
+  --app-bg: #0b1220;
+  --app-fg: #e2e8f0;
+  --app-muted: #94a3b8;
+  --app-border: color-mix(in srgb, #334155 45%, transparent);
+  --app-border-subtle: transparent;
+  --app-surface: #111827;
+  --app-surface-muted: #0f172a;
+  --app-accent: #3b82f6;
+  --app-accent-hover: #2563eb;
+  --app-accent-fg: #ffffff;
+  --app-sidebar: #0f172a;
+  --app-sidebar-fg: #94a3b8;
+  --app-sidebar-active: #3b82f6;
+  --app-sidebar-active-fg: #ffffff;
+  --app-hover: #1e293b;
+  --app-input-bg: #111827;
+  --app-shadow: 0 1px 2px rgba(0, 0, 0, 0.25);
+  --app-shadow-lg: 0 12px 36px rgba(0, 0, 0, 0.4);
+}
+
+[data-theme="modern-emerald"] {
+  color-scheme: dark;
+  --preset-navbar-glass: rgba(21, 31, 27, 0.88);
+  --preset-navbar-solid: #151f1b;
+  --app-bg: #0c1210;
+  --app-fg: #ecfdf5;
+  --app-muted: #6ee7b7;
+  --app-border: color-mix(in srgb, #374151 45%, transparent);
+  --app-border-subtle: transparent;
+  --app-surface: #151f1b;
+  --app-surface-muted: #0f1714;
+  --app-accent: #10b981;
+  --app-accent-hover: #059669;
+  --app-accent-fg: #ffffff;
+  --app-sidebar: #0f1714;
+  --app-sidebar-fg: #6ee7b7;
+  --app-sidebar-active: #10b981;
+  --app-sidebar-active-fg: #ffffff;
+  --app-hover: #1a2822;
+  --app-input-bg: #151f1b;
+  --app-shadow: 0 1px 2px rgba(0, 0, 0, 0.25);
+  --app-shadow-lg: 0 12px 36px rgba(0, 0, 0, 0.35);
+}
+
+[data-navbar-style="solid"] {
+  --app-navbar: var(--preset-navbar-solid);
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
+  --color-app-bg: var(--app-bg);
+  --color-app-fg: var(--app-fg);
+  --color-app-muted: var(--app-muted);
+  --color-app-border: var(--app-border);
+  --color-app-border-subtle: var(--app-border-subtle);
+  --color-app-surface: var(--app-surface);
+  --color-app-surface-muted: var(--app-surface-muted);
+  --color-app-accent: var(--app-accent);
+  --color-app-accent-hover: var(--app-accent-hover);
+  --color-app-accent-fg: var(--app-accent-fg);
+  --color-app-sidebar: var(--app-sidebar);
+  --color-app-sidebar-fg: var(--app-sidebar-fg);
+  --color-app-sidebar-active: var(--app-sidebar-active);
+  --color-app-sidebar-active-fg: var(--app-sidebar-active-fg);
+  --color-app-navbar: var(--app-navbar);
+  --color-app-hover: var(--app-hover);
+  --color-app-input: var(--app-input-bg);
+  --radius-app: var(--app-radius);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
 
+/* Bridge legacy slate utilities to theme tokens */
+[data-theme] .bg-white { background-color: var(--app-surface); }
+[data-theme] .bg-slate-50 { background-color: var(--app-surface-muted); }
+[data-theme] .bg-slate-100 { background-color: var(--app-hover); }
+[data-theme] .bg-slate-950 { background-color: var(--app-accent); }
+[data-theme] .text-slate-950,
+[data-theme] .text-slate-900 { color: var(--app-fg); }
+[data-theme] .text-slate-800,
+[data-theme] .text-slate-700,
+[data-theme] .text-slate-600,
+[data-theme] .text-slate-500 { color: var(--app-muted); }
+[data-theme] .text-slate-400 { color: var(--app-muted); opacity: 0.85; }
+[data-theme] .border-slate-200,
+[data-theme] .border-slate-100,
+[data-theme] .border-slate-300 { border-color: var(--app-border); }
+[data-theme] .hover\\:bg-slate-50:hover,
+[data-theme] .hover\\:bg-slate-100:hover { background-color: var(--app-hover); }
+[data-theme] .hover\\:text-slate-950:hover,
+[data-theme] .hover\\:text-slate-900:hover,
+[data-theme] .hover\\:text-slate-800:hover { color: var(--app-fg); }
+
+html.theme-transition,
+html.theme-transition *,
+html.theme-transition *::before,
+html.theme-transition *::after {
+  transition:
+    background-color 0.3s ease,
+    color 0.2s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease !important;
+}
+
+@keyframes slide-in-right {
+  from { transform: translateX(100%); opacity: 0.7; }
+  to { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes fade-in-backdrop {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.settings-backdrop { animation: fade-in-backdrop 0.2s ease-out; }
+.settings-panel { animation: slide-in-right 0.28s cubic-bezier(0.16, 1, 0.3, 1); }
+
+@layer base {
+  a[href],
+  button:not(:disabled),
+  [role="button"]:not([aria-disabled="true"]),
+  [role="tab"],
+  [role="menuitem"],
+  [role="option"],
+  [role="switch"],
+  select,
+  summary,
+  label[for],
+  input[type="checkbox"],
+  input[type="radio"],
+  input[type="submit"],
+  input[type="reset"],
+  input[type="button"],
+  input[type="color"],
+  input[type="range"],
+  input[type="file"],
+  .cursor-pointer {
+    cursor: pointer;
+  }
+
+  button:disabled,
+  [aria-disabled="true"] {
+    cursor: not-allowed;
+  }
+
+  input:not([type="checkbox"]):not([type="radio"]):not([type="submit"]):not([type="button"]):not([type="reset"]):not([type="color"]):not([type="range"]):not([type="file"]),
+  textarea {
+    cursor: text;
+  }
+}
+
 body {
-  background: var(--background);
-  color: var(--foreground);
+  background: var(--app-bg);
+  color: var(--app-fg);
 }
 
 * {
   box-sizing: border-box;
+}
+
+[data-density="compact"] main {
+  padding: calc(0.75rem * var(--app-density-scale, 1)) calc(1rem * var(--app-density-scale, 1));
+}
+
+[data-density="default"] main {
+  padding: calc(1rem * var(--app-density-scale, 1)) calc(1.25rem * var(--app-density-scale, 1));
+}
+
+@media (min-width: 640px) {
+  [data-density="default"] main {
+    padding: calc(1.25rem * var(--app-density-scale, 1)) calc(1.5rem * var(--app-density-scale, 1));
+  }
+}
+
+[data-density="comfortable"] main {
+  padding: calc(1.5rem * var(--app-density-scale, 1)) calc(1.75rem * var(--app-density-scale, 1));
+}
+
+@media (min-width: 640px) {
+  [data-density="comfortable"] main {
+    padding: calc(1.75rem * var(--app-density-scale, 1)) calc(2rem * var(--app-density-scale, 1));
+  }
 }
 
 @media print {

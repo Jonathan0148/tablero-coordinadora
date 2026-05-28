@@ -38,18 +38,18 @@ export function LoginForm() {
   return (
     <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
       <div>
-        <label className="text-sm font-medium text-slate-700">Usuario</label>
+        <label className="text-sm font-medium text-app-fg">Usuario</label>
         <input
-          className="mt-2 h-11 w-full rounded-xl border border-slate-200 px-3 text-sm outline-none focus:border-slate-950"
+          className="mt-2 h-11 w-full rounded-app bg-app-input px-3 text-sm text-app-fg outline-none focus:bg-app-surface focus:ring-2 focus:ring-app-border/50"
           {...form.register("username")}
         />
         <p className="mt-1 text-xs text-red-600">{form.formState.errors.username?.message}</p>
       </div>
       <div>
-        <label className="text-sm font-medium text-slate-700">Contraseña</label>
+        <label className="text-sm font-medium text-app-fg">Contraseña</label>
         <input
           type="password"
-          className="mt-2 h-11 w-full rounded-xl border border-slate-200 px-3 text-sm outline-none focus:border-slate-950"
+          className="mt-2 h-11 w-full rounded-app bg-app-input px-3 text-sm text-app-fg outline-none focus:bg-app-surface focus:ring-2 focus:ring-app-border/50"
           {...form.register("password")}
         />
         <p className="mt-1 text-xs text-red-600">{form.formState.errors.password?.message}</p>
