@@ -14,8 +14,8 @@
 WHENEVER SQLERROR EXIT SQL.SQLCODE;
 
 DECLARE
-  v_admin_user_id app_user.user_id%TYPE;
-  v_admin_role_id role.role_id%TYPE;
+  v_admin_user_id NUMBER(19, 0);
+  v_admin_role_id NUMBER(19, 0);
   v_user_role_count NUMBER;
 BEGIN
   BEGIN
@@ -33,9 +33,9 @@ BEGIN
       ) VALUES (
         v_admin_user_id,
         'admin',
-        'admin@local.dev',
+        'analyruiz@coltefinanciera.com.co',
         '$2a$10$/huIvLDZ5xFix4W9lb/qsuQltsTitZEeyip222WfMZ97lHXZmFvWa',
-        'Administrador Local',
+        'Analy Ruiz',
         'Y',
         SYSTIMESTAMP,
         SYSTIMESTAMP,

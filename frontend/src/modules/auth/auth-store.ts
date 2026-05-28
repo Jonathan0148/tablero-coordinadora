@@ -9,7 +9,7 @@ type AuthState = {
   user: UserProfile | null;
   hydrated: boolean;
   hydrate: () => void;
-  login: (username: string, password: string) => Promise<void>;
+  login: (email: string, password: string) => Promise<void>;
   logout: () => void;
   hasPermission: (permission: string) => boolean;
 };
@@ -18,8 +18,8 @@ export const useAuthStore = create<AuthState>((set, get) => ({
   user: null,
   hydrated: false,
   hydrate: () => set({ user: tokenStorage.getUser(), hydrated: true }),
-  login: async (username, password) => {
-    const payload = await authService.login({ username, password });
+  login: async (email, password) => {
+    const payload = await authService.login({ email, password });
     set({ user: payload.user, hydrated: true });
   },
   logout: () => {

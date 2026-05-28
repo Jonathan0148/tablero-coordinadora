@@ -49,7 +49,7 @@ DECLARE
   END drop_audit_fks;
 
   PROCEDURE convert_column(p_table_name IN VARCHAR2, p_column_name IN VARCHAR2) IS
-    v_data_type user_tab_columns.data_type%TYPE;
+    v_data_type VARCHAR2(128);
     v_exists NUMBER;
     v_tmp_column VARCHAR2(128 CHAR);
   BEGIN

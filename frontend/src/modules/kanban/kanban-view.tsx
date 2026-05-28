@@ -4,6 +4,7 @@ import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import { Plus } from "lucide-react";
 import { useMemo, useState } from "react";
 import { kanbanService, projectService } from "@/services/project.service";
+import { useConfirm } from "@/providers/confirm-provider";
 import { useToast } from "@/providers/toast-provider";
 import { Badge } from "@/shared/components/badge";
 import { Button } from "@/shared/components/button";
@@ -84,11 +85,15 @@ export function KanbanView() {
         }
       />
 
-      <div className="grid gap-4 lg:grid-cols-3">
+      <div className="flex snap-x snap-mandatory gap-4 overflow-x-auto pb-2 lg:grid lg:snap-none lg:grid-cols-3 lg:overflow-visible lg:pb-0">
         {cardsByColumn.map((col) => (
           <div
             key={col.code}
-            className={cn("rounded-2xl border border-slate-200 bg-slate-50/80 p-3", "border-t-4", col.accent)}
+            className={cn(
+              "w-[min(100%,280px)] shrink-0 snap-start rounded-app bg-app-surface-muted p-3 lg:w-auto lg:shrink",
+              "border-t-4",
+              col.accent,
+            )}
             onDragOver={(e) => e.preventDefault()}
             onDrop={() => {
               if (draggedId) moveMutation.mutate({ id: draggedId, statusCode: col.code });
@@ -153,6 +158,7 @@ function KanbanModal({ card, onClose, onSaved }: { card: KanbanCard | null; onCl
   const [statusCode, setStatusCode] = useState(card?.statusCode ?? "PENDIENTE");
   const [dueDate, setDueDate] = useState(card?.dueDate ?? "");
   const { showToast } = useToast();
+  const { confirm: confirmDialog } = useConfirm();
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/40 p-4 backdrop-blur-sm">
@@ -177,7 +183,26 @@ function KanbanModal({ card, onClose, onSaved }: { card: KanbanCard | null; onCl
         </div>
         <input type="date" className="w-full rounded-xl border px-3 py-2 text-sm" value={dueDate} onChange={(e) => setDueDate(e.target.value)} />
         <div className="flex justify-end gap-2">
-          {card && <Button type="button" variant="danger" onClick={async () => { await kanbanService.remove(card.id); onSaved(); }}>Eliminar</Button>}
+          {card && (
+            <Button
+              type="button"
+              variant="danger"
+              onClick={async () => {
+                const ok = await confirmDialog({
+                  title: "Eliminar actividad",
+                  description: "¿Eliminar esta tarjeta del tablero Kanban?",
+                  confirmLabel: "Eliminar",
+                  variant: "danger",
+                });
+                if (ok) {
+                  await kanbanService.remove(card.id);
+                  onSaved();
+                }
+              }}
+            >
+              Eliminar
+            </Button>
+          )}
           <Button type="button" variant="secondary" onClick={onClose}>Cancelar</Button>
           <Button type="submit">Guardar</Button>
         </div>

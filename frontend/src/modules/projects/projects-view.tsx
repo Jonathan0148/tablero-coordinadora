@@ -1,12 +1,14 @@
 "use client";
 
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
-import { Plus } from "lucide-react";
+import { Plus, X } from "lucide-react";
 import { useSearchParams } from "next/navigation";
 import { useMemo, useState } from "react";
 import { ProjectCard } from "@/modules/projects/project-card";
 import { ProjectDetailPanel } from "@/modules/projects/project-detail-panel";
+import { ProjectFiltersPanel } from "@/modules/projects/project-filters-panel";
 import { projectService } from "@/services/project.service";
+import { useConfirm } from "@/providers/confirm-provider";
 import { useToast } from "@/providers/toast-provider";
 import { Button } from "@/shared/components/button";
 import { FilterToolbar } from "@/shared/components/layout/filter-toolbar";
@@ -15,6 +17,7 @@ import { PageSkeleton } from "@/shared/components/feedback/skeleton";
 import { EmptyState, ErrorState } from "@/shared/components/state";
 import { DEFAULT_VISIBLE_PIPELINE, PIPELINE_STATUSES } from "@/shared/utils/constants";
 import { loadVisiblePipelineStatuses, saveVisiblePipelineStatuses } from "@/shared/utils/ui-preferences";
+import { cn } from "@/shared/utils/cn";
 import type { Project, ProjectFilters } from "@/types/domain";
 
 const TL_OPTIONS = [
@@ -37,6 +40,7 @@ export function ProjectsView() {
   const [staleOnly, setStaleOnly] = useState(false);
   const [coordOnly, setCoordOnly] = useState(false);
   const [stopperOnly, setStopperOnly] = useState(false);
+  const [filtersOpen, setFiltersOpen] = useState(false);
   const [openProjectId, setOpenProjectId] = useState<number | null>(() => {
     const open = searchParams.get("open");
     return open ? Number(open) : null;
@@ -45,6 +49,7 @@ export function ProjectsView() {
   const [editingProject, setEditingProject] = useState<Project | null>(null);
   const queryClient = useQueryClient();
   const { showToast } = useToast();
+  const { confirm: confirmDialog } = useConfirm();
 
   const filters: ProjectFilters = useMemo(() => ({
     search: search || undefined,
@@ -60,6 +65,7 @@ export function ProjectsView() {
   const query = useQuery({
     queryKey: ["projects", page, filters],
     queryFn: () => projectService.list(page, 24, filters),
+    placeholderData: (prev) => prev,
   });
 
   const deleteMutation = useMutation({
@@ -71,7 +77,36 @@ export function ProjectsView() {
   });
 
   const advancedActive = [staleOnly, coordOnly, stopperOnly].filter(Boolean).length
-    + (visibleStatuses.length !== DEFAULT_VISIBLE_PIPELINE.length ? 1 : 0);
+    + (visibleStatuses.length !== DEFAULT_VISIBLE_PIPELINE.length ? 1 : 0)
+    + (pipelineFilter ? 1 : 0);
+
+  const activeTags = useMemo(() => {
+    const tags: { key: string; label: string; onRemove: () => void }[] = [];
+    if (search) tags.push({ key: "search", label: `Buscar: ${search}`, onRemove: () => { setSearch(""); setPage(0); } });
+    if (tlFilter) {
+      const tl = TL_OPTIONS.find((o) => o.code === tlFilter);
+      tags.push({ key: "tl", label: `Semáforo: ${tl?.label ?? tlFilter}`, onRemove: () => { setTlFilter(""); setPage(0); } });
+    }
+    if (pipelineFilter) {
+      const p = PIPELINE_STATUSES.find((s) => s.code === pipelineFilter);
+      tags.push({ key: "pipeline", label: `Pipeline: ${p?.label ?? pipelineFilter}`, onRemove: () => { setPipelineFilter(""); setPage(0); } });
+    }
+    if (staleOnly) tags.push({ key: "stale", label: "Sin actualizar", onRemove: () => { setStaleOnly(false); setPage(0); } });
+    if (coordOnly) tags.push({ key: "coord", label: "Coordinación", onRemove: () => { setCoordOnly(false); setPage(0); } });
+    if (stopperOnly) tags.push({ key: "stopper", label: "Con stopper", onRemove: () => { setStopperOnly(false); setPage(0); } });
+    if (visibleStatuses.length !== DEFAULT_VISIBLE_PIPELINE.length) {
+      tags.push({
+        key: "visible",
+        label: `Estados visibles (${visibleStatuses.length})`,
+        onRemove: () => {
+          setVisibleStatuses([...DEFAULT_VISIBLE_PIPELINE]);
+          saveVisiblePipelineStatuses(DEFAULT_VISIBLE_PIPELINE);
+          setPage(0);
+        },
+      });
+    }
+    return tags;
+  }, [search, tlFilter, pipelineFilter, staleOnly, coordOnly, stopperOnly, visibleStatuses]);
 
   const clearFilters = () => {
     setSearch("");
@@ -85,7 +120,13 @@ export function ProjectsView() {
     setPage(0);
   };
 
-  if (query.isLoading) return <PageSkeleton />;
+  const handleVisibleStatusesChange = (codes: string[]) => {
+    setVisibleStatuses(codes);
+    saveVisiblePipelineStatuses(codes);
+    setPage(0);
+  };
+
+  if (query.isLoading && !query.data) return <PageSkeleton />;
   if (query.isError) return <ErrorState message={query.error.message} />;
   if (!query.data) return <PageSkeleton />;
 
@@ -112,70 +153,62 @@ export function ProjectsView() {
           active: tlFilter === o.code,
           onClick: () => { setTlFilter(o.code); setPage(0); },
         }))}
-        activeCount={advancedActive + (pipelineFilter ? 1 : 0) + (search ? 1 : 0)}
+        activeCount={advancedActive + (search ? 1 : 0) + (tlFilter ? 1 : 0)}
         onClear={clearFilters}
+        advancedOpen={filtersOpen}
+        onAdvancedOpenChange={setFiltersOpen}
         advanced={
-          <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
-            <div>
-              <p className="mb-2 text-xs font-semibold uppercase tracking-wide text-slate-500">Pipeline</p>
-              <div className="flex flex-wrap gap-1.5">
-                <button type="button" onClick={() => { setPipelineFilter(""); setPage(0); }} className={`rounded-lg px-2.5 py-1 text-xs font-semibold ${!pipelineFilter ? "bg-slate-900 text-white" : "bg-slate-100"}`}>Todos</button>
-                {PIPELINE_STATUSES.map((s) => (
-                  <button key={s.code} type="button" onClick={() => { setPipelineFilter(s.code); setPage(0); }} className={`rounded-lg px-2.5 py-1 text-xs font-semibold ${pipelineFilter === s.code ? "bg-slate-900 text-white" : "bg-slate-100"}`}>{s.label}</button>
-                ))}
-              </div>
-            </div>
-            <div>
-              <p className="mb-2 text-xs font-semibold uppercase tracking-wide text-slate-500">Señales</p>
-              <div className="flex flex-wrap gap-1.5">
-                {[
-                  ["stale", staleOnly, setStaleOnly, "Sin actualizar"],
-                  ["coord", coordOnly, setCoordOnly, "Coordinación"],
-                  ["stopper", stopperOnly, setStopperOnly, "Con stopper"],
-                ].map(([id, val, setter, label]) => (
-                  <button
-                    key={id as string}
-                    type="button"
-                    onClick={() => { (setter as (v: boolean) => void)(!(val as boolean)); setPage(0); }}
-                    className={`rounded-lg px-2.5 py-1 text-xs font-semibold ${val ? "bg-amber-600 text-white" : "bg-slate-100"}`}
-                  >
-                    {label as string}
-                  </button>
-                ))}
-              </div>
-            </div>
-            <div>
-              <p className="mb-2 text-xs font-semibold uppercase tracking-wide text-slate-500">Estados visibles</p>
-              <select
-                multiple
-                className="h-24 w-full rounded-xl border border-slate-200 px-2 py-1 text-xs"
-                value={visibleStatuses}
-                onChange={(e) => {
-                  const selected = Array.from(e.target.selectedOptions).map((o) => o.value);
-                  const next = selected.length ? selected : DEFAULT_VISIBLE_PIPELINE;
-                  setVisibleStatuses(next);
-                  saveVisiblePipelineStatuses(next);
-                  setPage(0);
-                }}
-              >
-                {PIPELINE_STATUSES.map((s) => <option key={s.code} value={s.code}>{s.label}</option>)}
-              </select>
-            </div>
-          </div>
+          <ProjectFiltersPanel
+            pipelineFilter={pipelineFilter}
+            onPipelineFilterChange={(code) => { setPipelineFilter(code); setPage(0); }}
+            staleOnly={staleOnly}
+            coordOnly={coordOnly}
+            stopperOnly={stopperOnly}
+            onStaleChange={(v) => { setStaleOnly(v); setPage(0); }}
+            onCoordChange={(v) => { setCoordOnly(v); setPage(0); }}
+            onStopperChange={(v) => { setStopperOnly(v); setPage(0); }}
+            visibleStatuses={visibleStatuses}
+            onVisibleStatusesChange={handleVisibleStatusesChange}
+          />
         }
       />
+
+      {activeTags.length > 0 && (
+        <div className="flex flex-wrap items-center gap-1.5">
+          <span className="text-[11px] font-semibold uppercase tracking-wide text-slate-400">Activos</span>
+          {activeTags.map((tag) => (
+            <button
+              key={tag.key}
+              type="button"
+              onClick={tag.onRemove}
+              className="inline-flex items-center gap-1 rounded-full border border-slate-200 bg-white py-1 pl-2.5 pr-1.5 text-[11px] font-medium text-slate-700 shadow-sm transition hover:border-slate-300 hover:bg-slate-50"
+            >
+              {tag.label}
+              <X className="h-3 w-3 text-slate-400" />
+            </button>
+          ))}
+        </div>
+      )}
 
       {!query.data.content.length ? (
         <EmptyState title="Sin proyectos" description="No hay proyectos para los filtros seleccionados." />
       ) : (
-        <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-3">
+        <div className={cn("grid gap-4 sm:grid-cols-2 xl:grid-cols-3 transition-opacity duration-200", query.isFetching && "opacity-70")}>
           {query.data.content.map((project) => (
             <ProjectCard
               key={project.id}
               project={project}
               onOpen={() => setOpenProjectId(project.id)}
               onEdit={() => setEditingProject(project)}
-              onDelete={() => { if (confirm(`¿Eliminar "${project.name}"?`)) deleteMutation.mutate(project.id); }}
+              onDelete={async () => {
+                const ok = await confirmDialog({
+                  title: "Eliminar proyecto",
+                  description: `¿Eliminar "${project.name}"? Esta acción no se puede deshacer.`,
+                  confirmLabel: "Eliminar",
+                  variant: "danger",
+                });
+                if (ok) deleteMutation.mutate(project.id);
+              }}
             />
           ))}
         </div>

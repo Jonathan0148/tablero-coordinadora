@@ -4,6 +4,7 @@ import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import { Download, Search } from "lucide-react";
 import { useMemo, useState } from "react";
 import { logService } from "@/services/project.service";
+import { useConfirm } from "@/providers/confirm-provider";
 import { useToast } from "@/providers/toast-provider";
 import { Badge } from "@/shared/components/badge";
 import { Button } from "@/shared/components/button";
@@ -28,6 +29,7 @@ export function LogView() {
   const [search, setSearch] = useState("");
   const queryClient = useQueryClient();
   const { showToast } = useToast();
+  const { confirm: confirmDialog } = useConfirm();
 
   const query = useQuery({
     queryKey: ["activity-logs", areaFilter],
@@ -102,7 +104,7 @@ export function LogView() {
       </Card>
 
       <div className="flex flex-wrap items-center gap-2">
-        <div className="relative min-w-[220px] flex-1">
+        <div className="relative min-w-0 w-full flex-1 basis-[min(100%,12rem)]">
           <Search className="pointer-events-none absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-slate-400" />
           <input
             value={search}
@@ -134,7 +136,21 @@ export function LogView() {
                       isLast={i === logs.length - 1}
                     >
                       <p className="whitespace-pre-wrap">{log.text}</p>
-                      <button type="button" className="mt-2 text-xs text-red-500 hover:underline" onClick={() => deleteMutation.mutate(log.id)}>Eliminar</button>
+                      <button
+                        type="button"
+                        className="mt-2 text-xs text-red-500 hover:underline"
+                        onClick={async () => {
+                          const ok = await confirmDialog({
+                            title: "Eliminar entrada",
+                            description: "¿Eliminar esta entrada de la bitácora?",
+                            confirmLabel: "Eliminar",
+                            variant: "danger",
+                          });
+                          if (ok) deleteMutation.mutate(log.id);
+                        }}
+                      >
+                        Eliminar
+                      </button>
                     </TimelineItem>
                   ))}
                 </Timeline>

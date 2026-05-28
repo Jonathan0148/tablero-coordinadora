@@ -1,27 +1,31 @@
-import { ShieldCheck } from "lucide-react";
+import { LoginBackground } from "@/modules/auth/login-background";
+import { LoginBrand } from "@/modules/auth/login-brand";
 import { LoginForm } from "@/modules/auth/login-form";
-import { Card, CardContent } from "@/shared/components/card";
 
 export default function LoginPage() {
   return (
-    <main className="flex min-h-screen items-center justify-center bg-[radial-gradient(circle_at_top,#e0f2fe,transparent_35%),#f8fafc] p-6">
-      <Card className="w-full max-w-md">
-        <CardContent className="space-y-6 p-8">
-          <div className="flex items-center gap-3">
-            <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-slate-950 text-white">
-              <ShieldCheck className="h-6 w-6" />
-            </div>
-            <div>
-              <p className="text-sm font-semibold uppercase tracking-[0.2em] text-slate-400">Acceso seguro</p>
-              <h1 className="text-2xl font-bold text-slate-950">IT Dashboard</h1>
-            </div>
+    <main className="relative min-h-screen overflow-hidden">
+      <LoginBackground />
+
+      <div className="relative z-10 flex min-h-screen flex-col items-center justify-center px-4 py-8 sm:px-6 lg:px-10">
+        <div
+          className="login-glass w-full max-w-[420px] rounded-2xl border border-white/10 p-6 shadow-2xl sm:p-8"
+        >
+          <div className="mb-8 flex flex-col items-center text-center">
+            <LoginBrand />
+            <h1 className="mt-5 text-2xl font-bold tracking-tight text-white sm:text-[1.65rem]">
+              IT Dashboard
+            </h1>
+            <p className="mt-2 max-w-xs text-sm leading-relaxed text-slate-300">
+              Gestión ejecutiva de proyectos, operaciones y colaboración ágil
+            </p>
           </div>
-          <p className="text-sm leading-6 text-slate-600">
-            Autenticación real contra Spring Security, JWT y RBAC almacenado en Oracle.
-          </p>
           <LoginForm />
-        </CardContent>
-      </Card>
+          <p className="mt-6 text-center text-[11px] text-slate-400">
+            Acceso seguro con autenticación corporativa
+          </p>
+        </div>
+      </div>
     </main>
   );
 }

@@ -60,8 +60,8 @@ export function ProjectDetailPanel({ projectId, onClose }: { projectId: number; 
   return (
     <div className="fixed inset-0 z-50 flex justify-end">
       <div className="absolute inset-0 bg-black/30" onClick={onClose} />
-      <aside className="relative flex h-full w-full max-w-3xl flex-col bg-white shadow-2xl">
-        <div className="border-b border-slate-100 bg-slate-50/50 px-6 py-5">
+      <aside className="relative flex h-full w-full max-w-3xl flex-col bg-app-surface shadow-2xl">
+        <div className="bg-app-surface-muted/50 px-4 py-4 sm:px-6 sm:py-5">
           <div className="flex items-start justify-between gap-4">
             <div className="min-w-0">
               <p className="text-xs font-semibold uppercase tracking-wide text-slate-400">Detalle de proyecto</p>

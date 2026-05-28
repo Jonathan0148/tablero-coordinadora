@@ -14,7 +14,13 @@ export class EnterpriseApiError extends Error {
   constructor(error: AxiosError<ApiErrorResponse>) {
     const response = error.response;
     const payload = response?.data;
-    super(payload?.message ?? error.message);
+    const diagnostic = payload?.data?.details as
+      | { rootCauseMessage?: string; exceptionType?: string }
+      | undefined;
+    const diagnosticHint = diagnostic?.rootCauseMessage
+      ? ` (${diagnostic.rootCauseMessage})`
+      : "";
+    super((payload?.message ?? error.message) + diagnosticHint);
     this.name = "EnterpriseApiError";
     this.status = response?.status;
     this.code = payload?.code;
