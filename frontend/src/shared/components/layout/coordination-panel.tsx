@@ -12,7 +12,14 @@ import {
 } from "lucide-react";
 import { Button } from "@/shared/components/button";
 import { cn } from "@/shared/utils/cn";
-import type { DashboardCoordinationProjectItem } from "@/types/domain";
+
+export type CoordinationProjectItem = {
+  projectId: number;
+  projectName: string;
+  coordinationDesc?: string;
+  responsibleAreaName?: string;
+  responsibleAction?: string;
+};
 
 const AUTO_SCROLL_MS = 6000;
 
@@ -52,7 +59,7 @@ function CoordinationCard({
   project,
   compact = false,
 }: {
-  project: DashboardCoordinationProjectItem;
+  project: CoordinationProjectItem;
   compact?: boolean;
 }) {
   return (
@@ -102,7 +109,7 @@ function CoordinationFullPanel({
   projects,
   onClose,
 }: {
-  projects: DashboardCoordinationProjectItem[];
+  projects: CoordinationProjectItem[];
   onClose: () => void;
 }) {
   useEffect(() => {
@@ -149,9 +156,19 @@ function CoordinationFullPanel({
       </aside>
     </div>
   );
-}
+};
 
-export function CoordinationPanel({ projects }: { projects: DashboardCoordinationProjectItem[] }) {
+type CoordinationPanelProps = {
+  projects: CoordinationProjectItem[];
+  title?: string;
+  subtitle?: string;
+};
+
+export function CoordinationPanel({
+  projects,
+  title = "Acción de coordinación requerida",
+  subtitle,
+}: CoordinationPanelProps) {
   const visibleCount = useVisibleCount();
   const [page, setPage] = useState(0);
   const [expanded, setExpanded] = useState(false);
@@ -178,6 +195,8 @@ export function CoordinationPanel({ projects }: { projects: DashboardCoordinatio
 
   if (!projects.length) return null;
 
+  const resolvedSubtitle = subtitle ?? `${projects.length} proyecto(s) pendientes de decisión`;
+
   return (
     <>
       <section
@@ -196,10 +215,8 @@ export function CoordinationPanel({ projects }: { projects: DashboardCoordinatio
               <AlertTriangle className="h-4 w-4" />
             </div>
             <div>
-              <h3 className="font-semibold text-red-900">Acción de coordinación requerida</h3>
-              <p className="text-xs text-red-700/80">
-                {projects.length} proyecto(s) pendientes de decisión
-              </p>
+              <h3 className="font-semibold text-red-900">{title}</h3>
+              <p className="text-xs text-red-700/80">{resolvedSubtitle}</p>
             </div>
           </div>
 

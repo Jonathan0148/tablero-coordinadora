@@ -3,7 +3,7 @@
 import { useQuery } from "@tanstack/react-query";
 import Link from "next/link";
 import { ArrowRight, Calendar, Clock, FileText, Landmark } from "lucide-react";
-import { CoordinationPanel } from "@/modules/dashboard/coordination-panel";
+import { CoordinationPanel } from "@/shared/components/layout/coordination-panel";
 import { ExecutiveStatusBreakdown } from "@/modules/dashboard/executive-status-breakdown";
 import { dashboardService, projectService } from "@/services/project.service";
 import { Badge } from "@/shared/components/badge";
