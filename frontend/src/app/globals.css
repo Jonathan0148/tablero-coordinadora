@@ -30,6 +30,11 @@
   --app-topbar-height: 4rem;
   --app-content-gap-top: 1rem;
   --app-main-offset-top: calc(var(--app-topbar-height) + var(--app-content-gap-top));
+  /* Shell layering — keep below overlays (drawers 60+, modals 100+) */
+  --z-shell-sidebar: 30;
+  --z-shell-topbar: 40;
+  --z-shell-sidebar-expanded: 45;
+  --z-shell-topbar-popover: 50;
 }
 
 @media (min-width: 640px) {
@@ -184,6 +189,22 @@
 .app-topbar-scrolled {
   box-shadow: var(--app-shadow-lg);
   border-bottom-color: color-mix(in srgb, var(--app-border) 85%, transparent);
+}
+
+.z-shell-sidebar {
+  z-index: var(--z-shell-sidebar);
+}
+
+.z-shell-sidebar-expanded {
+  z-index: var(--z-shell-sidebar-expanded);
+}
+
+.z-shell-topbar {
+  z-index: var(--z-shell-topbar);
+}
+
+.z-shell-topbar-popover {
+  z-index: var(--z-shell-topbar-popover);
 }
 
 @theme inline {

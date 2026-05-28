@@ -329,7 +329,8 @@ export function AppSidebar({ hasPermission }: AppSidebarProps) {
         width: expanded ? SIDEBAR_WIDTH_EXPANDED : SIDEBAR_WIDTH_COLLAPSED,
       }}
       className={cn(
-        "sidebar-rail fixed inset-y-0 left-0 z-30 hidden flex-col bg-app-sidebar will-change-[width] lg:flex",
+        "sidebar-rail fixed inset-y-0 left-0 z-50 hidden flex-col bg-app-sidebar will-change-[width] lg:flex",
+        expanded ? "z-shell-sidebar-expanded" : "z-shell-sidebar",
         "transition-[width,box-shadow] duration-300 ease-[cubic-bezier(0.4,0,0.2,1)]",
         expanded ? "shadow-[var(--app-shadow-lg)]" : "shadow-[var(--app-shadow)]",
       )}

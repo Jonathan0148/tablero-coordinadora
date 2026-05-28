@@ -92,7 +92,7 @@ export function AppShell({ children }: { children: React.ReactNode }) {
       >
         <header
           className={cn(
-            "app-topbar fixed inset-x-0 top-0 z-40 flex items-center gap-2 px-3 py-2 sm:gap-3 sm:px-5 sm:py-0",
+            "app-topbar z-shell-topbar fixed inset-x-0 top-0 flex items-center gap-2 px-3 py-2 sm:gap-3 sm:px-5 sm:py-0",
             "lg:left-[var(--sidebar-width)]",
             topbarScrolled && "app-topbar-scrolled",
           )}
@@ -128,10 +128,10 @@ export function AppShell({ children }: { children: React.ReactNode }) {
                     <button
                       type="button"
                       aria-label="Cerrar alertas"
-                      className="fixed inset-0 z-[45]"
+                      className="fixed inset-0 z-[calc(var(--z-shell-topbar-popover)-1)]"
                       onClick={() => setAlertsOpen(false)}
                     />
-                    <div className="absolute right-0 z-50 mt-2 w-[min(calc(100vw-1.5rem),420px)] overflow-hidden rounded-app bg-app-surface shadow-[var(--app-shadow-lg)]">
+                    <div className="z-shell-topbar-popover absolute right-0 mt-2 w-[min(calc(100vw-1.5rem),420px)] overflow-hidden rounded-app bg-app-surface shadow-[var(--app-shadow-lg)]">
                       <div className="px-4 py-3">
                         <p className="font-semibold text-app-fg">Alertas activas</p>
                         <p className="text-xs text-app-muted">{alerts.data?.length ?? 0} señales operativas</p>
