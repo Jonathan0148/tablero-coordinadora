@@ -1,4 +1,4 @@
-import Image from "next/image";
+import { LoginBrand } from "@/modules/auth/login-brand";
 import { LoginForm } from "@/modules/auth/login-form";
 import { Card, CardContent } from "@/shared/components/card";
 
@@ -9,14 +9,7 @@ export default function LoginPage() {
       <Card className="relative w-full max-w-md border-app-border shadow-[var(--app-shadow-lg)]">
         <CardContent className="space-y-8 p-8">
           <div className="flex flex-col items-center text-center">
-            <Image
-              src="/logo.png"
-              alt="Coltefinanciera"
-              width={56}
-              height={56}
-              className="h-14 w-14 object-contain"
-              priority
-            />
+            <LoginBrand />
             <h1 className="mt-4 text-2xl font-bold tracking-tight text-app-fg">IT Dashboard</h1>
             <p className="mt-1 text-sm text-app-muted">Gestión ejecutiva de proyectos y operaciones IT</p>
           </div>

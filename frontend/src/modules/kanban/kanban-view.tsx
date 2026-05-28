@@ -85,11 +85,15 @@ export function KanbanView() {
         }
       />
 
-      <div className="grid gap-4 lg:grid-cols-3">
+      <div className="flex snap-x snap-mandatory gap-4 overflow-x-auto pb-2 lg:grid lg:snap-none lg:grid-cols-3 lg:overflow-visible lg:pb-0">
         {cardsByColumn.map((col) => (
           <div
             key={col.code}
-            className={cn("rounded-2xl border border-slate-200 bg-slate-50/80 p-3", "border-t-4", col.accent)}
+            className={cn(
+              "w-[min(100%,280px)] shrink-0 snap-start rounded-app bg-app-surface-muted p-3 lg:w-auto lg:shrink",
+              "border-t-4",
+              col.accent,
+            )}
             onDragOver={(e) => e.preventDefault()}
             onDrop={() => {
               if (draggedId) moveMutation.mutate({ id: draggedId, statusCode: col.code });

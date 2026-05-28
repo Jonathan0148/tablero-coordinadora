@@ -97,9 +97,9 @@ export function CommitteeView() {
           </CardHeader>
           <CardContent className="space-y-3 pt-0">
             {resourceLoad.topMembers.length ? resourceLoad.topMembers.map((m) => (
-              <div key={m.memberId} className="grid grid-cols-[1fr_minmax(80px,120px)_2.5rem] items-center gap-3 rounded-xl px-2 py-2 transition hover:bg-slate-50">
+              <div key={m.memberId} className="grid grid-cols-[minmax(0,1fr)_auto] items-center gap-2 rounded-xl px-2 py-2 transition hover:bg-app-hover sm:grid-cols-[1fr_minmax(80px,120px)_2.5rem] sm:gap-3">
                 <span className="truncate text-sm font-medium text-slate-800">{m.memberName}</span>
-                <div className="h-2 overflow-hidden rounded-full bg-slate-100">
+                <div className="col-span-2 h-2 overflow-hidden rounded-full bg-slate-100 sm:col-span-1">
                   <div
                     className={cn(
                       "h-full rounded-full transition-all duration-500",
@@ -108,7 +108,7 @@ export function CommitteeView() {
                     style={{ width: `${Math.min(100, m.assignmentCount * 20)}%` }}
                   />
                 </div>
-                <Badge tone={m.assignmentCount >= 5 ? "red" : m.assignmentCount >= 3 ? "yellow" : "blue"} className="justify-center tabular-nums">
+                <Badge tone={m.assignmentCount >= 5 ? "red" : m.assignmentCount >= 3 ? "yellow" : "blue"} className="shrink-0 justify-self-end tabular-nums sm:justify-self-auto">
                   {m.assignmentCount}
                 </Badge>
               </div>

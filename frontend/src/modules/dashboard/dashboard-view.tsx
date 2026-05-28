@@ -31,8 +31,8 @@ function MetricBar({
   const pct = max > 0 ? (count / max) * 100 : 0;
   const bar = { red: "bg-red-500", amber: "bg-amber-500", green: "bg-emerald-500", slate: "bg-slate-400" };
   return (
-    <div className="flex items-center gap-3 py-1.5">
-      <span className="w-28 shrink-0 text-sm text-slate-600">{label}</span>
+    <div className="flex min-w-0 items-center gap-2 py-1.5 sm:gap-3">
+      <span className="w-20 shrink-0 truncate text-xs text-app-muted sm:w-28 sm:text-sm">{label}</span>
       <div className="h-2 flex-1 overflow-hidden rounded-full bg-slate-100">
         <div className={cn("h-full rounded-full transition-all", bar[tone ?? "slate"])} style={{ width: `${pct}%` }} />
       </div>

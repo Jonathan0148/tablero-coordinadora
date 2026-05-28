@@ -59,13 +59,13 @@ export function FilterToolbar({
     <div
       ref={containerRef}
       className={cn(
-        "rounded-app bg-app-surface/90 shadow-[var(--app-shadow)] backdrop-blur",
+        "min-w-0 max-w-full rounded-app bg-app-surface/90 shadow-[var(--app-shadow)] backdrop-blur",
         sticky && "sticky top-14 z-[5]",
       )}
     >
       <div className="flex flex-wrap items-center gap-2 p-3">
         {onSearchChange !== undefined && (
-          <div className="relative min-w-[200px] flex-1">
+          <div className="relative min-w-0 w-full flex-1 basis-[min(100%,12rem)] sm:min-w-[200px]">
             <Search className="pointer-events-none absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-app-muted" />
             <input
               value={search ?? ""}

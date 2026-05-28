@@ -56,7 +56,7 @@ export function TeamView() {
         actions={tab === "members" ? <Button onClick={() => setShowCreate(true)}><Plus className="mr-2 h-4 w-4" /> Nueva persona</Button> : undefined}
       />
 
-      <div className="inline-flex rounded-xl border border-slate-200 bg-slate-100 p-1">
+      <div className="flex w-full max-w-full overflow-x-auto rounded-app bg-app-surface-muted p-1">
         {([
           ["members", "Personas"],
           ["assignments", "Asignaciones"],
@@ -67,8 +67,8 @@ export function TeamView() {
             type="button"
             onClick={() => setTab(id)}
             className={cn(
-              "rounded-lg px-4 py-2 text-sm font-semibold transition",
-              tab === id ? "bg-white text-slate-900 shadow-sm" : "text-slate-600 hover:text-slate-900",
+              "shrink-0 rounded-lg px-3 py-2 text-sm font-semibold transition sm:px-4",
+              tab === id ? "bg-app-surface text-app-fg shadow-sm" : "text-app-muted hover:text-app-fg",
             )}
           >
             {label}
@@ -166,9 +166,9 @@ export function TeamView() {
               {committee.data?.resourceLoad.activeMemberCount ?? 0} personas activas · {committee.data?.resourceLoad.totalAssignments ?? 0} asignaciones
             </p>
             {capacityRows.map((m) => (
-              <div key={m.memberId} className="grid grid-cols-[140px_1fr_48px] items-center gap-4">
-                <span className="truncate text-sm font-medium">{m.memberName}</span>
-                <div className="h-3 overflow-hidden rounded-full bg-slate-100">
+              <div key={m.memberId} className="grid grid-cols-[minmax(0,1fr)_auto] items-center gap-2 sm:grid-cols-[140px_1fr_48px] sm:gap-4">
+                <span className="truncate text-sm font-medium sm:col-auto">{m.memberName}</span>
+                <div className="col-span-2 h-3 overflow-hidden rounded-full bg-slate-100 sm:col-span-1">
                   <div
                     className={cn(
                       "h-full rounded-full transition-all",
@@ -177,7 +177,7 @@ export function TeamView() {
                     style={{ width: `${m.pct}%` }}
                   />
                 </div>
-                <Badge tone={m.assignmentCount >= 5 ? "red" : m.assignmentCount >= 3 ? "yellow" : "blue"}>{m.assignmentCount}</Badge>
+                <Badge className="justify-self-end sm:justify-self-auto" tone={m.assignmentCount >= 5 ? "red" : m.assignmentCount >= 3 ? "yellow" : "blue"}>{m.assignmentCount}</Badge>
               </div>
             ))}
           </CardContent>

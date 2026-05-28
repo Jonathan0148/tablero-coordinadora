@@ -222,6 +222,20 @@ html.theme-transition *::after {
 .settings-backdrop { animation: fade-in-backdrop 0.2s ease-out; }
 .settings-panel { animation: slide-in-right 0.28s cubic-bezier(0.16, 1, 0.3, 1); }
 
+@keyframes slide-in-left {
+  from { transform: translateX(-100%); opacity: 0.7; }
+  to { transform: translateX(0); opacity: 1; }
+}
+
+.mobile-nav-panel {
+  animation: slide-in-left 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.sidebar-rail {
+  contain: layout style;
+  backface-visibility: hidden;
+}
+
 @layer base {
   a[href],
   button:not(:disabled),
@@ -259,6 +273,13 @@ html.theme-transition *::after {
 body {
   background: var(--app-bg);
   color: var(--app-fg);
+  overflow-x: hidden;
+  max-width: 100%;
+}
+
+html {
+  overflow-x: hidden;
+  max-width: 100%;
 }
 
 * {
