@@ -6,7 +6,7 @@ import { Bell, LogOut, Settings2 } from "lucide-react";
 import { useState } from "react";
 import { Button } from "@/shared/components/button";
 import { AlertsPanel } from "@/shared/components/layout/alerts-panel";
-import { AppSidebar, PAGE_TITLES } from "@/shared/components/layout/app-sidebar";
+import { AppSidebar, resolvePageTitle } from "@/shared/components/layout/app-sidebar";
 import { MobileMenuButton, MobileNavDrawer } from "@/shared/components/layout/mobile-nav-drawer";
 import { SettingsPanel } from "@/shared/components/layout/settings-panel";
 import { UserAvatar } from "@/shared/components/layout/user-avatar";
@@ -55,7 +55,7 @@ export function AppShell({ children }: { children: React.ReactNode }) {
   const [alertsOpen, setAlertsOpen] = useState(false);
   const [mobileNavOpen, setMobileNavOpen] = useState(false);
 
-  const pageTitle = PAGE_TITLES[pathname] ?? "IT Dashboard";
+  const pageTitle = resolvePageTitle(pathname);
 
   const alerts = useQuery({
     queryKey: ["dashboard-alerts"],

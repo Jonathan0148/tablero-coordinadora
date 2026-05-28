@@ -16,6 +16,8 @@ import java.util.Set;
 public class AppUser extends AuditableEntity {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seq_app_user_gen")
+    @SequenceGenerator(name = "seq_app_user_gen", sequenceName = "seq_app_user", allocationSize = 1)
     @Column(name = "user_id")
     private Long id;
 

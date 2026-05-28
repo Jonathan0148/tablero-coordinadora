@@ -6,6 +6,48 @@ export type UserProfile = {
   permissions: string[];
 };
 
+export type AdminRoleSummary = {
+  id: number;
+  code: string;
+  name: string;
+  active: boolean;
+};
+
+export type AdminRole = {
+  id: number;
+  code: string;
+  name: string;
+  description?: string;
+  active: boolean;
+  permissionCodes: string[];
+};
+
+export type AdminPermission = {
+  id: number;
+  code: string;
+  module: string;
+  action: string;
+  description?: string;
+  active: boolean;
+};
+
+export type AdminPermissionGroup = {
+  module: string;
+  label: string;
+  permissions: AdminPermission[];
+};
+
+export type AdminUser = {
+  userId: number;
+  username: string;
+  email: string;
+  fullName: string;
+  active: boolean;
+  roles: AdminRoleSummary[];
+  effectivePermissions: string[];
+  lastLoginAt?: string;
+};
+
 export type AuthPayload = {
   accessToken: string;
   tokenType: "Bearer" | string;

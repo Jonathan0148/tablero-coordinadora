@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: com.coltefinanciera.itdashboard.identity.AdminControllerIntegrationTest
+-------------------------------------------------------------------------------
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 18.97 s -- in com.coltefinanciera.itdashboard.identity.AdminControllerIntegrationTest

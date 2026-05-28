@@ -11,8 +11,14 @@ spring:
   jpa:
     show-sql: false
 
+app:
+  errors:
+    expose-details: true
+
 logging:
   level:
     com.coltefinanciera.itdashboard: INFO
+    com.coltefinanciera.itdashboard.identity: DEBUG
+    com.coltefinanciera.itdashboard.shared.exception: DEBUG
     org.springframework.security: INFO
     org.hibernate.SQL: WARN
