@@ -60,7 +60,7 @@ CREATE OR REPLACE PACKAGE BODY pkg_legacy_json_migration AS
   END map_entity;
 
   PROCEDURE import_backup(p_stg_legacy_backup_id IN NUMBER) IS
-    v_batch_id migration_batch.migration_batch_id%TYPE;
+    v_batch_id NUMBER(19, 0);
     v_json CLOB;
     v_total NUMBER := 0;
     v_success NUMBER := 0;

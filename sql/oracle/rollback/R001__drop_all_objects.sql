@@ -9,37 +9,26 @@
 
 WHENEVER SQLERROR CONTINUE;
 
-DROP TRIGGER trg_project_update_no_delete;
-DROP TRIGGER trg_project_update_append_only;
-
-DROP TRIGGER trg_legacy_id_map_audit_biu;
-DROP TRIGGER trg_migration_batch_audit_biu;
-DROP TRIGGER trg_okr_activity_milestone_audit_biu;
-DROP TRIGGER trg_okr_activity_audit_biu;
-DROP TRIGGER trg_okr_audit_biu;
-DROP TRIGGER trg_activity_log_audit_biu;
-DROP TRIGGER trg_notification_reminder_audit_biu;
-DROP TRIGGER trg_kanban_card_audit_biu;
-DROP TRIGGER trg_project_update_audit_biu;
-DROP TRIGGER trg_project_assignment_audit_biu;
-DROP TRIGGER trg_team_member_audit_biu;
-DROP TRIGGER trg_project_audit_biu;
-DROP TRIGGER trg_okr_activity_status_audit_biu;
-DROP TRIGGER trg_tech_role_audit_biu;
-DROP TRIGGER trg_responsible_area_audit_biu;
-DROP TRIGGER trg_stopper_impact_audit_biu;
-DROP TRIGGER trg_priority_level_audit_biu;
-DROP TRIGGER trg_kanban_status_audit_biu;
-DROP TRIGGER trg_work_area_audit_biu;
-DROP TRIGGER trg_traffic_light_audit_biu;
-DROP TRIGGER trg_executive_status_audit_biu;
-DROP TRIGGER trg_pipeline_status_audit_biu;
-DROP TRIGGER trg_auth_refresh_token_audit_biu;
-DROP TRIGGER trg_role_permission_audit_biu;
-DROP TRIGGER trg_user_role_audit_biu;
-DROP TRIGGER trg_permission_audit_biu;
-DROP TRIGGER trg_role_audit_biu;
-DROP TRIGGER trg_app_user_audit_biu;
+-- Dynamic drop: audit triggers created by V014 (and legacy V009 audit triggers)
+BEGIN
+  FOR r IN (
+    SELECT trigger_name
+    FROM user_triggers
+    WHERE trigger_name LIKE 'TRG\_%\_AUDIT\_BIU' ESCAPE '\'
+       OR trigger_name IN (
+         'TRG_PROJECT_UPDATE_APPEND_ONLY',
+         'TRG_PROJECT_UPDATE_NO_DELETE'
+       )
+  ) LOOP
+    BEGIN
+      EXECUTE IMMEDIATE 'DROP TRIGGER ' || r.trigger_name;
+    EXCEPTION
+      WHEN OTHERS THEN
+        NULL;
+    END;
+  END LOOP;
+END;
+/
 
 DROP VIEW vw_team_member_capacity;
 DROP VIEW vw_project_current_status;
