@@ -8,6 +8,7 @@ import {
   ChevronLeft,
   ChevronRight,
   LayoutList,
+  Search,
   X,
 } from "lucide-react";
 import { Button } from "@/shared/components/button";
@@ -55,53 +56,103 @@ function chunk<T>(items: T[], size: number): T[][] {
   return pages;
 }
 
-function CoordinationCard({
-  project,
-  compact = false,
-}: {
-  project: CoordinationProjectItem;
-  compact?: boolean;
-}) {
+/** Carousel card — preview destacado en dashboard/comité */
+function CoordinationCarouselCard({ project }: { project: CoordinationProjectItem }) {
   return (
     <Link
       href={`/projects?open=${project.projectId}`}
       className={cn(
-        "group relative flex h-full flex-col rounded-xl border border-red-100/80 bg-white p-4 shadow-sm",
+        "group relative flex h-full flex-col rounded-xl border border-red-100/80 bg-white p-3.5 shadow-sm",
         "transition-all duration-300 hover:-translate-y-0.5 hover:border-red-200 hover:shadow-md",
         "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-300",
-        compact && "p-3.5",
       )}
     >
-      <span className="absolute right-3 top-3 flex h-2 w-2">
-        <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-red-400 opacity-40" />
-        <span className="relative inline-flex h-2 w-2 rounded-full bg-red-500" />
-      </span>
+      <span className="absolute right-2.5 top-2.5 h-1.5 w-1.5 rounded-full bg-red-500" aria-hidden />
 
-      <p className={cn("pr-4 font-semibold leading-snug text-slate-900", compact ? "text-sm" : "text-[15px]")}>
+      <p className="pr-3 text-[15px] font-semibold leading-snug text-slate-900 line-clamp-2">
         {project.projectName}
       </p>
 
       {project.coordinationDesc && (
-        <p className={cn("mt-2 line-clamp-2 text-slate-600", compact ? "text-xs" : "text-sm")}>
-          <span className="font-medium text-red-700">Coordinación:</span>{" "}
-          {project.coordinationDesc}
+        <p className="mt-1.5 line-clamp-2 text-xs leading-relaxed text-slate-600">
+          <span className="font-medium text-red-700">Coord.</span> {project.coordinationDesc}
         </p>
       )}
 
-      {project.responsibleAreaName && project.responsibleAction && (
-        <p className="mt-auto pt-3 text-[11px] leading-relaxed text-amber-900/90">
-          <span className="rounded-md bg-amber-50 px-1.5 py-0.5 font-semibold text-amber-800">
-            {project.responsibleAreaName}
-          </span>{" "}
-          {project.responsibleAction}
-        </p>
+      {(project.responsibleAreaName || project.responsibleAction) && (
+        <div className="mt-2 flex flex-wrap items-center gap-1">
+          {project.responsibleAreaName && (
+            <span className="rounded bg-amber-50 px-1.5 py-0.5 text-[10px] font-semibold text-amber-800">
+              {project.responsibleAreaName}
+            </span>
+          )}
+          {project.responsibleAction && (
+            <span className="line-clamp-1 text-[10px] text-slate-500">{project.responsibleAction}</span>
+          )}
+        </div>
       )}
 
-      <span className="mt-3 inline-flex items-center gap-1 text-xs font-semibold text-slate-400 transition group-hover:text-red-600">
-        Ver proyecto
-        <ArrowRight className="h-3.5 w-3.5 transition-transform group-hover:translate-x-0.5" />
+      <span className="mt-2 inline-flex items-center gap-1 text-[11px] font-semibold text-slate-400 transition group-hover:text-red-600">
+        Abrir
+        <ArrowRight className="h-3 w-3 transition-transform group-hover:translate-x-0.5" />
       </span>
     </Link>
+  );
+}
+
+/** Fila compacta — panel lateral “Ver todos” */
+function CoordinationListRow({ project }: { project: CoordinationProjectItem }) {
+  return (
+    <Link
+      href={`/projects?open=${project.projectId}`}
+      className={cn(
+        "group grid grid-cols-[auto_1fr_auto] items-start gap-2.5 rounded-lg border border-slate-100",
+        "bg-white px-2.5 py-2 transition-all duration-200",
+        "hover:border-red-200/80 hover:bg-red-50/50 hover:shadow-sm",
+        "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-200",
+      )}
+    >
+      <span className="mt-1.5 h-2 w-2 shrink-0 rounded-full bg-red-500 ring-2 ring-red-100" aria-hidden />
+
+      <div className="min-w-0 space-y-0.5">
+        <p className="truncate text-sm font-semibold leading-tight text-slate-900 group-hover:text-red-900">
+          {project.projectName}
+        </p>
+        {project.coordinationDesc && (
+          <p className="line-clamp-1 text-xs leading-snug text-slate-600">
+            {project.coordinationDesc}
+          </p>
+        )}
+        {(project.responsibleAreaName || project.responsibleAction) && (
+          <div className="flex min-w-0 items-center gap-1.5 pt-0.5">
+            {project.responsibleAreaName && (
+              <span className="shrink-0 rounded px-1.5 py-px text-[10px] font-semibold leading-tight text-amber-800 bg-amber-50">
+                {project.responsibleAreaName}
+              </span>
+            )}
+            {project.responsibleAction && (
+              <span className="truncate text-[10px] leading-tight text-slate-500">
+                {project.responsibleAction}
+              </span>
+            )}
+          </div>
+        )}
+      </div>
+
+      <ArrowRight className="mt-0.5 h-4 w-4 shrink-0 text-slate-300 transition group-hover:translate-x-0.5 group-hover:text-red-500" />
+    </Link>
+  );
+}
+
+function filterProjects(projects: CoordinationProjectItem[], query: string) {
+  const q = query.trim().toLowerCase();
+  if (!q) return projects;
+  return projects.filter(
+    (p) =>
+      p.projectName.toLowerCase().includes(q)
+      || p.coordinationDesc?.toLowerCase().includes(q)
+      || p.responsibleAreaName?.toLowerCase().includes(q)
+      || p.responsibleAction?.toLowerCase().includes(q),
   );
 }
 
@@ -112,6 +163,10 @@ function CoordinationFullPanel({
   projects: CoordinationProjectItem[];
   onClose: () => void;
 }) {
+  const [search, setSearch] = useState("");
+
+  const filtered = useMemo(() => filterProjects(projects, search), [projects, search]);
+
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => e.key === "Escape" && onClose();
     window.addEventListener("keydown", onKey);
@@ -126,37 +181,64 @@ function CoordinationFullPanel({
         className="absolute inset-0 bg-black/30 backdrop-blur-[2px] transition-opacity"
         onClick={onClose}
       />
-      <aside className="relative flex h-full w-full max-w-lg flex-col border-l border-slate-200 bg-white shadow-2xl transition-transform duration-300">
-        <div className="flex items-start justify-between gap-4 border-b border-red-100 bg-gradient-to-r from-red-50 to-white px-6 py-5">
-          <div className="flex items-start gap-3">
-            <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-red-100 text-red-700">
-              <LayoutList className="h-4 w-4" />
+      <aside className="relative flex h-full w-full max-w-md flex-col border-l border-slate-200 bg-slate-50/80 shadow-2xl">
+        {/* Sticky header */}
+        <div className="sticky top-0 z-10 shrink-0 border-b border-red-100 bg-white/95 backdrop-blur-sm">
+          <div className="flex items-start justify-between gap-3 px-4 py-3.5">
+            <div className="flex min-w-0 items-start gap-2.5">
+              <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-red-100 text-red-700">
+                <LayoutList className="h-3.5 w-3.5" />
+              </div>
+              <div className="min-w-0">
+                <h3 className="truncate text-sm font-semibold text-red-900">Coordinación pendiente</h3>
+                <p className="text-[11px] text-red-700/75">
+                  {filtered.length} de {projects.length} proyecto(s)
+                </p>
+              </div>
             </div>
-            <div>
-              <h3 className="font-semibold text-red-900">Listado completo</h3>
-              <p className="mt-0.5 text-xs text-red-700/80">
-                {projects.length} proyecto(s) pendientes de coordinación
-              </p>
-            </div>
+            <button
+              type="button"
+              onClick={onClose}
+              className="shrink-0 rounded-lg p-1.5 text-slate-400 transition hover:bg-slate-100 hover:text-slate-700"
+            >
+              <X className="h-4 w-4" />
+            </button>
           </div>
-          <button
-            type="button"
-            onClick={onClose}
-            className="rounded-lg p-2 text-slate-400 transition hover:bg-slate-100 hover:text-slate-700"
-          >
-            <X className="h-5 w-5" />
-          </button>
+
+          {projects.length > 3 && (
+            <div className="border-t border-slate-100 px-4 pb-3">
+              <div className="relative">
+                <Search className="pointer-events-none absolute left-2.5 top-1/2 h-3.5 w-3.5 -translate-y-1/2 text-slate-400" />
+                <input
+                  type="search"
+                  placeholder="Buscar proyecto..."
+                  value={search}
+                  onChange={(e) => setSearch(e.target.value)}
+                  className="h-8 w-full rounded-lg border border-slate-200 bg-slate-50 pl-8 pr-3 text-xs text-slate-900 placeholder:text-slate-400 focus:border-red-200 focus:bg-white focus:outline-none focus:ring-2 focus:ring-red-100"
+                />
+              </div>
+            </div>
+          )}
         </div>
 
-        <div className="flex-1 space-y-3 overflow-y-auto p-4">
-          {projects.map((p) => (
-            <CoordinationCard key={p.projectId} project={p} compact />
-          ))}
+        {/* Dense scroll list */}
+        <div className="flex-1 overflow-y-auto overscroll-contain px-3 py-2">
+          {filtered.length > 0 ? (
+            <div className="space-y-1">
+              {filtered.map((p) => (
+                <CoordinationListRow key={p.projectId} project={p} />
+              ))}
+            </div>
+          ) : (
+            <p className="py-8 text-center text-xs text-slate-500">
+              {search ? "Sin resultados para la búsqueda" : "Sin proyectos pendientes"}
+            </p>
+          )}
         </div>
       </aside>
     </div>
   );
-};
+}
 
 type CoordinationPanelProps = {
   projects: CoordinationProjectItem[];
@@ -264,7 +346,7 @@ export function CoordinationPanel({
                 style={{ minWidth: "100%" }}
               >
                 {pageItems.map((p) => (
-                  <CoordinationCard key={p.projectId} project={p} />
+                  <CoordinationCarouselCard key={p.projectId} project={p} />
                 ))}
               </div>
             ))}
