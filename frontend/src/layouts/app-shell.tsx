@@ -3,7 +3,7 @@
 import { usePathname, useRouter } from "next/navigation";
 import { useQuery } from "@tanstack/react-query";
 import { Bell, LogOut, Settings2 } from "lucide-react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Button } from "@/shared/components/button";
 import { AlertsPanel } from "@/shared/components/layout/alerts-panel";
 import { AppSidebar, resolvePageTitle } from "@/shared/components/layout/app-sidebar";
@@ -73,8 +73,17 @@ export function AppShell({ children }: { children: React.ReactNode }) {
 
   useKanbanNotifications(kanban.data?.content);
 
+  const [topbarScrolled, setTopbarScrolled] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => setTopbarScrolled(window.scrollY > 6);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, [pathname]);
+
   return (
-    <div className="min-h-screen overflow-x-hidden bg-app-bg text-app-fg">
+    <div className="min-h-screen bg-app-bg text-app-fg">
       <AppSidebar hasPermission={hasPermission} />
 
       <div
@@ -83,14 +92,15 @@ export function AppShell({ children }: { children: React.ReactNode }) {
       >
         <header
           className={cn(
-            "sticky top-0 z-20 flex h-14 items-center gap-2 px-3 backdrop-blur-md sm:gap-3 sm:px-5",
-            "bg-app-navbar shadow-[var(--app-shadow)]",
+            "app-topbar fixed inset-x-0 top-0 z-40 flex items-center gap-2 px-3 py-2 sm:gap-3 sm:px-5 sm:py-0",
+            "lg:left-[var(--sidebar-width)]",
+            topbarScrolled && "app-topbar-scrolled",
           )}
         >
           <MobileMenuButton onClick={() => setMobileNavOpen(true)} />
 
-          <div className="min-w-0 flex-1">
-            <p className="truncate text-[11px] font-medium uppercase tracking-wide text-app-muted sm:hidden">
+          <div className="min-w-0 flex-1 leading-tight">
+            <p className="truncate text-[10px] font-semibold uppercase tracking-[0.18em] text-app-muted sm:hidden">
               {pageTitle}
             </p>
             <h1 className="truncate text-base font-semibold tracking-tight text-app-fg sm:text-lg">
@@ -118,10 +128,10 @@ export function AppShell({ children }: { children: React.ReactNode }) {
                     <button
                       type="button"
                       aria-label="Cerrar alertas"
-                      className="fixed inset-0 z-10"
+                      className="fixed inset-0 z-[45]"
                       onClick={() => setAlertsOpen(false)}
                     />
-                    <div className="absolute right-0 z-30 mt-2 w-[min(calc(100vw-1.5rem),420px)] overflow-hidden rounded-app bg-app-surface shadow-[var(--app-shadow-lg)]">
+                    <div className="absolute right-0 z-50 mt-2 w-[min(calc(100vw-1.5rem),420px)] overflow-hidden rounded-app bg-app-surface shadow-[var(--app-shadow-lg)]">
                       <div className="px-4 py-3">
                         <p className="font-semibold text-app-fg">Alertas activas</p>
                         <p className="text-xs text-app-muted">{alerts.data?.length ?? 0} señales operativas</p>
@@ -160,7 +170,7 @@ export function AppShell({ children }: { children: React.ReactNode }) {
           </div>
         </header>
 
-        <main className="min-w-0 max-w-full">{children}</main>
+        <main className="app-main">{children}</main>
       </div>
 
       <MobileNavDrawer

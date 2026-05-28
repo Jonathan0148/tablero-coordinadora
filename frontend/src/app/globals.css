@@ -27,6 +27,17 @@
   --app-shadow-lg: 0 8px 30px rgba(15, 23, 42, 0.08);
   --app-radius: 0.875rem;
   --app-density-scale: 1;
+  --app-topbar-height: 4rem;
+  --app-content-gap-top: 1rem;
+  --app-main-offset-top: calc(var(--app-topbar-height) + var(--app-content-gap-top));
+}
+
+@media (min-width: 640px) {
+  :root,
+  [data-theme] {
+    --app-topbar-height: 3.5rem;
+    --app-content-gap-top: 1.125rem;
+  }
 }
 
 [data-theme="dark-graphite"] {
@@ -152,6 +163,27 @@
 
 [data-navbar-style="solid"] {
   --app-navbar: var(--preset-navbar-solid);
+}
+
+.app-topbar {
+  min-height: var(--app-topbar-height);
+  background: var(--app-navbar);
+  border-bottom: 1px solid color-mix(in srgb, var(--app-border) 65%, transparent);
+  box-shadow: var(--app-shadow);
+  transition:
+    box-shadow 200ms ease,
+    border-color 200ms ease,
+    background-color 200ms ease;
+}
+
+[data-navbar-style="glass"] .app-topbar {
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.app-topbar-scrolled {
+  box-shadow: var(--app-shadow-lg);
+  border-bottom-color: color-mix(in srgb, var(--app-border) 85%, transparent);
 }
 
 @theme inline {
@@ -309,33 +341,62 @@ body {
 html {
   overflow-x: hidden;
   max-width: 100%;
+  scroll-padding-top: var(--app-main-offset-top);
 }
 
 * {
   box-sizing: border-box;
 }
 
-[data-density="compact"] main {
-  padding: calc(0.75rem * var(--app-density-scale, 1)) calc(1rem * var(--app-density-scale, 1));
+[data-density="compact"] {
+  --app-content-gap-top: 0.625rem;
 }
 
-[data-density="default"] main {
-  padding: calc(1rem * var(--app-density-scale, 1)) calc(1.25rem * var(--app-density-scale, 1));
+[data-density="comfortable"] {
+  --app-content-gap-top: 1.25rem;
 }
 
 @media (min-width: 640px) {
-  [data-density="default"] main {
-    padding: calc(1.25rem * var(--app-density-scale, 1)) calc(1.5rem * var(--app-density-scale, 1));
+  [data-density="comfortable"] {
+    --app-content-gap-top: 1.5rem;
   }
 }
 
-[data-density="comfortable"] main {
-  padding: calc(1.5rem * var(--app-density-scale, 1)) calc(1.75rem * var(--app-density-scale, 1));
+.app-main {
+  min-width: 0;
+  max-width: 100%;
+  overflow-x: clip;
+}
+
+[data-density="compact"] .app-main {
+  padding-top: calc(var(--app-main-offset-top) * var(--app-density-scale, 1));
+  padding-bottom: calc(0.75rem * var(--app-density-scale, 1));
+  padding-inline: calc(1rem * var(--app-density-scale, 1));
+}
+
+[data-density="default"] .app-main {
+  padding-top: calc(var(--app-main-offset-top) * var(--app-density-scale, 1));
+  padding-bottom: calc(1rem * var(--app-density-scale, 1));
+  padding-inline: calc(1.25rem * var(--app-density-scale, 1));
 }
 
 @media (min-width: 640px) {
-  [data-density="comfortable"] main {
-    padding: calc(1.75rem * var(--app-density-scale, 1)) calc(2rem * var(--app-density-scale, 1));
+  [data-density="default"] .app-main {
+    padding-bottom: calc(1.25rem * var(--app-density-scale, 1));
+    padding-inline: calc(1.5rem * var(--app-density-scale, 1));
+  }
+}
+
+[data-density="comfortable"] .app-main {
+  padding-top: calc(var(--app-main-offset-top) * var(--app-density-scale, 1));
+  padding-bottom: calc(1.5rem * var(--app-density-scale, 1));
+  padding-inline: calc(1.75rem * var(--app-density-scale, 1));
+}
+
+@media (min-width: 640px) {
+  [data-density="comfortable"] .app-main {
+    padding-bottom: calc(1.75rem * var(--app-density-scale, 1));
+    padding-inline: calc(2rem * var(--app-density-scale, 1));
   }
 }
 
@@ -345,7 +406,7 @@ html {
   .no-print {
     display: none !important;
   }
-  main {
+  .app-main {
     padding: 0 !important;
   }
   .committee-print {
