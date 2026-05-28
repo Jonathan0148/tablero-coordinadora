@@ -1,24 +1,24 @@
-import { ShieldCheck } from "lucide-react";
+import Image from "next/image";
 import { LoginForm } from "@/modules/auth/login-form";
 import { Card, CardContent } from "@/shared/components/card";
 
 export default function LoginPage() {
   return (
     <main className="flex min-h-screen items-center justify-center bg-[radial-gradient(circle_at_top,#e0f2fe,transparent_35%),#f8fafc] p-6">
-      <Card className="w-full max-w-md">
-        <CardContent className="space-y-6 p-8">
-          <div className="flex items-center gap-3">
-            <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-slate-950 text-white">
-              <ShieldCheck className="h-6 w-6" />
-            </div>
-            <div>
-              <p className="text-sm font-semibold uppercase tracking-[0.2em] text-slate-400">Acceso seguro</p>
-              <h1 className="text-2xl font-bold text-slate-950">IT Dashboard</h1>
-            </div>
+      <Card className="w-full max-w-md border-slate-200/80 shadow-xl shadow-slate-200/50">
+        <CardContent className="space-y-8 p-8">
+          <div className="flex flex-col items-center text-center">
+            <Image
+              src="/logo.png"
+              alt="Coltefinanciera"
+              width={56}
+              height={56}
+              className="h-14 w-14 object-contain"
+              priority
+            />
+            <h1 className="mt-4 text-2xl font-bold tracking-tight text-slate-950">IT Dashboard</h1>
+            <p className="mt-1 text-sm text-slate-500">Gestión ejecutiva de proyectos y operaciones IT</p>
           </div>
-          <p className="text-sm leading-6 text-slate-600">
-            Autenticación real contra Spring Security, JWT y RBAC almacenado en Oracle.
-          </p>
           <LoginForm />
         </CardContent>
       </Card>

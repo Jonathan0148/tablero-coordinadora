@@ -60,7 +60,7 @@ export function FilterToolbar({
       ref={containerRef}
       className={cn(
         "rounded-2xl border border-slate-200 bg-white/95 shadow-sm backdrop-blur",
-        sticky && "sticky top-[4.25rem] z-[5]",
+        sticky && "sticky top-14 z-[5]",
       )}
     >
       <div className="flex flex-wrap items-center gap-2 p-3">

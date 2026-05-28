@@ -8,6 +8,7 @@ import { ProjectCard } from "@/modules/projects/project-card";
 import { ProjectDetailPanel } from "@/modules/projects/project-detail-panel";
 import { ProjectFiltersPanel } from "@/modules/projects/project-filters-panel";
 import { projectService } from "@/services/project.service";
+import { useConfirm } from "@/providers/confirm-provider";
 import { useToast } from "@/providers/toast-provider";
 import { Button } from "@/shared/components/button";
 import { FilterToolbar } from "@/shared/components/layout/filter-toolbar";
@@ -48,6 +49,7 @@ export function ProjectsView() {
   const [editingProject, setEditingProject] = useState<Project | null>(null);
   const queryClient = useQueryClient();
   const { showToast } = useToast();
+  const { confirm: confirmDialog } = useConfirm();
 
   const filters: ProjectFilters = useMemo(() => ({
     search: search || undefined,
@@ -198,7 +200,15 @@ export function ProjectsView() {
               project={project}
               onOpen={() => setOpenProjectId(project.id)}
               onEdit={() => setEditingProject(project)}
-              onDelete={() => { if (confirm(`¿Eliminar "${project.name}"?`)) deleteMutation.mutate(project.id); }}
+              onDelete={async () => {
+                const ok = await confirmDialog({
+                  title: "Eliminar proyecto",
+                  description: `¿Eliminar "${project.name}"? Esta acción no se puede deshacer.`,
+                  confirmLabel: "Eliminar",
+                  variant: "danger",
+                });
+                if (ok) deleteMutation.mutate(project.id);
+              }}
             />
           ))}
         </div>

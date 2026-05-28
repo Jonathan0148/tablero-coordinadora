@@ -6,6 +6,7 @@ import { Plus } from "lucide-react";
 import { useMemo, useState } from "react";
 import { useAllAssignments } from "@/hooks/use-all-assignments";
 import { dashboardService, teamService } from "@/services/project.service";
+import { useConfirm } from "@/providers/confirm-provider";
 import { useToast } from "@/providers/toast-provider";
 import { Badge } from "@/shared/components/badge";
 import { Button } from "@/shared/components/button";
@@ -23,6 +24,7 @@ export function TeamView() {
   const [showCreate, setShowCreate] = useState(false);
   const queryClient = useQueryClient();
   const { showToast } = useToast();
+  const { confirm: confirmDialog } = useConfirm();
 
   const members = useQuery({ queryKey: ["team-members"], queryFn: () => teamService.list() });
   const committee = useQuery({ queryKey: ["committee-summary"], queryFn: dashboardService.committee });
@@ -93,7 +95,21 @@ export function TeamView() {
                     <span>{load} proyecto(s)</span>
                     {m.notes && <span className="truncate italic">{m.notes}</span>}
                   </div>
-                  <Button variant="ghost" className="text-red-600" onClick={() => { if (confirm(`¿Eliminar a ${m.name}?`)) deleteMutation.mutate(m.id); }}>Eliminar</Button>
+                  <Button
+                    variant="ghost"
+                    className="text-red-600"
+                    onClick={async () => {
+                      const ok = await confirmDialog({
+                        title: "Eliminar persona",
+                        description: `¿Eliminar a ${m.name}? Se quitarán sus asignaciones asociadas.`,
+                        confirmLabel: "Eliminar",
+                        variant: "danger",
+                      });
+                      if (ok) deleteMutation.mutate(m.id);
+                    }}
+                  >
+                    Eliminar
+                  </Button>
                 </CardContent>
               </Card>
             );
