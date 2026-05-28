@@ -33,9 +33,7 @@ export default function RootLayout({
     >
       <head>
         <ThemeBootstrapScript />
-        <link rel="preload" href="/log.jpeg" as="image" />
-        <link rel="preload" href="/logo-negro.jpeg" as="image" />
-        <link rel="preload" href="/logo-blanco.jpeg" as="image" />
+        <link rel="preload" href="/log.png" as="image" type="image/png" />
       </head>
       <body className="min-h-full">
         <AppProviders>{children}</AppProviders>

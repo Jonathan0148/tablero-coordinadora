@@ -236,6 +236,18 @@ html.theme-transition *::after {
   backface-visibility: hidden;
 }
 
+/* Corporate wordmark — theme-adaptive gradient text (no image assets) */
+.brand-wordmark {
+  background-image: linear-gradient(
+    115deg,
+    var(--app-fg) 0%,
+    color-mix(in srgb, var(--app-fg) 58%, var(--app-accent)) 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
 @layer base {
   a[href],
   button:not(:disabled),

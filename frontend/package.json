@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "brand:process-mark": "node scripts/process-brand-mark.mjs"
   },
   "dependencies": {
     "@hookform/resolvers": "^5.4.0",
