@@ -43,6 +43,7 @@ app:
     allowed-origins:
       - http://localhost:3000
       - http://127.0.0.1:3000
+      - https://lgj6bcr8-3000.use2.devtunnels.ms
   jwt:
     issuer: coltefinanciera-it-dashboard
     # Override with APP_JWT_SECRET in local/prod. Minimum 32 bytes for HS256.
