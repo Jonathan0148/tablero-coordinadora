@@ -7,6 +7,7 @@ import lombok.Setter;
 
 import java.util.HashSet;
 import java.util.Set;
+import java.util.stream.Collectors;
 
 @Getter
 @Setter
@@ -32,11 +33,27 @@ public class Role extends AuditableEntity {
     @Column(name = "active", nullable = false, columnDefinition = "CHAR(1)")
     private String active = "Y";
 
-    @ManyToMany(fetch = FetchType.EAGER)
-    @JoinTable(
-            name = "role_permission",
-            joinColumns = @JoinColumn(name = "role_id"),
-            inverseJoinColumns = @JoinColumn(name = "permission_id")
-    )
-    private Set<Permission> permissions = new HashSet<>();
+    @OneToMany(mappedBy = "role", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
+    private Set<RolePermission> rolePermissions = new HashSet<>();
+
+    public Set<Permission> getPermissions() {
+        return rolePermissions.stream()
+                .filter(link -> !link.isDeleted())
+                .map(RolePermission::getPermission)
+                .filter(permission -> permission != null && !permission.isDeleted())
+                .collect(Collectors.toCollection(HashSet::new));
+    }
+
+    public void setPermissions(Set<Permission> permissions) {
+        rolePermissions.clear();
+        if (permissions == null || permissions.isEmpty()) {
+            return;
+        }
+        for (Permission permission : permissions) {
+            RolePermission link = new RolePermission();
+            link.setRole(this);
+            link.setPermission(permission);
+            rolePermissions.add(link);
+        }
+    }
 }

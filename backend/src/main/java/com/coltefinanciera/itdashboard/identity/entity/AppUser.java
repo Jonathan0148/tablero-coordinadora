@@ -8,6 +8,7 @@ import lombok.Setter;
 import java.time.OffsetDateTime;
 import java.util.HashSet;
 import java.util.Set;
+import java.util.stream.Collectors;
 
 @Getter
 @Setter
@@ -39,13 +40,29 @@ public class AppUser extends AuditableEntity {
     @Column(name = "last_login_at")
     private OffsetDateTime lastLoginAt;
 
-    @ManyToMany(fetch = FetchType.EAGER)
-    @JoinTable(
-            name = "user_role",
-            joinColumns = @JoinColumn(name = "user_id"),
-            inverseJoinColumns = @JoinColumn(name = "role_id")
-    )
-    private Set<Role> roles = new HashSet<>();
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
+    private Set<UserRole> userRoles = new HashSet<>();
+
+    public Set<Role> getRoles() {
+        return userRoles.stream()
+                .filter(link -> !link.isDeleted())
+                .map(UserRole::getRole)
+                .filter(role -> role != null && !role.isDeleted())
+                .collect(Collectors.toCollection(HashSet::new));
+    }
+
+    public void setRoles(Set<Role> roles) {
+        userRoles.clear();
+        if (roles == null || roles.isEmpty()) {
+            return;
+        }
+        for (Role role : roles) {
+            UserRole link = new UserRole();
+            link.setUser(this);
+            link.setRole(role);
+            userRoles.add(link);
+        }
+    }
 
     public boolean isActive() {
         return "Y".equals(active) && !isDeleted();

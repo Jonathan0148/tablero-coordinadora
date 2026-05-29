@@ -39,6 +39,8 @@ C:\Users\bohor\OneDrive - Angex\Documents\JONATHAN\UNIVERSIDAD Y TRABAJO\TRABAJO
 C:\Users\bohor\OneDrive - Angex\Documents\JONATHAN\UNIVERSIDAD Y TRABAJO\TRABAJO\COLTEFINANCIERA\code\legacy\backend\src\main\java\com\coltefinanciera\itdashboard\identity\entity\AppUser.java
 C:\Users\bohor\OneDrive - Angex\Documents\JONATHAN\UNIVERSIDAD Y TRABAJO\TRABAJO\COLTEFINANCIERA\code\legacy\backend\src\main\java\com\coltefinanciera\itdashboard\identity\entity\Permission.java
 C:\Users\bohor\OneDrive - Angex\Documents\JONATHAN\UNIVERSIDAD Y TRABAJO\TRABAJO\COLTEFINANCIERA\code\legacy\backend\src\main\java\com\coltefinanciera\itdashboard\identity\entity\Role.java
+C:\Users\bohor\OneDrive - Angex\Documents\JONATHAN\UNIVERSIDAD Y TRABAJO\TRABAJO\COLTEFINANCIERA\code\legacy\backend\src\main\java\com\coltefinanciera\itdashboard\identity\entity\RolePermission.java
+C:\Users\bohor\OneDrive - Angex\Documents\JONATHAN\UNIVERSIDAD Y TRABAJO\TRABAJO\COLTEFINANCIERA\code\legacy\backend\src\main\java\com\coltefinanciera\itdashboard\identity\entity\UserRole.java
 C:\Users\bohor\OneDrive - Angex\Documents\JONATHAN\UNIVERSIDAD Y TRABAJO\TRABAJO\COLTEFINANCIERA\code\legacy\backend\src\main\java\com\coltefinanciera\itdashboard\identity\repository\AppUserRepository.java
 C:\Users\bohor\OneDrive - Angex\Documents\JONATHAN\UNIVERSIDAD Y TRABAJO\TRABAJO\COLTEFINANCIERA\code\legacy\backend\src\main\java\com\coltefinanciera\itdashboard\identity\repository\PermissionRepository.java
 C:\Users\bohor\OneDrive - Angex\Documents\JONATHAN\UNIVERSIDAD Y TRABAJO\TRABAJO\COLTEFINANCIERA\code\legacy\backend\src\main\java\com\coltefinanciera\itdashboard\identity\repository\RoleRepository.java
