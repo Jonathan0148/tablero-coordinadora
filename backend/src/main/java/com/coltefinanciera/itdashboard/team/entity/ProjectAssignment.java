@@ -7,7 +7,7 @@ import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
-import java.time.OffsetDateTime;
+import java.time.LocalDateTime;
 
 @Getter
 @Setter
@@ -16,8 +16,7 @@ import java.time.OffsetDateTime;
 public class ProjectAssignment extends AuditableEntity {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seq_project_assignment_gen")
-    @SequenceGenerator(name = "seq_project_assignment_gen", sequenceName = "seq_project_assignment", allocationSize = 1)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "project_assignment_id")
     private Long id;
 
@@ -40,8 +39,8 @@ public class ProjectAssignment extends AuditableEntity {
     private String lead = "N";
 
     @Column(name = "valid_from")
-    private OffsetDateTime validFrom;
+    private LocalDateTime validFrom;
 
     @Column(name = "valid_to")
-    private OffsetDateTime validTo;
+    private LocalDateTime validTo;
 }

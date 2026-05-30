@@ -10,7 +10,7 @@ import org.springframework.data.web.PageableDefault;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.web.bind.annotation.*;
 
-import java.time.OffsetDateTime;
+import java.time.LocalDateTime;
 
 @RestController
 @RequestMapping("/api/v1/projects/{projectId}")
@@ -46,7 +46,7 @@ public class ProjectUpdateController {
     @GetMapping("/status-at")
     public ProjectUpdateResponse statusAt(
             @PathVariable Long projectId,
-            @RequestParam @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME) OffsetDateTime at
+            @RequestParam @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME) LocalDateTime at
     ) {
         return service.statusAt(projectId, at);
     }

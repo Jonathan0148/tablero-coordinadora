@@ -74,7 +74,7 @@ public final class AdminDtos {
             boolean active,
             java.util.List<RoleSummaryResponse> roles,
             Set<String> effectivePermissions,
-            java.time.OffsetDateTime lastLoginAt
+            java.time.LocalDateTime lastLoginAt
     ) {
     }
 

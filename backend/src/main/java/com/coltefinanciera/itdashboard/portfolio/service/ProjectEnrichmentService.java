@@ -10,7 +10,7 @@ import com.coltefinanciera.itdashboard.work.repository.KanbanCardRepository;
 import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
 
-import java.time.OffsetDateTime;
+import java.time.LocalDateTime;
 import java.time.temporal.ChronoUnit;
 import java.util.HashMap;
 import java.util.List;
@@ -80,13 +80,13 @@ public class ProjectEnrichmentService {
     }
 
     public Integer computeStaleDays(Project project, ProjectUpdate latestUpdate) {
-        OffsetDateTime reference = latestUpdate != null
+        LocalDateTime reference = latestUpdate != null
                 ? latestUpdate.getUpdatedAtOriginal()
                 : (project.getLegacyUpdatedAt() != null ? project.getLegacyUpdatedAt() : project.getUpdatedAt());
         if (reference == null) {
             return null;
         }
-        long days = ChronoUnit.DAYS.between(reference.toLocalDate(), OffsetDateTime.now().toLocalDate());
+        long days = ChronoUnit.DAYS.between(reference.toLocalDate(), LocalDateTime.now().toLocalDate());
         return (int) days;
     }
 

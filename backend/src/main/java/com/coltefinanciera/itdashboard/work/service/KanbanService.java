@@ -16,7 +16,7 @@ import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.time.OffsetDateTime;
+import java.time.LocalDateTime;
 
 @Service
 public class KanbanService {
@@ -56,7 +56,7 @@ public class KanbanService {
         card.setKanbanStatus(kanbanStatusRepository.findByCode(request.statusCode()).orElseThrow(() -> new NotFoundException("Estado Kanban no encontrado")));
         card.setDueDate(request.dueDate());
         card.setReminderAt(request.reminderAt());
-        card.setCreatedAtOriginal(OffsetDateTime.now());
+        card.setCreatedAtOriginal(LocalDateTime.now());
         applyProject(card, request.projectId());
         return toResponse(repository.save(card));
     }

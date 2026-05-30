@@ -15,7 +15,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.StringUtils;
 
-import java.time.OffsetDateTime;
+import java.time.LocalDateTime;
 import java.util.List;
 
 @Service
@@ -71,7 +71,7 @@ public class ProjectAssignmentService {
         assignment.setRole(techRoleRepository.findByCode(request.roleCode())
                 .orElseThrow(() -> new NotFoundException("Rol no encontrado")));
         assignment.setLead(request.lead() ? "Y" : "N");
-        assignment.setValidFrom(OffsetDateTime.now());
+        assignment.setValidFrom(LocalDateTime.now());
         return toResponse(repository.save(assignment));
     }
 

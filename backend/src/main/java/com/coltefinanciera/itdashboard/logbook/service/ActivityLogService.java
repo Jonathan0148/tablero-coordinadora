@@ -12,7 +12,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.StringUtils;
 
-import java.time.OffsetDateTime;
+import java.time.LocalDateTime;
 
 @Service
 public class ActivityLogService {
@@ -39,7 +39,7 @@ public class ActivityLogService {
         ActivityLog log = new ActivityLog();
         log.setText(request.text());
         log.setWorkArea(workAreaRepository.findByCode(request.areaCode()).orElseThrow(() -> new NotFoundException("Área no encontrada")));
-        log.setLoggedAtOriginal(request.loggedAtOriginal() == null ? OffsetDateTime.now() : request.loggedAtOriginal());
+        log.setLoggedAtOriginal(request.loggedAtOriginal() == null ? LocalDateTime.now() : request.loggedAtOriginal());
         return toDto(repository.save(log));
     }
 

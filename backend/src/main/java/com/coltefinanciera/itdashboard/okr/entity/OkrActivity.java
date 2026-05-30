@@ -14,6 +14,7 @@ import java.math.BigDecimal;
 @Table(name = "okr_activity")
 public class OkrActivity extends AuditableEntity {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "okr_activity_id")
     private Long id;
 

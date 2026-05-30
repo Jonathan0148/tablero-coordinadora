@@ -1,7 +1,6 @@
 package com.coltefinanciera.itdashboard.identity.entity;
 
 import com.coltefinanciera.itdashboard.shared.audit.AuditableEntity;
-import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
@@ -9,7 +8,7 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
-import jakarta.persistence.SequenceGenerator;
+import jakarta.persistence.Column;
 import jakarta.persistence.Table;
 import lombok.Getter;
 import lombok.Setter;
@@ -21,8 +20,7 @@ import lombok.Setter;
 public class RolePermission extends AuditableEntity {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seq_role_permission_gen")
-    @SequenceGenerator(name = "seq_role_permission_gen", sequenceName = "seq_role_permission", allocationSize = 1)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "role_permission_id")
     private Long id;
 

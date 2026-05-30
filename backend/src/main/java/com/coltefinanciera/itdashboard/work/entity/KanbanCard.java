@@ -10,7 +10,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 import java.time.LocalDate;
-import java.time.OffsetDateTime;
+import java.time.LocalDateTime;
 
 @Getter
 @Setter
@@ -18,8 +18,7 @@ import java.time.OffsetDateTime;
 @Table(name = "kanban_card")
 public class KanbanCard extends AuditableEntity {
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seq_kanban_card_gen")
-    @SequenceGenerator(name = "seq_kanban_card_gen", sequenceName = "seq_kanban_card", allocationSize = 1)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "kanban_card_id")
     private Long id;
 
@@ -46,12 +45,12 @@ public class KanbanCard extends AuditableEntity {
     private LocalDate dueDate;
 
     @Column(name = "reminder_at")
-    private OffsetDateTime reminderAt;
+    private LocalDateTime reminderAt;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "project_id")
     private Project project;
 
     @Column(name = "created_at_original")
-    private OffsetDateTime createdAtOriginal;
+    private LocalDateTime createdAtOriginal;
 }

@@ -1,12 +1,15 @@
 package com.coltefinanciera.itdashboard.identity;
 
+import org.junit.jupiter.api.Assumptions;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.http.MediaType;
 import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.web.servlet.MockMvc;
+import org.springframework.util.StringUtils;
 
 import static org.hamcrest.Matchers.containsString;
 import static org.hamcrest.Matchers.notNullValue;
@@ -23,20 +26,31 @@ class AuthLoginIntegrationTest {
     @Autowired
     MockMvc mockMvc;
 
+    @Value("${app.test.admin-email:}")
+    private String adminEmail;
+
+    @Value("${app.test.admin-password:}")
+    private String adminPassword;
+
     @Test
     void loginWithEmailSucceeds() throws Exception {
+        Assumptions.assumeTrue(
+                StringUtils.hasText(adminEmail) && StringUtils.hasText(adminPassword),
+                "Configure TEST_ADMIN_EMAIL and TEST_ADMIN_PASSWORD to run login E2E against Oracle"
+        );
+
         mockMvc.perform(post("/api/v1/auth/login")
                         .contentType(MediaType.APPLICATION_JSON)
                         .content("""
                                 {
-                                  "email": "admin@local.dev",
-                                  "password": "admin123"
+                                  "email": "%s",
+                                  "password": "%s"
                                 }
-                                """))
+                                """.formatted(adminEmail.trim(), adminPassword)))
                 .andDo(print())
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$.data.accessToken").value(notNullValue()))
-                .andExpect(jsonPath("$.data.user.username").value("admin"))
+                .andExpect(jsonPath("$.data.user.username").value(notNullValue()))
                 .andExpect(jsonPath("$.data.user.permissions").isArray());
     }
 

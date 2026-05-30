@@ -3,7 +3,7 @@ package com.coltefinanciera.itdashboard.work.dto;
 import jakarta.validation.constraints.NotBlank;
 
 import java.time.LocalDate;
-import java.time.OffsetDateTime;
+import java.time.LocalDateTime;
 
 public record UpdateKanbanCardRequest(
         @NotBlank String text,
@@ -11,7 +11,7 @@ public record UpdateKanbanCardRequest(
         @NotBlank String priorityCode,
         @NotBlank String statusCode,
         LocalDate dueDate,
-        OffsetDateTime reminderAt,
+        LocalDateTime reminderAt,
         Long projectId
 ) {
 }

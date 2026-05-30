@@ -1,7 +1,7 @@
 package com.coltefinanciera.itdashboard.work.dto;
 
 import java.time.LocalDate;
-import java.time.OffsetDateTime;
+import java.time.LocalDateTime;
 
 public record KanbanCardResponse(
         Long id,
@@ -11,7 +11,7 @@ public record KanbanCardResponse(
         String priorityCode,
         String statusCode,
         LocalDate dueDate,
-        OffsetDateTime reminderAt,
+        LocalDateTime reminderAt,
         Long projectId
 ) {
 }

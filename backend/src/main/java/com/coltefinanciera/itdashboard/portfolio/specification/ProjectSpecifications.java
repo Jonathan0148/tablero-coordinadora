@@ -9,7 +9,7 @@ import jakarta.persistence.criteria.Subquery;
 import org.springframework.data.jpa.domain.Specification;
 import org.springframework.util.StringUtils;
 
-import java.time.OffsetDateTime;
+import java.time.LocalDateTime;
 import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
 import java.util.List;
@@ -73,7 +73,7 @@ public final class ProjectSpecifications {
         if (stale == null) {
             return null;
         }
-        OffsetDateTime threshold = OffsetDateTime.now().minus(7, ChronoUnit.DAYS);
+        LocalDateTime threshold = LocalDateTime.now().minus(7, ChronoUnit.DAYS);
         return (root, query, cb) -> {
             Predicate projectStale = cb.lessThan(root.get("updatedAt"), threshold);
             Predicate projectFresh = cb.greaterThanOrEqualTo(root.get("updatedAt"), threshold);
@@ -151,14 +151,14 @@ public final class ProjectSpecifications {
         };
     }
 
-    private static Subquery<OffsetDateTime> maxUpdatedAtSubquery(
+    private static Subquery<LocalDateTime> maxUpdatedAtSubquery(
             Root<Project> root,
             jakarta.persistence.criteria.CriteriaQuery<?> query,
             jakarta.persistence.criteria.CriteriaBuilder cb
     ) {
-        Subquery<OffsetDateTime> subquery = query.subquery(OffsetDateTime.class);
+        Subquery<LocalDateTime> subquery = query.subquery(LocalDateTime.class);
         Root<ProjectUpdate> updateRoot = subquery.from(ProjectUpdate.class);
-        subquery.select(cb.greatest(updateRoot.<OffsetDateTime>get("updatedAtOriginal")));
+        subquery.select(cb.greatest(updateRoot.<LocalDateTime>get("updatedAtOriginal")));
         subquery.where(
                 cb.equal(updateRoot.get("project"), root),
                 cb.equal(updateRoot.get(DELETED), NOT_DELETED)

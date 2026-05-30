@@ -16,8 +16,7 @@ import java.util.stream.Collectors;
 public class Role extends AuditableEntity {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seq_role_gen")
-    @SequenceGenerator(name = "seq_role_gen", sequenceName = "seq_role", allocationSize = 1)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "role_id")
     private Long id;
 

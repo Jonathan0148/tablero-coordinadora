@@ -5,7 +5,7 @@ import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
-import java.time.OffsetDateTime;
+import java.time.LocalDateTime;
 import java.util.HashSet;
 import java.util.Set;
 import java.util.stream.Collectors;
@@ -17,8 +17,7 @@ import java.util.stream.Collectors;
 public class AppUser extends AuditableEntity {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seq_app_user_gen")
-    @SequenceGenerator(name = "seq_app_user_gen", sequenceName = "seq_app_user", allocationSize = 1)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "user_id")
     private Long id;
 
@@ -38,7 +37,7 @@ public class AppUser extends AuditableEntity {
     private String active = "Y";
 
     @Column(name = "last_login_at")
-    private OffsetDateTime lastLoginAt;
+    private LocalDateTime lastLoginAt;
 
     @OneToMany(mappedBy = "user", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.EAGER)
     private Set<UserRole> userRoles = new HashSet<>();

@@ -6,7 +6,7 @@ import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
-import java.time.OffsetDateTime;
+import java.time.LocalDateTime;
 
 @Getter
 @Setter
@@ -14,8 +14,7 @@ import java.time.OffsetDateTime;
 @Table(name = "activity_log")
 public class ActivityLog extends AuditableEntity {
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seq_activity_log_gen")
-    @SequenceGenerator(name = "seq_activity_log_gen", sequenceName = "seq_activity_log", allocationSize = 1)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "activity_log_id")
     private Long id;
 
@@ -31,5 +30,5 @@ public class ActivityLog extends AuditableEntity {
     private WorkArea workArea;
 
     @Column(name = "logged_at_original", nullable = false)
-    private OffsetDateTime loggedAtOriginal;
+    private LocalDateTime loggedAtOriginal;
 }

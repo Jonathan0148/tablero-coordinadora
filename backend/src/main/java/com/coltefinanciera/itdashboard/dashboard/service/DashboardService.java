@@ -303,7 +303,7 @@ public class DashboardService {
                     ));
                 }
             }
-            if (card.getReminderAt() != null && !card.getReminderAt().isAfter(java.time.OffsetDateTime.now())) {
+            if (card.getReminderAt() != null && !card.getReminderAt().isAfter(java.time.LocalDateTime.now())) {
                 alerts.add(new AlertItemResponse(
                         "reminder",
                         card.getText(),

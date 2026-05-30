@@ -1,13 +1,13 @@
 package com.coltefinanciera.itdashboard.tracking.dto;
 
 import java.time.LocalDate;
-import java.time.OffsetDateTime;
+import java.time.LocalDateTime;
 
 public record ProjectUpdateResponse(
         Long id,
         String legacyId,
         Long projectId,
-        OffsetDateTime updatedAtOriginal,
+        LocalDateTime updatedAtOriginal,
         String executiveStatusCode,
         String executiveStatusName,
         String trafficLightCode,

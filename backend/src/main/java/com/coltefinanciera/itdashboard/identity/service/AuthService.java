@@ -20,7 +20,7 @@ import org.springframework.security.core.AuthenticationException;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.time.OffsetDateTime;
+import java.time.LocalDateTime;
 import java.util.Set;
 import java.util.stream.Collectors;
 
@@ -65,7 +65,7 @@ public class AuthService {
                 .filter(AppUser::isActive)
                 .orElseThrow(() -> new BusinessException(ApiResponseCode.AUTH_INVALID_LOGIN));
 
-        user.setLastLoginAt(OffsetDateTime.now());
+        user.setLastLoginAt(LocalDateTime.now());
         Set<String> permissions = permissions(user);
         Set<String> roles = roles(user);
         AuthenticatedUser authenticatedUser = new AuthenticatedUser(user.getId(), user.getUsername(), user.getFullName(), permissions);

@@ -20,7 +20,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.StringUtils;
 
-import java.time.OffsetDateTime;
+import java.time.LocalDateTime;
 
 @Service
 public class ProjectUpdateService {
@@ -70,7 +70,7 @@ public class ProjectUpdateService {
 
     @Transactional(readOnly = true)
     @PreAuthorize("hasAuthority('PERM_project-updates:read')")
-    public ProjectUpdateResponse statusAt(Long projectId, OffsetDateTime at) {
+    public ProjectUpdateResponse statusAt(Long projectId, LocalDateTime at) {
         return repository.findStatusAt(projectId, at, PageRequest.of(0, 1))
                 .stream()
                 .findFirst()
@@ -88,7 +88,7 @@ public class ProjectUpdateService {
         Project project = projectService.getActiveProject(projectId);
         ProjectUpdate update = new ProjectUpdate();
         update.setProject(project);
-        update.setUpdatedAtOriginal(OffsetDateTime.now());
+        update.setUpdatedAtOriginal(LocalDateTime.now());
         update.setExecutiveStatus(executiveStatusRepository.findByCode(request.executiveStatusCode())
                 .orElseThrow(() -> new NotFoundException("Estado ejecutivo no encontrado")));
         update.setTrafficLight(trafficLightRepository.findByCode(trafficLightCalculator.calculate(request))

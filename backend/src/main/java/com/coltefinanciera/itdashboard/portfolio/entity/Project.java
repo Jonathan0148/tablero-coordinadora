@@ -7,7 +7,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 import java.time.LocalDate;
-import java.time.OffsetDateTime;
+import java.time.LocalDateTime;
 
 @Getter
 @Setter
@@ -16,8 +16,7 @@ import java.time.OffsetDateTime;
 public class Project extends AuditableEntity {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seq_project_gen")
-    @SequenceGenerator(name = "seq_project_gen", sequenceName = "seq_project", allocationSize = 1)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "project_id")
     private Long id;
 
@@ -35,7 +34,7 @@ public class Project extends AuditableEntity {
     private LocalDate startDate;
 
     @Column(name = "legacy_updated_at")
-    private OffsetDateTime legacyUpdatedAt;
+    private LocalDateTime legacyUpdatedAt;
 
     @Column(name = "is_ghost", nullable = false, columnDefinition = "CHAR(1)")
     private String ghost = "N";

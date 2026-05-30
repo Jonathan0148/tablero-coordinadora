@@ -9,7 +9,6 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
-import jakarta.persistence.SequenceGenerator;
 import jakarta.persistence.Table;
 import lombok.Getter;
 import lombok.Setter;
@@ -21,8 +20,7 @@ import lombok.Setter;
 public class UserRole extends AuditableEntity {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seq_user_role_gen")
-    @SequenceGenerator(name = "seq_user_role_gen", sequenceName = "seq_user_role", allocationSize = 1)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "user_role_id")
     private Long id;
 

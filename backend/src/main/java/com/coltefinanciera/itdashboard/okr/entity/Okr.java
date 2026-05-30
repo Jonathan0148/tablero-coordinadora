@@ -14,6 +14,7 @@ import java.util.List;
 @Table(name = "okr")
 public class Okr extends AuditableEntity {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "okr_id")
     private Long id;
 

@@ -11,7 +11,7 @@ import org.springframework.data.annotation.LastModifiedDate;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 import jakarta.persistence.EntityListeners;
-import java.time.OffsetDateTime;
+import java.time.LocalDateTime;
 
 @Getter
 @Setter
@@ -21,28 +21,28 @@ public abstract class AuditableEntity {
 
     @CreatedDate
     @Column(name = "created_at", nullable = false)
-    private OffsetDateTime createdAt;
+    private LocalDateTime createdAt;
 
     @LastModifiedDate
     @Column(name = "updated_at", nullable = false)
-    private OffsetDateTime updatedAt;
+    private LocalDateTime updatedAt;
 
     @CreatedBy
-    @Column(name = "created_by", length = 128)
+    @Column(name = "created_by", length = 50, insertable = false, updatable = false)
     private String createdBy;
 
     @LastModifiedBy
-    @Column(name = "updated_by", length = 128)
+    @Column(name = "updated_by", length = 50, insertable = false, updatable = false)
     private String updatedBy;
 
     @Column(name = "is_deleted", nullable = false, columnDefinition = "CHAR(1)")
     private String deleted = "N";
 
     @Column(name = "deleted_at")
-    private OffsetDateTime deletedAt;
+    private LocalDateTime deletedAt;
 
-    @Column(name = "deleted_by", length = 128)
-    private String deletedBy;
+    @Column(name = "deleted_by")
+    private Long deletedBy;
 
     public boolean isDeleted() {
         return "Y".equals(deleted);
@@ -50,6 +50,6 @@ public abstract class AuditableEntity {
 
     public void markDeleted() {
         this.deleted = "Y";
-        this.deletedAt = OffsetDateTime.now();
+        this.deletedAt = LocalDateTime.now();
     }
 }

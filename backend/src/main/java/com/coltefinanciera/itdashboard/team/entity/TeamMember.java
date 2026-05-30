@@ -13,8 +13,7 @@ import lombok.Setter;
 public class TeamMember extends AuditableEntity {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seq_team_member_gen")
-    @SequenceGenerator(name = "seq_team_member_gen", sequenceName = "seq_team_member", allocationSize = 1)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "team_member_id")
     private Long id;
 

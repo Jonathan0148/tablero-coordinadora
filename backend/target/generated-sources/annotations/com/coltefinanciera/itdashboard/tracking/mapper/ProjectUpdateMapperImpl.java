@@ -8,13 +8,13 @@ import com.coltefinanciera.itdashboard.portfolio.entity.Project;
 import com.coltefinanciera.itdashboard.tracking.dto.ProjectUpdateResponse;
 import com.coltefinanciera.itdashboard.tracking.entity.ProjectUpdate;
 import java.time.LocalDate;
-import java.time.OffsetDateTime;
+import java.time.LocalDateTime;
 import javax.annotation.processing.Generated;
 import org.springframework.stereotype.Component;
 
 @Generated(
     value = "org.mapstruct.ap.MappingProcessor",
-    date = "2026-05-28T19:07:10-0500",
+    date = "2026-05-29T19:48:09-0500",
     comments = "version: 1.6.3, compiler: javac, environment: Java 21.0.11 (Eclipse Adoptium)"
 )
 @Component
@@ -35,7 +35,7 @@ public class ProjectUpdateMapperImpl implements ProjectUpdateMapper {
         String responsibleAreaCode = null;
         Long id = null;
         String legacyId = null;
-        OffsetDateTime updatedAtOriginal = null;
+        LocalDateTime updatedAtOriginal = null;
         String summary = null;
         String pendingItems = null;
         String stopperDesc = null;

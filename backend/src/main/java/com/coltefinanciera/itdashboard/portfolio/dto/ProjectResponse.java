@@ -1,7 +1,7 @@
 package com.coltefinanciera.itdashboard.portfolio.dto;
 
 import java.time.LocalDate;
-import java.time.OffsetDateTime;
+import java.time.LocalDateTime;
 
 public record ProjectResponse(
         Long id,
@@ -10,7 +10,7 @@ public record ProjectResponse(
         String pipelineStatusCode,
         String pipelineStatusName,
         LocalDate startDate,
-        OffsetDateTime legacyUpdatedAt,
+        LocalDateTime legacyUpdatedAt,
         String currentTrafficLight,
         String currentExecutiveStatus,
         String leadName,

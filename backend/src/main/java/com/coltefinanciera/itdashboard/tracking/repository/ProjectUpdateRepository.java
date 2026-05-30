@@ -6,7 +6,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 
-import java.time.OffsetDateTime;
+import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Optional;
 
@@ -23,7 +23,7 @@ public interface ProjectUpdateRepository extends JpaRepository<ProjectUpdate, Lo
               and pu.updatedAtOriginal <= :at
             order by pu.updatedAtOriginal desc, pu.id desc
             """)
-    Page<ProjectUpdate> findStatusAt(Long projectId, OffsetDateTime at, Pageable pageable);
+    Page<ProjectUpdate> findStatusAt(Long projectId, LocalDateTime at, Pageable pageable);
 
     @Query("""
             select pu from ProjectUpdate pu
